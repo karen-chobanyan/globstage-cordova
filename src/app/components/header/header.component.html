@@ -1,0 +1,25 @@
+<div class="menu-block col-md-12">
+  <div class="menu row">
+    <ul>
+      <li *ngIf="friendRequests?.length > 0" class="relative-length"><span class="notify-length">{{ friendRequests?.length }}</span></li>
+      <li *ngIf="friendRequests?.length > 0" class="notification"><i class="notify fa fa-bell" aria-hidden="true"></i></li>
+      <li routerLink="/profile"><button><i class="fa fa-home"></i></button></li>
+      <li routerLink="/friends"><button><i class="fa fa-users"></i></button></li>
+      <li (click)="openDialogSearch()"><button><i class="fa fa-search"></i></button></li>
+      <li routerLink="/settings"><button><i class="fa fa-cog"></i></button></li>
+      <li><button (click)="logOut()"><i class="fa fa-sign-out"></i></button></li>
+      <li class="language">
+        <mat-form-field>
+          <mat-select [(value)]="selectedOption" [ngClass]="selectedOption" (selectionChange)="changeLang($event)">
+            <mat-option value="En">
+              <img width="40" class="lang-gb" src="./assets/imgs/gb.svg" alt="GlobFull_logo1"> English
+            </mat-option>
+            <mat-option value="Ru">
+              <img width="40" class="lang-gb" src="./assets/imgs/ru.svg" alt="GlobFull_logo1"> Russian
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </li>
+    </ul>
+  <div class="clearfix"></div>
+</div>

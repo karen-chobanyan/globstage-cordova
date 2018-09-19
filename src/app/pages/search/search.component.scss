@@ -1,0 +1,72 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+ul{
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+.searchAll{
+  padding: 20px;
+  background: #fff;
+  margin: 20px 0;
+  .searchUser{
+    .mat-form-field{
+      width: 90%;
+      ::ng-deep .mat-form-field-label{
+        color: $color-blue;
+      }
+    }
+    .search{
+      padding: 6px 12px;
+      margin-bottom: 4px;
+      background: $color-green;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 4px;
+      border: none;
+    }
+    .search:hover{
+      background: #8fb915;
+    }
+  }
+  .search-avatar{
+    position: relative;
+    .search-img{
+      position: relative;
+      overflow: hidden;
+      img{
+        cursor: pointer;
+        max-width: 100%;
+        width: 172px;
+      }
+      ul{
+        position: absolute;
+        list-style: none;
+        bottom: 0;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        background: rgba(0, 0, 0, 0.56);
+        color: #fff;
+        text-align: center;
+        display: none;
+      }
+    }
+    .search-img:hover{
+      .fadeInUp{
+        display: block;
+        animation-duration: 0.4s;
+      }
+    }
+    .video-info{
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 10px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+  }
+
+}

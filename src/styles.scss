@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import './assets/animate.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body{
+  width: 100vw;
+  overflow: hidden;
+}
+
+.cdk-overlay-pane{
+  margin-bottom: 50px !important;
+}
+input.ng-touched.ng-invalid{
+  //border: 1px solid #9D0A0E !important;
+}

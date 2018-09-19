@@ -1,0 +1,203 @@
+@import '../variable';
+.animation {
+    position: absolute;
+    width: 1200px;
+    min-width: 1200px;
+    height: 100%;
+    overflow: hidden;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -600px;
+    display: none;
+}
+.background-page{
+    background: url("/assets/imgs/styles.jpg");
+    height: 100vh;
+    background-color: #011222;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+    width: 100vw;
+}
+.element1{
+    position: absolute;
+    right: 143px;
+    bottom: -300px;
+    z-index: 3;
+    animation-duration: 0.5s;
+}
+.element2{
+    position: absolute;
+    left: 350px;
+    bottom: -40px;
+    z-index: 2;
+    animation-duration: 1.6s;
+}
+.element3{
+    position: absolute;
+    left: 243px;
+    bottom: 227px;
+    z-index: 2;
+    animation-duration: 0.6s;
+}
+.element4{
+    position: absolute;
+    left: 78px;
+    bottom: 80px;
+    z-index: 2;
+    animation-duration: 1.2s;
+}
+.element5{
+    position: absolute;
+    bottom: 80px;
+    left: 533px;
+    z-index: 2;
+    animation-duration: 1.4s;
+}
+.element6{
+    position: absolute;
+    bottom: 201px;
+    right: 277px;
+    z-index: 2;
+    animation-duration: 0.8s;
+}
+.element7{
+    position: absolute;
+    right: 82px;
+    bottom: 164px;
+    z-index: 2;
+    animation-duration: 0.4s;
+}
+.element8{
+    position: absolute;
+    left: 60px;
+    bottom: 180px;
+    z-index: 2;
+    animation-duration: 0.2s;
+}
+.element9{
+    position: absolute;
+    bottom: 144px;
+    right: 463px;
+    z-index: 2;
+    animation-duration: 1s;
+}
+.element10{
+    position: absolute;
+    bottom: -70px;
+    left: 57px;
+    z-index: 1;
+    animation-duration: 1.8s;
+}
+.quote1element{
+    position: absolute;
+    bottom: 246px;
+    right: 213px;
+    z-index: 2;
+    animation-duration: 1s;
+    animation-delay: 1.6s;
+}
+.quote2element{
+    position: absolute;
+    bottom: 205px;
+    left: 22px;
+    z-index: 2;
+    animation-duration: 1s;
+    animation-delay: 1.8s;
+}
+
+.menu-btn{
+    margin-left: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    outline: none;
+    background: #fff;
+    .mat-icon{
+        padding-top: 6px;
+        color: $color-green;
+    }
+}
+.menu-btn:hover{
+    background: $color-green;
+    .mat-icon{
+        color: #fff;
+    }
+}
+::ng-deep .mat-menu-panel{
+    background: none;
+    border-bottom: 2px solid $color-blue;
+    border-right: 2px solid $color-blue;
+}
+::ng-deep .cdk-overlay-container{
+    left: -10px;
+}
+::ng-deep .mat-menu-content{
+    .mat-menu-item{
+        padding: 0;
+        transition: 0.3s;
+        padding-left: 10px;
+        .mat-icon{
+            color: $color-blue;
+            font-size: 26px;
+        }
+        span{
+            color: $color-blue;
+            font-size: 14px;
+        }
+    }
+    .mat-menu-item:hover{
+        background: $color-blue;
+        transition: 0.3s;
+        .mat-icon, span{
+            color: #fff;
+        }
+    }
+    button:focus{
+        outline: none;
+    }
+}
+.user-avatar-menu{
+    padding-bottom: 20px;
+    .user-img{
+        width: 110px;
+        margin: auto;
+        padding-top: 20px;
+        img{
+            width: 110px;
+            height: 110px;
+            border-radius: 100%;
+            border: 2px solid #03AAAC;
+        }
+    }
+    a{
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        transition: 0.3s;
+        display: block;
+        padding: 15px 0;
+    }
+    a:hover{
+        text-decoration: none;
+        transition: 0.3s;
+        color: $color-blue;
+    }
+    .exit{
+        display: block;
+        margin: auto;
+        width: 100px;
+        border: 2px solid #FFFFFF;
+        text-align: center;
+        padding: 5px;
+        border-radius: 3px;
+        color: #FFFFFF;
+        background: none;
+    }
+}
+

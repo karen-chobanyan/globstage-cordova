@@ -1,0 +1,91 @@
+@import '../../../variable';
+
+.create-video {
+  width: 350px;
+  .center-p {
+    color: $color-blue;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .example-full-width {
+    width: 100%;
+  }
+  ::ng-deep .mat-form-field-label {
+    color: $color-blue;
+    font-size: 14px;
+  }
+  .supported {
+    margin-bottom: 0;
+    font-size: 13px;
+    span {
+      font-weight: bold;
+      font-size: 12px;
+    }
+  }
+  .result-load {
+    .img {
+      color: $color-blue;
+      font-size: 14px;
+      display: block;
+    }
+    img {
+      width: 130px;
+      margin-top: 8px;
+    }
+    .can {
+      p {
+        margin-bottom: 0;
+        font-size: 13px;
+      }
+      ::ng-deep .mat-form-field-infix {
+        width: 100px;
+        margin-left: 10px;
+      }
+      ::ng-deep .mat-select-value {
+        color: $color-blue;
+      }
+      ::ng-deep .mat-form-field-underline {
+        background-color: #fff;
+      }
+    }
+  }
+  .create-btn {
+    text-align: right;
+    padding-top: 10px;
+    .done {
+      background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      color: #3F4752;
+      font-size: 11px;
+      padding: 4px 15px;
+    }
+    .done:hover {
+      background: $color-green;
+    }
+    .cancel {
+      background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      color: #3F4752;
+      font-size: 11px;
+      padding: 4px 15px;
+    }
+    .cancel:hover {
+      background: linear-gradient(#FFFFFF, #E9E9E9);
+    }
+    .mat-dialog-container {
+      height: auto;
+    }
+  }
+
+  .pacleholder {
+    height: 160px;
+  }
+}

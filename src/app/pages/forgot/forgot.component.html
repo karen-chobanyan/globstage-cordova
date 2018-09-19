@@ -1,0 +1,29 @@
+<div class="animation">
+  <img class="element1 animated fadeInDownBig" src="./assets/imgs/01.png" alt="01">
+  <img class="element2 animated fadeInDownBig" src="./assets/imgs/02.png" alt="02">
+  <img class="element3 animated fadeInDownBig" src="./assets/imgs/03.png" alt="03">
+  <img class="element4 animated fadeInDownBig" src="./assets/imgs/04.png" alt="04">
+  <img class="element5 animated fadeInDownBig" src="./assets/imgs/05.png" alt="05">
+  <img class="element6 animated fadeInDownBig" src="./assets/imgs/06.png" alt="06">
+  <img class="element7 fadeInRightBig" src="./assets/imgs/07.png" alt="07">
+  <img class="element8 fadeInLeftBig" src="./assets/imgs/08.png" alt="08">
+  <img class="element9 animated fadeInDownBig" src="./assets/imgs/09.png" alt="09">
+  <img class="element10 animated fadeInUpBig" src="./assets/imgs/10.png" alt="10">
+  <img class="quote1element animated fadeInUpBig" src="./assets/imgs/11.png" alt="11">
+  <img class="quote2element animated fadeInUpBig" src="./assets/imgs/12.png" alt="12">
+  <div class="create-password">
+    <h5>Create password</h5>
+    <form class="example-form" [formGroup]="createPassword" (ngSubmit)="createPass(createPassword)">
+      <mat-form-field class="example-full-width">
+        <input type="password" matInput placeholder="Password" formControlName="new_password" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input type="password" matInput placeholder="Confirm password" formControlName="confirm_password" required>
+      </mat-form-field>
+      <div class="create-pass">
+          <p class="error" *ngIf="erroLogin">Invalid Password</p>
+        <button type="submit" class="create btn btn-default">Send</button>
+      </div>
+    </form>
+  </div>
+</div>

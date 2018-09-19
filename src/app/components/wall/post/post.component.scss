@@ -1,0 +1,159 @@
+@import '../../../../variable';
+.wall-user{
+    background: rgba(3, 170, 173, 0.8);
+    padding-bottom: 20px;
+    padding: 5px;
+    padding-left: 16px;
+    .wall-name{
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bolder;
+        margin-bottom: 2px;
+    }
+    .date{
+        color: #fff;
+    }
+    .wall-avatar{
+      img{
+        width: 50px;
+        height: auto;
+      }
+  }
+  .delete-post{
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 999;
+
+  }
+}
+.wall-content{
+    padding-top: 20px;
+    padding-left: 66px;
+    .wall-atach-photo{
+        h6{
+            font-size: 11px;
+        }
+    }
+}
+.wall-atach-photo{
+    padding-bottom: 20px;
+    img{
+        width: 400px;
+        max-width: 100%;
+    }
+}
+.wall-attach-video{
+    .name{
+        color: $color-green;
+        margin: 0;
+    }
+}
+.like-dislike{
+    text-align: left;
+    padding-bottom: 20px;
+    padding-left: 66px;
+    i{
+        font-size: 21px;
+        cursor: pointer;
+    }
+    .like{
+        color: #95c800;
+        padding-right: 4px;
+        position: relative;
+        .like-count{
+            width: 140px;
+            position: absolute;
+            bottom: 40px;
+            background: #000;
+            display: none;
+            padding: 4px;
+            h5{
+                margin: 0;
+                font-size: 14px;
+                color: #fff;
+                padding: 0 6px;
+                font-family: sans-serif;
+            }
+        }
+    }
+    .like:hover{
+        .like-count{
+            display: block;
+        }
+    }
+    .dislike{
+        color: $color-red;
+        .dislike-count{
+            width: 140px;
+            position: absolute;
+            bottom: 65px;
+            background: #000;
+            display: none;
+            padding: 4px;
+            h5{
+                margin: 0;
+                font-size: 14px;
+                color: #fff;
+                padding: 0 6px;
+                font-family: sans-serif;
+            }
+        }
+    }
+    .dislike:hover{
+        .dislike-count{
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .user-images{
+        max-width: 20%;
+    }
+    .wall-name{
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+  
+    .user-images{
+        width: 20%;
+    }
+    .wall-name{
+        width: 80%;
+    }
+    .wall-content{
+        padding-left: 15px;
+        padding-top: 0;
+    }
+    .like-dislike{
+        padding-bottom: 10px;
+        padding-left: 15px;
+    }
+    .wall-attach-video{
+        padding-left: 0;
+    }
+    
+    
+}
+
+@media only screen and (max-width: 375px) {
+    
+    .wall-content{
+        padding-left: 5px;
+        padding-top: 0;
+        padding-right: 5px;
+    }
+    .like-dislike{
+        padding-bottom: 0;
+        padding-left: 15px;
+    }
+    .wall-attach-video{
+        padding-left: 0;
+    }
+    
+  
+}

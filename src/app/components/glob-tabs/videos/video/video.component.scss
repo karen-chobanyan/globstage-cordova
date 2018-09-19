@@ -1,0 +1,53 @@
+.video {
+  margin: 15px;
+  overflow: hidden !important;
+  padding: 0;
+  width: 225px;
+  img {
+    position: relative;
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+  p {
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 25%;
+    text-align: center;
+  }
+  .hover {
+    background: #10ac84;
+    color: #fff;
+    display: block;
+    opacity: 0;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+    width: 100%;
+    position: absolute;
+  }
+  .delete {
+    position: absolute;
+    color: #c9302c;
+    cursor: pointer;
+    right: -16px;
+    top: 6px;
+    z-index: 999;
+  }
+
+}
+
+.video:hover {
+  .delete {
+    right: 16px !important;
+  }
+}
+
+.video:hover .hover {
+  height: 100%;
+  opacity: 0.8;
+  width: 100%;
+  z-index: 9;
+}

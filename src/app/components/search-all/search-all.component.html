@@ -1,0 +1,20 @@
+<div class="search-form">
+  <div class="search-user">
+    <form  class="example-form">
+      <mat-form-field class="example-full-width">
+        <input name="query" [(ngModel)]="query" type="search" matInput placeholder="Search" value="">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select name="type" [(value)]="selected1" [(ngModel)]="type" >
+          <mat-option value="users">{{'byPeople' | translate}}</mat-option>
+          <mat-option value="videos">{{'onVideos' | translate}}</mat-option>
+          <mat-option value="audios">{{'onAudios' | translate}}</mat-option>
+          <mat-option value="notes">{{'onNotes' | translate}}</mat-option>
+          <mat-option value="group">{{'onGroup' | translate}}</mat-option>
+          <mat-option value="posts">{{'onRecordings' | translate}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button (click)="searchResult(query, type)" type="submit" class="search btn-success save">{{'information.search' | translate}}</button>
+    </form>
+  </div>
+</div>

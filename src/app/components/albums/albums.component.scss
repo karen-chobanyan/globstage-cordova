@@ -1,0 +1,213 @@
+@import '../../../variable';
+
+.clearfix{
+  clear: both;
+}
+img{
+  max-width: 100%;
+}
+.padding{
+  padding: 0;
+}
+
+.tabs-a{
+  background: $color-white;
+  padding: 15px;
+  .t-info{
+    padding-bottom: 6px;
+    .information{
+      .title{
+        border-bottom: 1px dashed #e5e5e5;
+        background: url("/assets/imgs/pencil.png") center right no-repeat;
+        background-size: 20px;
+        color: #666666;
+        cursor: pointer;
+      }
+      p{
+        font-size: 15px;
+        margin: 5px 0;
+      }
+    }
+    .user-info{
+      div{
+        padding-bottom: 4px;
+      }
+      span{
+        color: $color-green;
+        transition: 0.3s;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      span:hover{
+        color: #333;
+        transition: 0.3s;
+      }
+      .rating{
+        color: $color-white;
+      }
+      .user-info-rat{
+        background: $color-green;
+        width: 100px;
+        text-align: center;
+        .rating:hover{
+          color: $color-white;
+        }
+      }
+    }
+  }
+  .gift{
+    .g-info{
+      border-bottom: 1px dashed #e5e5e5;
+      color: #666666;
+    }
+    .user-n{
+      font-size: 14px;
+      color: #777777;
+    }
+  }
+  .show-details{
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    color: #536069;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .show-details:hover{
+    background: #f1f5f8;
+  }
+  .hidden-block{
+    padding: 0 15px;
+    .borders{
+      a{
+        text-decoration: none;
+        color: #666666;
+      }
+      .edits{
+        background: url("/assets/imgs/pencil.png") center right no-repeat;
+        border-bottom: 1px dashed #666666;
+        background-size: 20px;
+        padding-bottom: 6px;
+        width: 500px;
+        max-width: 100%;
+        text-decoration: none;
+        font-size: 15px;
+      }
+      p{
+        color: #666666;
+        font-size: 15px;
+        margin-bottom: 10px;
+        span{
+          padding-left: 10px;
+          color: #000;
+        }
+      }
+    }
+  }
+  .img-alb{
+    img{
+      width: 130px;
+    }
+  }
+  .music-alb{
+    img{
+      width: 130px;
+    }
+  }
+  .video-alb{
+    img{
+      width: 130px;
+    }
+  }
+  .upload{
+    text-align: center;
+    padding-top: 30px;
+    p{
+      font-size: 14px;
+      color: #777777;
+      margin-bottom: 0;
+    }
+    span{
+      color: $color-green;
+      font-size: 13px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    span:hover{
+      color: #333;
+      transition: 0.3s;
+    }
+  }
+  .albums{
+    margin: 6px 0;
+    position: relative;
+    cursor: pointer;
+    img{
+      max-width: 100%;
+    }
+    h3{
+      font-size: 18px;
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      width: calc(100% - 30px);
+      display: block;
+      margin: 0;
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+     
+    .upload{
+        width: 70%;
+    }
+    .tabs-a{
+      text-align: center;
+      .img-alb{
+        width: 30%;
+        img{
+          width: 100px;
+        }
+    }
+    .albums{
+      width: 50%;
+      img{
+        max-width: 100%;
+        height: auto;
+      }
+      h3{
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 414px){
+  .tabs-a{
+    .upload{
+      padding-top: 14px;
+      p{
+        font-size: 12px;
+      }
+    }
+    .albums{
+      width: 100%;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+  }  
+}
+@media only screen and (max-width: 320px){
+  .tabs-a{
+    .upload{
+      padding-top: 0;
+    }
+  }
+}

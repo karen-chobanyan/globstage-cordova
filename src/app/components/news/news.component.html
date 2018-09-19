@@ -1,0 +1,59 @@
+<article class="post-article">
+  <!-- <div class="col-md-12 news-user">
+      <div class="row">
+          <div class="col-md-1">
+              <div class="news-avatar">
+                <a href=""><img src="/assets/imgs/no_ava_50.png" alt="no_ava_50"></a>
+              </div>
+            </div>
+            <div class="col-md-11 news-name">
+              Argam Hakobyan
+              <div class="date">
+                  26 June 2018 14:12
+              </div>
+            </div>
+            <div class="clearfix"></div>
+      </div>
+   </div>
+   <div class="col-md-12">
+    <div class="row">
+      <div class="news-content col-md-11">
+          <div class="news-atach-photo">
+                <h6>{{'newModal.firstPost' | translate}}</h6>
+              <img src="/assets/imgs/no_avatar.png" alt="no_avatar">
+          </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="like-dislike col-md-12">
+        <i class="like fa fa-thumbs-up" aria-hidden="true"><span>1</span></i>
+        <i class="dislike fa fa-thumbs-down" aria-hidden="true"><span>1</span></i>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-md-12 author-comment">
+        <div class="borders">
+            <div class="row">
+                <div class="author-img col-md-1">
+                  <a href=""><img src="/assets/imgs/no_ava_50.png" alt="no_ava_50"></a>
+                </div>
+                <div class="col-md-3 author">
+                    <a href="">Argam Hakobyan</a>
+                    <span class="comment-text">{{'newModal.newComment' | translate}}</span>
+                </div>
+                <div class="col-md-4 date">
+                    <span class="date-comm">30 June 2018 21:57</span>
+                </div>
+                <div class="col-md-4 delete-comm">
+                    <i class="delete fa fa-trash" aria-hidden="true"></i>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+        </div>
+      <div class="add-comment" [ngClass]="activeClass">
+        <textarea (focus)="focusFunction()" (focusout)="focusOutFunction()" class="text-comm" placeholder="Add a comment"></textarea>
+        <button type="submit" class="add-comm btn btn-success">{{'newModal.send' | translate}}</button>
+      </div>
+    </div>
+    </div>
+  </div> -->
+  <app-post (onDelete)="messageDeleted($event)"  *ngFor="let post of news" [post]="post"></app-post>
+</article>

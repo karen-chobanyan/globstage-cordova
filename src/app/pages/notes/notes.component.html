@@ -1,0 +1,17 @@
+<app-home-menu></app-home-menu>
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+      <app-profile-image></app-profile-image>
+      <div class="create-note">
+        <span (click)="openDialogNotes()" class="create">{{'notes.note' | translate}}</span>
+      </div>
+      </div>
+      <div class="col-md-9">
+        <app-header></app-header>
+        <div class="notes">
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+</div>

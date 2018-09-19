@@ -1,0 +1,63 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+img{
+  max-width: 100%;
+}
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; }
+.another-file-over-class { border: dotted 3px green; }
+html, body { height: 100%; }
+::ng-deep .mat-dialog-container{
+  position: relative;
+  padding: 15px;
+}
+  .progress{
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+  }
+  .progress-bar{
+    background: $color-blue;
+  }
+  .chooser{
+    margin-bottom: 10px;
+    border: 1px solid $color-blue;
+    border-radius: 6px;
+    padding: 4px 8px;
+    background: $color-blue;
+    cursor: pointer;
+  }
+  .upload-btn{
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+    .ok{
+      background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      color: #3F4752;
+      font-size: 12px;
+      padding: 4px 10px;
+      margin-right: 4px;
+      transition: 0.3s;
+    }
+    .ok:hover{
+      background: $color-green;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .cancel{
+      background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      color: #3F4752;
+      font-size: 12px;
+      padding: 4px 15px;
+    }
+    .cancel:hover{
+      background: linear-gradient(#FFFFFF, #E9E9E9);
+    }
+  }

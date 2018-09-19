@@ -1,0 +1,142 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+img{
+  max-width: 100%;
+}
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
+::ng-deep .mat-dialog-container{
+  position: relative;
+}
+.progress{
+  margin-bottom: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+.progress-bar{
+  background: $color-blue;
+}
+.user-upload{
+  .center-p{
+    color: $color-blue;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .uploaded-img{
+    img{
+      height: auto;
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+  .why-photo{
+    padding-left: 0;
+    h4{
+      font-size: 18px;
+    }
+    p{
+      font-size: 11px;
+      margin-bottom: 0;
+    }
+    // .select{
+    //   background: linear-gradient(rgb(255, 255, 255), rgb(245, 245, 245)) 0px 0px repeat scroll rgb(252, 252, 252);
+    //   border: 1px solid #E0E0E0;
+    //   border-radius: 3px;
+    //   color: #3F4752;
+    //   font-size: 11px;
+    //   padding: 4px 15px;
+    //   margin-top: 10px;
+    // }
+    // .select:hover{
+    //   background: $color-green;
+    // }
+    .select{
+      width: 100%;
+      margin-top: 6px;
+      cursor: pointer;
+    }
+  }
+  .uploads{
+    .upload{
+      background: $color-green;
+      padding: 4px 10px;
+      border-color: $color-green;
+      transition: 0.3s;
+    }
+    .upload:hover{
+      background: #84af07;
+    }
+    .remove{
+      padding: 4px 10px;
+    }
+  }
+  .chooser{
+    margin-bottom: 10px;
+    border: 1px solid $color-blue;
+    border-radius: 6px;
+    padding: 4px 8px;
+    background: $color-blue;
+    cursor: pointer;
+  }
+  .show-info{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    span{
+      color: $color-green;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+    span:hover{
+      color: #000;
+    }
+  }
+  .hidden-info{
+    background: rgb(233, 236, 238);
+    padding: 20px;
+    margin: 0 15px;
+    p{
+      font-size: 11px;
+      line-height: 11px;
+      margin-bottom: 0;
+    }
+
+  }
+  .upload-btn{
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+    .ok{
+      background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      color: #3F4752;
+      font-size: 12px;
+      padding: 4px 10px;
+      margin-right: 4px;
+      transition: 0.3s;
+    }
+    .ok:hover{
+      background: $color-green;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .cancel{
+      background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      color: #3F4752;
+      font-size: 12px;
+      padding: 4px 15px;
+    }
+    .cancel:hover{
+      background: linear-gradient(#FFFFFF, #E9E9E9);
+    }
+  }
+}

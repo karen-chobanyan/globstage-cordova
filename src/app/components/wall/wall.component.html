@@ -1,0 +1,8 @@
+<div class="wall">
+  <div class="wall-quantity">
+    {{'wall.wall' | translate}}
+  </div>
+  <app-post-box [type]="'post'" *ngIf="wallId" [wallId]="wallId" (postCreated)="updateWall()"></app-post-box>
+  <app-post-box [type]="'post'" *ngIf="groupId" [groupId]="groupId" (postCreated)="updateWall()"></app-post-box>
+  <app-post (onDelete)="messageDeleted($event)"  *ngFor="let post of wallPosts" [post]="post"></app-post>
+</div>

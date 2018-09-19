@@ -1,0 +1,68 @@
+<div class="animation">
+  <img class="element1 animated fadeInDownBig" src="./assets/imgs/01.png" alt="01">
+  <img class="element2 animated fadeInDownBig" src="./assets/imgs/02.png" alt="02">
+  <img class="element3 animated fadeInDownBig" src="./assets/imgs/03.png" alt="03">
+  <img class="element4 animated fadeInDownBig" src="./assets/imgs/04.png" alt="04">
+  <img class="element5 animated fadeInDownBig" src="./assets/imgs/05.png" alt="05">
+  <img class="element6 animated fadeInDownBig" src="./assets/imgs/06.png" alt="06">
+  <img class="element7 fadeInRightBig" src="./assets/imgs/07.png" alt="07">
+  <img class="element8 fadeInLeftBig" src="./assets/imgs/08.png" alt="08">
+  <img class="element9 animated fadeInDownBig" src="./assets/imgs/09.png" alt="09">
+  <img class="element10 animated fadeInUpBig" src="./assets/imgs/10.png" alt="10">
+  <img class="quote1element animated fadeInUpBig" src="./assets/imgs/11.png" alt="11">
+  <img class="quote2element animated fadeInUpBig" src="./assets/imgs/12.png" alt="12">
+</div>
+<div class="animate-login animated fadeInDownBig">
+  <h1>{{'login.welcomeTo' | translate}}</h1>
+  <span>{{'login.globStage' | translate}}</span>
+  <div class="buttons">
+      <button (click)="openLogin()" type="button" class="btn">{{'login.login' | translate}}</button>
+      <button (click)="openRegister()" type="button" class="btn-default">{{'login.register' | translate}}</button>
+  </div>
+  <!-- <h4 (click)="openCreatePassword()">aaaaaa</h4> -->
+</div>
+<ng-template [ngIf]= "loginPanel">
+<div class="login-panel">
+  <div class="login-form animated fadeInDownBig">
+      <span (click)="closeLogin()" class="icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <h3>{{'login.welcome' | translate}}
+      <span class="solid"></span>
+    </h3>
+    <form [formGroup]="formgroupLog" (ngSubmit)="signIn(formgroupLog)"
+    action="http://api-globstage.atero.solutions/v1//users/token" method="post">
+      <div class="forms">
+        <span class="input-span">{{'login.eMail' | translate}}:</span>
+        <input class="input-text" type="email" formControlName="user_name"><br>
+        <span class="input-span">{{'login.password' | translate}}</span>
+        <input class="input-text margin" type="password" formControlName="user_password">
+        <!--<p *ngIf="formgroupLog.invalid" class="form-error">* All fields are required.</p>-->
+        <p (click)="openDialogForgot()" class="text-md-right forgot-text">{{'login.forgotYourPass' | translate}}?</p>
+      </div>
+      <!--<input class="check-box" type="checkbox" name="remember">-->
+      <!--<label class="remember-me" for="remember_me">Remember me</label>-->
+      <span class="error" *ngIf="errorLogin">Invalid email or password *</span>
+      <button type="submit" [disabled]="!formgroupLog.valid" class="login btn btn-success">{{'login.login' | translate}}</button>
+    </form>
+  </div>
+</div>
+</ng-template>
+<ng-template [ngIf]= "registerPanel">
+<div class="register-panel">
+  <div class="register-form animated fadeInDownBig">
+      <span (click)="closeRegister()" class="icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      <h3>{{'login.register' | translate}}
+        <span class="solid"></span>
+      </h3>
+      <form [formGroup]="formgroupReg" (ngSubmit)="onSignUp(formgroupReg)" action="" method="post">
+        <input type="text" formControlName="user_first_name" placeholder="Your name*"><br>
+        <input type="text" formControlName="user_last_name" placeholder="Your last name*"><br>
+        <input type="email" formControlName="user_email" placeholder="E-mail address*"><br>
+        <input type="password" formControlName="user_password" placeholder="Password*"><br>
+        <input class="margin" type="password" formControlName="password_second" placeholder="Password again*"><br>
+        <p *ngIf="formgroupReg.invalid" class="form-error">* {{'login.allRequired' | translate}}</p>
+        <span class="error-reg" *ngIf="errorReg">Pasdwords does not match*</span>
+        <button type="submit" [disabled]="!formgroupReg.valid" class="register btn btn-success">{{'login.register' | translate}}</button>
+      </form>
+  </div>
+</div>
+</ng-template>

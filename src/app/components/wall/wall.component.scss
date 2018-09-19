@@ -1,0 +1,18 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+img{
+    vertical-align: middle;
+}
+.wall{
+    background: rgb(255, 255, 255);
+    .wall-quantity{
+        padding: 10px;
+        padding-left: 25px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    
+  
+  
+  }

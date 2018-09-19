@@ -1,0 +1,30 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+img{max-width: 100%;}
+
+.privacy{
+  background: #fff;
+  padding: 0 20px;
+  margin-top: 20px;
+  p{
+    margin-bottom: 0;
+    font-size: 13px;
+    padding-left: 20px;
+}
+::ng-deep .mat-form-field-infix{
+    width: 100px;
+    margin-left: 10px;
+}
+::ng-deep .mat-select-value{
+    color: $color-blue;
+}
+::ng-deep .mat-form-field-underline{
+    background-color: #fff;
+}
+}

@@ -1,0 +1,25 @@
+.smile-wrap{
+  position: fixed;
+  bottom: 32px;
+  width: 240px;
+  background: white;
+  ul{
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    width: 40px;
+    box-sizing: border-box;
+    padding: 2px;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    :hover {
+      border: 1px solid #1b6d85;
+      border-radius: 2px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="create-audio">
+    <p class="center-p">{{'newModal.addSong' | translate}}</p>
+    <mat-tab-group>
+      <mat-tab label="The Link">
+        <div class="song-load">
+          <form class="example-form" [formGroup]="audioForm">
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="audioInsertName" placeholder="Audio name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="audioInsertLink" placeholder="Insert a link to an mp3 file">
+            </mat-form-field>
+          </form>
+          <p>{{'newModal.example' | translate}}:
+            <span>{{'newModal.fileLink' | translate}}</span>
+          </p>
+        </div>
+      </mat-tab>
+      <mat-tab label="From the computer">
+        <div class="from-comp">
+          <span class="limit">{{'newModal.limit' | translate}}</span>
+          <ul>
+            <li>{{'newModal.fileSize' | translate}}</li>
+            <li>{{'newModal.copyright' | translate}}</li>
+          </ul>
+          <div class="upload-file">
+            <button (click)="openDialogAttach()" type="button" class="select-file btn btn-default">{{'newModal.selectFile' | translate}}</button>
+          </div>
+          <p>{{'newModal.downFiles' | translate}}
+            <a href="">{{'newModal.searchAudio' | translate}}</a>
+          </p>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    <div class="create-btn">
+      <button (click)="addAudio(audioForm)" type="button" class="done btn btn-default">{{'newModal.done' | translate}}</button>
+      <button (click)="onNoClick()" type="button" class="cancel btn btn-default">{{'newModal.cancel' | translate}}</button>
+    </div>
+</div>

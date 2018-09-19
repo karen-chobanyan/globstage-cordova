@@ -1,0 +1,32 @@
+<app-home-menu></app-home-menu>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-profile-image></app-profile-image>
+    </div>
+    <div class="col-md-9">
+      <app-header></app-header>
+      <div class="friend-requests">
+          <app-friend-request (onAdd)="friendAdded($event)" (onIgnore)="friendIgnored($event)" [request]="person" *ngFor="let person of friendRequests"></app-friend-request>
+      </div>
+      <div class="friends">
+        <p class="friend-title">{{'friend.friends' | translate}}</p>
+        <div class="search-friend">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input class="search-fr"type="search" matInput placeholder="Search" value="">
+            </mat-form-field>
+            <button type="submit" class="search btn-success save">{{'friend.search' | translate}}</button>
+          </form>
+        </div>
+        <div class="col-md-12 padd">
+          <div class="row">
+            <app-friend (delFriend)="friendDelete($event)" class="col-md-6 friend-block" [friend]="friend" *ngFor="let friend of friends"></app-friend>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

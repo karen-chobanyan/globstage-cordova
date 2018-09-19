@@ -1,0 +1,26 @@
+<div class="progress">
+  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+</div>
+<div class="user-upload">
+  <div class="row">
+    <div class="uploaded-img col-md-12">
+      <!--<img [src]="croppedImage" alt="no_avatar.png">-->
+      <image-cropper crossorigin
+              [imageBase64]="profileImage"
+              [maintainAspectRatio]="true"
+              [resizeToWidth]="256"
+              format="jpeg"
+              (imageCroppedBase64)="imageCropped($event)"
+              (imageCroppedFile)="imageCroppedFile($event)"
+              (imageLoaded)="imageLoaded()"
+              (loadImageFailed)="loadImageFailed()"
+      ></image-cropper>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="upload-btn">
+      <button (click) = "updateUploadImage()" type="button" class="ok btn btn-default">{{'user.ok' | translate}}</button>
+      <button (click) = "onNoClick()" type="button" class="cancel btn btn-default">{{'user.cancel' | translate}}</button>
+    </div>
+  </div>
+</div>

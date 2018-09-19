@@ -1,0 +1,133 @@
+@import '../../../variable';
+.animation {
+  position: absolute;
+  width: 1200px;
+  min-width: 1200px;
+  height: 100%;
+  overflow: hidden;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -600px;
+  .create-password{
+    padding: 15px;
+    text-align: center;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    background: #fff;
+    h5{
+        color: $color-blue;
+        text-align: center;
+        font-size: 17px;
+    }
+    .create-pass{
+        text-align: center;
+    }
+    .create-pass{
+        .create {
+            background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+            border: 1px solid #E0E0E0;
+            border-radius: 3px;
+            color: #3F4752;
+            font-size: 13px;
+            padding: 4px 15px;
+          }
+          .create:hover {
+            background: $color-green;
+            color: #fff;
+          }
+    }
+}
+    .mat-form-field{
+        width: 100%;
+        .mat-form-field.mat-form-field-invalid .mat-form-field-label{
+            color: $color-blue;
+        }
+    }
+}
+.element1{
+  position: absolute;
+  right: 143px;
+  bottom: -300px;
+  z-index: 3;
+  animation-duration: 0.5s;
+}
+.element2{
+  position: absolute;
+  left: 350px;
+  bottom: -40px;
+  z-index: 2;
+  animation-duration: 1.6s;
+}
+.element3{
+  position: absolute;
+  left: 243px;
+  bottom: 227px;
+  z-index: 2;
+  animation-duration: 0.6s;
+}
+.element4{
+  position: absolute;
+  left: 78px;
+  bottom: 80px;
+  z-index: 2;
+  animation-duration: 1.2s;
+}
+.element5{
+  position: absolute;
+  bottom: 80px;
+  left: 533px;
+  z-index: 2;
+  animation-duration: 1.4s;
+}
+.element6{
+  position: absolute;
+  bottom: 201px;
+  right: 277px;
+  z-index: 2;
+  animation-duration: 0.8s;
+}
+.element7{
+  position: absolute;
+  right: 82px;
+  bottom: 164px;
+  z-index: 2;
+  animation-duration: 0.4s;
+}
+.element8{
+  position: absolute;
+  left: 60px;
+  bottom: 180px;
+  z-index: 2;
+  animation-duration: 0.2s;
+}
+.element9{
+  position: absolute;
+  bottom: 144px;
+  right: 463px;
+  z-index: 2;
+  animation-duration: 1s;
+}
+.element10{
+  position: absolute;
+  bottom: -70px;
+  left: 57px;
+  z-index: 1;
+  animation-duration: 1.8s;
+}
+.quote1element{
+  position: absolute;
+  bottom: 246px;
+  right: 213px;
+  z-index: 2;
+  animation-duration: 1s;
+  animation-delay: 1.6s;
+}
+.quote2element{
+  position: absolute;
+  bottom: 205px;
+  left: 22px;
+  z-index: 2;
+  animation-duration: 1s;
+  animation-delay: 1.8s;
+}

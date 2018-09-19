@@ -1,0 +1,110 @@
+<app-home-menu></app-home-menu>
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+      <app-profile-image></app-profile-image>
+      </div>
+      <div class="col-md-9">
+        <app-header></app-header>
+        <div class="settings-page">
+          <div class="change-password center">
+              <h4>{{'settings.changePass' | translate}}</h4>
+              <form [formGroup]="changePassword" (ngSubmit)="changePass(changePassword)" class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <input formControlName="user_password" type="password" matInput placeholder="Old password" value="">
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input formControlName="new_password" type="password" matInput placeholder="New password" value="">
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input formControlName="confirm_password" type="password" matInput placeholder="Confirm Password" value="">
+                  </mat-form-field>
+                  <div class="change-btn">
+                    <button type="submit" class="change btn-success save">{{'settings.changePass' | translate}}</button>
+                  </div>
+              </form>
+          </div>
+          <div class="change-name center">
+              <h4>{{'settings.changeName' | translate}}</h4>
+              <form [formGroup]="nameLastname" (ngSubmit)="changeName(nameLastname)" class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <input formControlName="user_name" type="text" matInput placeholder="Your name" value="">
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input formControlName="user_last_name" type="text" matInput placeholder="Your lastname" value="">
+                  </mat-form-field>
+                  <div class="change-btn">
+                    <button type="submit" class="change btn-success save">{{'settings.changeName' | translate}}</button>
+                  </div>
+              </form>
+          </div>
+          <!-- <div class="page-address center">
+              <h4>{{'settings.pageAdd' | translate}}</h4>
+              <p>{{'settings.pageNumb' | translate}}:<span>2</span></p>
+              <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <input type="search" matInput placeholder="Webpage" value="">
+                  </mat-form-field>
+                  <div class="change-btn">
+                    <button type="submit" class="change btn-success save">{{'settings.changeSort' | translate}}</button>
+                  </div>
+              </form>
+           </div>
+           <div class="recalculation center">
+              <h4>{{'settings.calc' | translate}}</h4>
+              <div class="change-btn">
+                 <button type="submit" class="change btn-success save">{{'settings.calcEvents' | translate}}</button>
+              </div>
+           </div>
+           <div class="verification center">
+              <h4>{{'settings.veryFic' | translate}}</h4>
+              <ng-template [ngIf]= "closeBtnVerify">
+              <div class="change-btn">
+                  <button (click)="openVerification()" type="submit" class="change btn-success save">{{'settings.reqVerify' | translate}}</button>
+               </div>
+               </ng-template>
+               <ng-template [ngIf]= "viewVerification">
+                <div class="openDialogDocument">
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Skype" value="">
+                      </mat-form-field>
+                      <div class="select-doc">
+                          <p>{{'settings.confirmDoc' | translate}} #1:</p>
+                          <button class="selectDoc change btn-success save">{{'settings.selectDoc' | translate}}</button>
+                      </div>
+                      <div class="upload-img">
+                        <img src="assets/imgs/pasport_scan1.jpg">
+                        <p>{{'settings.docFromId' | translate}}</p>
+                      </div>
+                      <div class="select-doc">
+                        <p>{{'settings.confirmDoc' | translate}} #2:</p>
+                        <button class="selectDoc change btn-success save">{{'settings.selectDoc' | translate}}</button>{{'settings.justFriends' | translate}}
+                      </div>
+                      <div class="upload-img">
+                        <img src="assets/imgs/pasport_scan2.jpg">
+                        <p>{{'settings.scanPas' | translate}}</p>
+                        <mat-checkbox>{{'settings.iAgree' | translate}}</mat-checkbox>
+                      </div>
+                      <div class="change-btn">
+                          <button type="submit" class="change btn-success save">{{'settings.send' | translate}}</button>
+                       </div>
+                </div>
+              </ng-template>
+           </div>
+           <div class="email-addres center">
+              <h4>{{'settings.emailAdd' | translate}}</h4>
+              <p>{{'settings.currentAdd' | translate}}:<span>*******@</span></p>
+              <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <input type="search" matInput placeholder="New address" value="">
+                  </mat-form-field>
+                  <div class="change-btn">
+                    <button type="submit" class="change btn-success save">{{'settings.saveAdd' | translate}}</button>
+                  </div>
+              </form>
+           </div> -->
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>

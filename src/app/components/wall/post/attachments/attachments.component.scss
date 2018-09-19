@@ -1,0 +1,38 @@
+@import '../../../../../variable';
+.clearfix{
+  clear: both;
+}
+.post_attachs{
+  .post_attach{
+    max-width: 600px;
+    margin-top: 10px;
+    height: auto;
+  }
+  .doc-hover{
+    width: 100px;
+    margin-top: 10px;
+  }
+  .doc-hover:hover{
+    opacity: 0.7;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .post_attachs{
+      .post_attach{
+          max-width: 400px;
+      }
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .attach-styling .post_attachs img{
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+    .attach-styling .post_attachs img{
+      max-width: 100%;
+    }
+}

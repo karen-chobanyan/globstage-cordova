@@ -1,0 +1,30 @@
+<app-home-menu></app-home-menu>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-profile-image></app-profile-image>
+      <div class="create-group">
+        <span (click)="openDialogGroup()" class="create">{{'groups.createGroup' | translate}}</span>
+      </div>
+      <div class="create-group subscribe">
+        <span (click)="subscribeToGroup()" class="create">{{'groups.subToGroup' | translate}}</span>
+      </div>
+      <!--<app-friends-sidebar-block *ngIf="user.friends" [friends]="user.friends"></app-friends-sidebar-block>-->
+    </div>
+    <div class="col-md-9">
+      <app-header></app-header>
+      <div class="groups">
+        <div class="search-group">
+          <h2 class="group-title">{{group?.group_name}}</h2>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <app-wall class="col-md-12" *ngIf="group"  [groupId]="group?.id"></app-wall>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

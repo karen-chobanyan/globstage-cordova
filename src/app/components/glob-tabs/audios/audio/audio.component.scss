@@ -1,0 +1,17 @@
+@import '../../../../../variable';
+
+.clearfix {
+  clear: both;
+}
+.audio {
+  position: relative;
+  padding: 4px 15px;
+  margin: 2px 0;
+  background: #049097;
+  span {
+    color: white;
+  }
+   audio{
+      width: 100%;
+    }
+}

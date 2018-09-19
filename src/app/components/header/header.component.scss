@@ -1,0 +1,171 @@
+@import '../../../variable';
+.menu-block{
+    position: relative;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    .menu{
+        text-align: left;
+        padding-top: 4px;
+        position: fixed;
+        bottom: 0;
+        background: #95c800;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 99999;
+        height: 50px;
+        ul{
+            padding: 0;
+            position: relative;
+            margin: 0;
+            width: calc(100vw - 50px);
+            li{
+                display: inline-block;
+                padding: 0 12px;
+                button{
+                 background: none;
+                 padding: 2px 0;
+                 border-radius: 4px;
+                 font-size: 14px;
+                 width: 40px;
+                 color: #fff;
+                 transition: 0.4s;
+                 cursor: pointer;
+                 border: 2px solid #fff;
+                }
+                button:hover{
+                    background: #353535;
+                    transition: 0.4s;
+                }
+                mat-form-field{
+                    ::ng-deep .mat-select-value{
+                        display: none;
+                    }
+                    ::ng-deep .mat-select-arrow-wrapper{
+                        display: none;
+                    }
+                    ::ng-deep .mat-form-field-infix{
+                        padding: 0;
+                    }
+                }
+                
+
+            }
+            .language{
+                float: right;
+            }
+            .notification{
+                position: absolute;
+                top: 6px;
+                .notify{
+                    color: #d40a0a;
+                    font-size: 20px;
+                }
+            }
+            .relative-length{
+                position: relative;
+            }
+            .notify-length{
+                color: #fff;
+                position: absolute;
+                bottom: 14px;
+                left: 10px;
+                z-index: 9999;
+                font-size: 12px;
+            }
+        }
+        .En{
+            background: url("/assets/imgs/gb.svg") no-repeat;
+            width: 40px;
+            max-width: 100%;
+            background-size: 100%;
+        }
+        .Ru{
+            background: url('/assets/imgs/ru.svg') no-repeat;
+            width: 40px;
+            height: 30px;
+            max-width: 100%;
+            background-size: 100%;
+        }
+        .mat-form-field{
+            text-align: center;
+            width: 50px;
+            left: 50px;
+        }
+        // ::ng-deep .cdk-overlay-pane{
+        //     bottom: 98px;
+        //     left: 366px;
+        // }
+     }
+ }
+ @media only screen and (max-width: 700px) {
+    .menu-block{
+        padding-top: 0;
+    }
+}
+    @media only screen and (max-width: 414px) {
+        .menu-block{
+        .menu{
+            ul{
+                li{
+                    padding: 0 4px;
+                }
+            }
+        }
+        }
+    } 
+@media only screen and (max-width: 443px) {
+    .menu-block{
+        .menu{
+            ul{
+                width: calc(100vw - 42px);
+                li{
+                    padding: 0 8px;
+                }
+            }
+        }
+    }
+     
+}
+@media only screen and (max-width: 387px) {
+    .menu-block{
+        .menu{
+            position: fixed;
+            bottom: 0;
+            background: $color-green;
+            width: 100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 99999;
+            ul{
+                li{
+                    padding: 0 6px;
+                }
+            }
+        }
+    }
+     
+}
+@media only screen and (max-width: 347px) {
+    .menu-block{
+        .menu{
+            ul{
+                width: calc(100vw - 35px);
+                li{
+                    padding: 0 2px;
+                }
+                .language{
+                    float: none;
+                    .mat-form-field{
+                        left: 30px;
+                    }
+                }
+            }
+        }
+    }
+     
+}
+

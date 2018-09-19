@@ -1,0 +1,21 @@
+<div class="img-album tabs-a">
+  <div class="row" *ngIf="albums.length < 1">
+    <div class="col-md-2 img-alb">
+      <img src="./assets/imgs/Images_no_albums.png" alt="Images_no_albums.png">
+    </div>
+      <div class="col-md-10 upload">
+        <p>{{'noHaveAlbums' | translate}}</p>
+      </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="albums col-md-3" *ngFor="let album of albums" [routerLink]="'/album/'+album.id">
+        <img _ngcontent-c26="" src="./assets/imgs/s1200.webp" alt="s1200">
+        <h3 class="album-title">{{album.name}}</h3>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+

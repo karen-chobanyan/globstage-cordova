@@ -1,0 +1,26 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+img{max-width: 100%;}
+.create-note{
+    background: $color-blue;
+    margin-top: 50px;
+    span{
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 6px 15px;
+        display: block;
+        transition: 0.3s;
+    }
+    span:hover{
+        color: $color-green;
+        background: rgba(0, 0, 0, 0.35);
+        transition: 0.3s;
+    }
+}

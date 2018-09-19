@@ -1,0 +1,44 @@
+<button class="menu-btn" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <div class="user-avatar-menu">
+        <div class="user-img">
+          <img  src="{{ user?.user_photo || './assets/imgs/no_avatar.png'}}">
+        </div>
+        <a class="user-name" routerLink="/profile">{{ user.user_name + " " + user.user_last_name }}</a>
+        <button (click)="logOut()" class="exit btn btn-default">Exit</button>
+    </div>
+      <button routerLink="/profile/albums" mat-menu-item>
+        <mat-icon>photo</mat-icon>
+        <span>{{'homeMenu.albums' | translate}}</span>
+      </button>
+      <button routerLink="/profile/videos" mat-menu-item>
+        <mat-icon>videocam</mat-icon>
+        <span>{{'homeMenu.video' | translate}}</span>
+      </button>
+      <button routerLink="/groups" mat-menu-item>
+        <mat-icon>speaker_notes</mat-icon>
+        <span>{{'homeMenu.group' | translate}}</span>
+      </button>
+      <button routerLink="/profile/news" mat-menu-item>
+          <mat-icon>assignment</mat-icon>
+          <span>{{'homeMenu.news' | translate}}</span>
+      </button>
+    <!-- <button routerLink="/notes" mat-menu-item>
+      <mat-icon>notes</mat-icon>
+      <span>{{'homeMenu.notes' | translate}}</span>
+    </button> -->
+    <button routerLink="/privacy" mat-menu-item>
+      <mat-icon>https</mat-icon>
+      <span>{{'homeMenu.privacy' | translate}}</span>
+    </button>
+    <!--<button mat-menu-item>-->
+      <!--<mat-icon>photo_library</mat-icon>-->
+      <!--<span>{{'homeMenu.pageBackground' | translate}}</span>-->
+    <!--</button>-->
+    <!--<button mat-menu-item>-->
+      <!--<mat-icon>language</mat-icon>-->
+      <!--<span>{{'homeMenu.language' | translate}}</span>-->
+    <!--</button>-->
+  </mat-menu>

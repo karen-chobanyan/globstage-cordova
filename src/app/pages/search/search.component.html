@@ -1,0 +1,78 @@
+<app-home-menu></app-home-menu>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-profile-image></app-profile-image>
+    </div>
+    <div class="col-md-9">
+      <app-header></app-header>
+      <div class="searchAll">
+        <div class="searchUser">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="search" matInput placeholder="Search" value="">
+            </mat-form-field>
+            <button type="submit" class="search btn-success save">{{'search' | translate}}</button>
+          </form>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="search-avatar" *ngFor="let result of searchResults">
+              <div class="search-img" *ngIf="type=='users'" [routerLink]="'/user-profile/'+result.id">
+                <div class="img" >
+                  <img [src]="result.user_photo || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
+                </div>
+                <ul class="animated fadeInUp">
+                  <li>{{result.user_name}} {{result.user_last_name}}</li>
+                  <li *ngIf="result.user_country">{{result.user_country + ", " +result.user_city}}</li>
+                  <li *ngIf="result.user_age">{{result.user_age}}</li>
+                </ul>
+              </div>
+              <div class="search-video" *ngIf="type=='videos'">
+                <div class="img" >
+                  <img [src]="result.video_image || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
+                </div>
+                <ul class="video-info">
+                  <li>{{result.video_name}}</li>
+                </ul>
+              </div>
+              <div class="search-audio" *ngIf="type=='audios'">
+                <div class="img" >
+                  <img [src]="result.audio_image || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
+                </div>
+                <ul class="audio-info">
+                  <li>{{result.audio_name}}</li>
+                </ul>
+              </div>
+              <div class="search-note" *ngIf="type=='notes'">
+                <div class="img" >
+                  <img [src]="result.note_image || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
+                </div>
+                <ul class="notes-info">
+                  <li>{{result.note_name}}</li>
+                </ul>
+              </div>
+              <div class="search-group" *ngIf="type=='group'">
+                <div class="img" >
+                  <img [src]="result.group_image || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
+                </div>
+                <ul class="notes-info">
+                  <li>{{result.post_content}}</li>
+                </ul>
+              </div>
+              <div class="search-post" *ngIf="type=='posts'">
+                <div class="img" >
+                  <img [src]="result.group_name || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
+                </div>
+                <ul class="notes-info">
+                  <li>{{result.post_name}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

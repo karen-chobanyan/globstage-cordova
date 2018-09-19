@@ -1,0 +1,112 @@
+<div id="ng-chat" *ngIf="isBootstrapped">
+  <div id="ng-chat-people" [ngClass]="{'ng-chat-people-collapsed':isCollapsed}">
+    <a href="javascript:void(0);" class="ng-chat-title shadowed" (click)="onChatTitleClicked($event)">
+            <span>
+                {{localization.title}}
+            </span>
+    </a>
+    <input id="ng-chat-search_friend" type="search" [placeholder]="localization.searchPlaceholder"
+           [(ngModel)]="searchInput"/>
+    <ul id="ng-chat-users" *ngIf="!isCollapsed">
+      <li *ngFor="let user of filteredUsers" (click)="openChatWindow(user, true, true)">
+        <div *ngIf="!user.user_photo" class="icon-wrapper">
+          <i class="user-icon"></i>
+        </div>
+        <img *ngIf="user.user_photo" alt="" class="avatar" height="30" width="30" src="{{user.user_photo}}"/>
+        <strong title="{{user.user_name}}">{{user.user_name}} {{user.user_last_name}}</strong>
+        <span
+            [ngClass]="{'ng-chat-user-status': true, 'online': user.status == UserStatus.Online, 'busy': user.status == UserStatus.Busy, 'away': user.status == UserStatus.Away, 'offline': user.status == UserStatus.Offline}"
+            title="{{getStatusTitle(UserStatus[user.status])}}"></span>
+        <span *ngIf="unreadMessagesTotalByUser(user).length > 0" class="ng-chat-unread-messages-count">{{unreadMessagesTotalByUser(user)}}</span>
+      </li>
+    </ul>
+  </div>
+  <div *ngFor="let window of windows; let i = index"
+       [ngClass]="{'ng-chat-window': true, 'ng-chat-window-collapsed': window.isCollapsed}"
+       [ngStyle]="{'right': friendsListWidth + 0 + windowSizeFactor * i + 'px'}">
+    <ng-container *ngIf="window.isCollapsed">
+      <div class="ng-chat-title" (click)="onChatWindowClicked(window)">
+        <strong title="{{window.chattingTo.userng-star-inserted_name}}">
+          {{window.chattingTo.user_name}} {{window.chattingTo.user_last_name}}
+        </strong>
+        <span
+            [ngClass]="{'ng-chat-user-status': true, 'online': window.chattingTo.status == UserStatus.Online, 'busy': window.chattingTo.status == UserStatus.Busy, 'away': window.chattingTo.status == UserStatus.Away, 'offline': window.chattingTo.status == UserStatus.Offline}"
+            title="{{getStatusTitle(UserStatus[window.chattingTo.status])}}"></span>
+        <span *ngIf="unreadMessagesTotal(window).length > 0" class="ng-chat-unread-messages-count">{{unreadMessagesTotal(window)}}</span>
+        <a href="javascript:void(0);" class="ng-chat-close" (click)="onCloseChatWindow(window)">X</a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!window.isCollapsed">
+      <div class="ng-chat-title" (click)="onChatWindowClicked(window)">
+        <strong title="{{window.chattingTo.user_name}}">
+          {{window.chattingTo.user_name}} {{window.chattingTo.user_last_name}}
+        </strong>
+        <span
+            [ngClass]="{'ng-chat-user-status': true, 'online': window.chattingTo.status == UserStatus.Online, 'busy': window.chattingTo.status == UserStatus.Busy, 'away': window.chattingTo.status == UserStatus.Away, 'offline': window.chattingTo.status == UserStatus.Offline}"
+            title="{{getStatusTitle(UserStatus[window.chattingTo.status])}}"></span>
+        <span *ngIf="unreadMessagesTotal(window).length > 0" class="ng-chat-unread-messages-count">{{unreadMessagesTotal(window)}}</span>
+        <a href="javascript:void(0);" class="ng-chat-close" (click)="onCloseChatWindow(window)">X</a>
+      </div>
+      <div #chatMessages class="ng-chat-messages">
+        <div *ngIf="window.isLoadingHistory" class="ng-chat-loading-wrapper">
+          <div class="loader">Loading history...</div>
+        </div>
+
+        <div *ngFor="let message of window.messages; let i = index"
+             [ngClass]="{'ng-chat-message': true, 'ng-chat-message-received': message.from_id != userId}">
+          <div *ngIf="!window.chattingTo.user_photo && isAvatarVisible(window, message, i)" class="icon-wrapper">
+            <i class="user-icon"></i>
+          </div>
+          <img *ngIf="window.chattingTo.user_photo && isAvatarVisible(window, message, i)" alt="" class="avatar"
+               height="30" width="30" [src]="window.chattingTo.user_photo"/>
+          <span *ngIf="message.content" [innerHtml]="message.content | emojify:emojisEnabled | linkfy:linkfyEnabled"></span>
+          <div *ngIf="message.attachments?.length > 0">
+            <div class="attach-styling col-md-12">
+              <div class="row">
+                <div id="myImg" class="post_attachs col-md-12" *ngFor="let attach of message.attachments"
+                  [ngClass]="{'ng-chat-message-received': message.from_id != userId}">
+                  <img class="post_attach " [src]="attach.path" alt="">
+                  <a target="_blank" [href]="attach.path"><img *ngIf="attach.type=='pdf'"
+                  class="post_attach doc-hover"
+                  src="./assets/imgs/pdf_icon_svg_by_qubodup-d9n1mhy.png"
+                  alt="">
+                  </a>
+                  <a target="_blank" [href]="attach.path"><img *ngIf="attach.type=='doc'"
+                  class="post_attach doc-hover"
+                  src="./assets/imgs/2000px-MS_word_DOC_icon.svg.png"
+                  alt="">
+                  </a>
+                  </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input #chatWindowInput [ngModel]="window.newMessage"
+             (ngModelChange)="window.newMessage=$event" type="text" (keydown)="onChatInputTyped($event, window)"
+             [placeholder]="localization.messagePlaceholder" (blur)="toggleWindowFocus(window)"
+             (focus)="toggleWindowFocus(window)"/>
+      <div class="attach-files">
+        <div class="row">
+          <div class="smiles col-md-8">
+            <ul>
+              <li><i class="fa fa-smile-o" (click)="openSmiles(window);"></i>
+                <app-smiles [opened]="window.smileOpen" (smile)="addSmile($event, window)"></app-smiles>
+              </li>
+              <li (click)="openDialogAttach($event, window)"><i class="fa fa-picture-o"></i></li>
+              <li (click)="openDialogVideo()"><i class="fa fa-video-camera"></i></li>
+              <li (click)="openDialogAudio()"><i class="fa fa-music"></i></li>
+              <li (click)="openDialogAttach($event, window)"><i class="fa fa-file-pdf-o"></i></li>
+            </ul>
+
+          </div>
+          <div class="send-btn col-md-4">
+            <button (click)="sendMessage($event, window)" type="button" class="send btn btn-success">Send</button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

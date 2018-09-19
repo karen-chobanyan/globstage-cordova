@@ -1,0 +1,37 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+ul{
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+.search-user{
+  .mat-form-field{
+    ::ng-deep .mat-form-field-label{
+      color: $color-blue;
+    }
+    ::ng-deep .mat-form-field-infix{
+      width: 130px;
+    }
+    ::ng-deep .mat-select-value{
+      color: $color-blue;
+    }
+  }
+  .search{
+    background: linear-gradient(#FFFFFF, #F5F5F5) repeat scroll 0 0 #FCFCFC;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    color: #3F4752;
+    font-size: 14px;
+    padding: 4px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .search:hover{
+    background: $color-green;
+    color: #fff;
+  }
+
+
+}

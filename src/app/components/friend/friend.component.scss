@@ -1,0 +1,110 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+
+.friend{
+  position: relative;
+  margin: 6px 0;
+  img{
+    cursor: pointer;
+    width: 110px;
+    height: auto;
+  }
+  a{
+    text-decoration: none;
+    h4{
+      color: $color-blue;
+      font-size: 13px;
+    }
+    h4:hover{
+      color: #000;
+      transition: 0.3s;
+    }
+  }
+  .delete{
+    position: absolute;
+    right: 100px;
+    color: $color-blue;
+    top: -3px;
+    cursor: pointer;
+    display: none;
+  }
+  button{
+    background: rgba(10, 134, 136, 0.8);
+    padding: 6px 12px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    display: block;
+    width: 60%;
+    transition: 0.3s;
+  }
+  button:hover{
+    background: rgba(24, 106, 107, 0.8);
+    transition: 0.3s;
+  }
+}
+.friend:hover{
+  .delete{
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .friend{
+    max-width: 100%;
+    padding: 0;
+    img{
+      cursor: pointer;
+      height: auto;
+      width: 90px;
+    }
+    .padd{
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .friend{
+    img{
+      width: 70px;
+    }
+    .padd{
+      padding: 0;
+      button{
+        font-size: 12px;
+      }
+      .delete{
+        right: 45px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px){
+  
+    .friend{
+        .cols2{
+            width: 30%;
+        }
+        .cols8{
+          width: 70%;
+          button{
+            font-size: 11px;
+            padding: 6px 0;
+            width: 50%;
+          }
+          .delete{
+            right: 60px;
+          }
+        }
+    }
+  }
+
+  
+
+
+
+

@@ -1,0 +1,158 @@
+@import '../../../variable';
+.clearfix{
+  clear: both;
+}
+.home-tab{
+  background: $color-white;
+  padding: 10px 15px;
+  .t-info{
+    padding-bottom: 6px;
+    margin: auto;
+    .information{
+      .title{
+        border-bottom: 1px dashed #e5e5e5;
+        color: #666666;
+      }
+      p{
+        font-size: 15px;
+        margin: 5px 0;
+      }
+    }
+    .user-info{
+      div{
+        padding-bottom: 4px;
+      }
+      span{
+        color: $color-green;
+        transition: 0.3s;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      span:hover{
+        color: #333;
+        transition: 0.3s;
+      }
+      .rating{
+        color: $color-white;
+      }
+      .user-info-rat{
+        background: $color-green;
+        width: 100px;
+        text-align: center;
+        .rating:hover{
+          color: $color-white;
+        }
+      }
+    }
+  }
+  .show-details{
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    color: #536069;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .show-details:hover{
+    background: #f1f5f8;
+  }
+  .hidden-block{
+    padding: 0 15px;
+    margin: auto;
+    .borders{
+      .edits{
+        border-bottom: 1px dashed #666666;
+        padding-bottom: 6px;
+        width: 500px;
+        max-width: 100%;
+        text-decoration: none;
+        font-size: 15px;
+      }
+      p{
+        color: #666666;
+        font-size: 15px;
+        margin-bottom: 10px;
+        span{
+          padding-left: 10px;
+          color: #000;
+        }
+      }
+      .pers-inf{
+        color: #000;
+        font-size: 15px;
+        span{
+          color: #95c800;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+   .borders{
+    padding: 15px;
+  }
+  .contact-info{
+    padding: 0;
+    li{
+      list-style: none;
+      font-size: 15px;
+      span{
+        margin-left: 15px;
+        color: $color-green;
+      }
+    }
+  }
+  .img-alb{
+    img{
+      width: 130px;
+    }
+  }
+  .music-alb{
+    img{
+      width: 130px;
+    }
+  }
+  .video-alb{
+    img{
+      width: 130px;
+    }
+  }
+  .upload{
+    text-align: center;
+    padding-top: 30px;
+    p{
+      font-size: 14px;
+      color: #777777;
+      margin-bottom: 0;
+    }
+    span{
+      color: $color-green;
+      font-size: 13px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    span:hover{
+      color: #333;
+      transition: 0.3s;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 991px){
+  .home-tab{
+    .t-info{
+      .user-info{
+        width: 50%;
+        .user-birthday{
+          span{
+            font-size: 12px;
+          }
+        }
+      }
+      .user-title-info{
+        width: 50%;
+      }
+    }
+  }
+}

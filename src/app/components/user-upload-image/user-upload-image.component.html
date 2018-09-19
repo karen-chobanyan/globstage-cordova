@@ -1,0 +1,70 @@
+<form enctype="multipart/form-data">
+<div class="progress">
+  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+</div>
+<div class="user-upload">
+  <p class="center-p">{{'user.topPhoto' | translate}}</p>
+  <div class="row">
+    <div class="uploaded-img col-md-6">
+      <!--<img src="{{uploadedImage || '/assets/imgs/no_avatar.png'}}" alt="no_avatar.png">-->
+      <image-cropper crossorigin
+                     [imageBase64]="selectedImage || './assets/imgs/no_avatar.png'"
+                     [imageChangedEvent]="imageChangedEvent"
+                     [maintainAspectRatio]="true"
+                     [resizeToWidth]="256"
+                     format="jpeg"
+                     (imageCroppedBase64)="imageCropped($event)"
+                     (imageCroppedFile)="imageCroppedFile($event)"
+                     (imageLoaded)="imageLoaded()"
+                     (loadImageFailed)="loadImageFailed()"
+      ></image-cropper>
+    </div>
+    <div class="why-photo col-md-6">
+      <h4>{{'user.whyPhoto' | translate}}?</h4>
+      <p>- People with a real photo write more often;<br>
+        - Your friends can easily find you;<br>
+        - No photos you will not be able to find and see other people.</p>
+    </div>
+    <div class="col-md-12">
+      <input class="chooser" type="file" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader"/>
+      <div class="uploads">
+        <div>
+        </div>
+        <button type="button" class="upload btn btn-success btn-s"
+                (click)="uploadThumb()" [disabled]="!uploader.getNotUploadedItems().length">
+          <span class="glyphicon glyphicon-upload"></span> {{'user.upload' | translate}}
+        </button>
+        <button type="button" class="remove btn btn-danger btn-s"
+                (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+          <span class="glyphicon glyphicon-trash"></span> {{'user.remove' | translate}}
+        </button>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div (click)="showInfoToggle()" class="show-info">
+      <span *ngIf="!infoToggle">{{'user.readRules' | translate}}</span>
+      <span *ngIf="infoToggle">{{'user.closeRules' | translate}}</span>
+    </div>
+    <ng-template [ngIf]="infoToggle">
+      <div class="hidden-info">
+        <p>Avatar can be any image (no larger than 10 MB, and in one of the following formats:
+          jpg, png, gif), does not violate the rules of the social network and ethical standards.<br><br>
+          <strong>Placing avatars, which contains:<br>
+            - Pornography or erotica; <br>
+            - Scenes of violence, abuse or homicide (involving human or animal); <br>
+            - Incitement to racial or ethnic hatred; <br>
+            - Calls for suicide; <br>
+            - Insults against other people (expressed slogans, gestures, etc.); <br>
+            - Spam and advertising; <br>
+            - Calls for the use of tobacco, alcohol, drugs, drugs.
+          </strong>
+        </p>
+      </div>
+    </ng-template>
+    <div class="upload-btn">
+      <button (click)="updateUploadImage()" type="button" class="ok btn btn-default">{{'user.ok' | translate}}</button>
+      <button (click)="onNoClick()" type="button" class="cancel btn btn-default">{{'user.cancel' | translate}}</button>
+    </div>
+  </div>
+</div>
+</form>

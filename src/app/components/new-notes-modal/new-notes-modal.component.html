@@ -1,0 +1,16 @@
+<div class="create-form">
+    <p>{{'newModal.newNotes' | translate}}</p>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text" matInput placeholder="Name" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Text"></textarea>
+      </mat-form-field>
+        <mat-checkbox>{{'newModal.publishWall' | translate}}</mat-checkbox>
+      <div class="create-btn">
+        <button type="submit" class="post btn btn-default">{{'newModal.post' | translate}}</button>
+        <button (click) = "onNoClick()" type="button" class="cancel btn btn-default">{{'newModal.cancel' | translate}}</button>
+      </div>
+    </form>
+  </div>

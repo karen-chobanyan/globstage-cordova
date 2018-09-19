@@ -1,0 +1,38 @@
+<div class="create-video">
+  <form class="example-form" [formGroup]="newpostvideo">
+    <p class="center-p">{{'newModal.addVideo' | translate}}</p>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Video link from Youtube or Vimeo" formControlName="linkvideo" required>
+    </mat-form-field>
+    <p class="supported">{{'newModal.videoServices' | translate}}
+      <span>{{'newModal.sites' | translate}}</span>
+    </p>
+    <div class="result-load">
+      <span class="img">{{'newModal.preview' | translate}}</span>
+      <!--<iframe [src]="thumbUrl" alt="">-->
+      <div class="pacleholder" [innerHtml]="thumbUrl"></div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" formControlName="namevideo" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Description" formControlName="descvideo"></textarea>
+      </mat-form-field>
+      <div class="can">
+        <p>{{'newModal.seeAlbum' | translate}}
+          <mat-form-field>
+            <mat-select [(value)]="selected3" [ngClass]="selected3"
+              formControlName="selectmembers">
+              <mat-option value="1" aria-selected="true">{{'newModal.allMember' | translate}}</mat-option>
+              <mat-option value="2">{{'newModal.justFriend' | translate}}</mat-option>
+              <mat-option value="3">{{'newModal.onlyI' | translate}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+    <div class="create-btn">
+      <button type="button" class="done btn btn-default" (click)="done()">{{'newModal.done' | translate}}</button>
+      <button (click)="onNoClick()" type="button" class="cancel btn btn-default">{{'newModal.cancel' | translate}}</button>
+    </div>
+  </form>
+</div>

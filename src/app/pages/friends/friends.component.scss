@@ -1,0 +1,120 @@
+@import '../../../variable';
+.clearfix{clear: both;}
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+::ng-deep .cdk-overlay-container{
+    left: -20px;
+    top: 45px;
+}
+
+.friends{
+  background: #fff;
+  margin-top: 5px;
+  padding: 20px;
+  padding-top: 6px;
+  .search-friend{
+    .mat-form-field{
+        width: 90%;
+        ::ng-deep .mat-form-field-label{
+            color: $color-blue;
+        }
+    }
+    .search{
+        padding: 6px 12px;
+        margin-bottom: 4px;
+        background: rgba(10, 134, 136, 0.8);
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 4px;
+        border: none;
+        transition: 0.3s;
+    }
+    .search:hover{
+        background: rgba(24, 106, 107, 0.8);
+        transition: 0.3s;
+    }
+}
+  .friend-title{
+    color: $color-blue;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 22px;
+  }
+}
+
+.friend-requests{
+  background: #fff;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .friends{
+        padding: 10px;
+        .search-friend .search{ 
+            padding: 4px 10px;
+            width: 10%;
+        }
+    } 
+  
+}
+
+@media only screen and (max-width: 991px) {
+    .friends{
+      .search-friend {
+        .mat-form-field{
+            width: 85%;
+            }
+            .search{ 
+                width: 15%;
+            }
+        } 
+    }
+}
+@media only screen and (max-width: 767px){
+    .friend-block{
+      width: 50%;
+    }
+}
+@media only screen and (max-width: 513px) {
+    .friends .search-friend .mat-form-field{
+        width: 100%;
+     }
+     .friends .search-friend{
+        text-align: center;
+     }
+}
+@media only screen and (max-width: 480px){
+    .friend-block{
+      width: 100%;
+    }
+    .friends{
+        .search-friend {
+          .mat-form-field{
+              width: 85%;
+              }
+              .search{ 
+                  width: 15%;
+                  font-size: 12px;
+              }
+          } 
+      }
+}
+@media only screen and (max-width: 480px){
+    .friends{
+        .search-friend {
+          .mat-form-field{
+              width: 80%;
+              }
+              .search{ 
+                  width: 20%;
+                  font-size: 12px;
+                  padding: 4px 0;
+              }
+          } 
+      }
+}
