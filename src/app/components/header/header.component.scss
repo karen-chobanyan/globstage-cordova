@@ -54,7 +54,7 @@
                         padding: 0;
                     }
                 }
-                
+
 
             }
             .notification{
@@ -78,13 +78,13 @@
             }
         }
         .En{
-            background: url("/assets/imgs/gb.svg") no-repeat;
+            background: url("../../../assets/imgs/gb.svg") no-repeat;
             width: 40px;
             max-width: 100%;
             background-size: 100%;
         }
         .Ru{
-            background: url('/assets/imgs/ru.svg') no-repeat;
+            background: url('../../../assets/imgs/ru.svg') no-repeat;
             width: 40px;
             height: 30px;
             max-width: 100%;
@@ -123,7 +123,7 @@
             }
         }
         }
-    } 
+    }
 @media only screen and (max-width: 443px) {
     .menu-block{
         .menu{
@@ -135,7 +135,7 @@
             }
         }
     }
-     
+
 }
 @media only screen and (max-width: 387px) {
     .menu-block{
@@ -154,7 +154,7 @@
             }
         }
     }
-     
+
 }
 @media only screen and (max-width: 347px) {
     .menu-block{
@@ -167,6 +167,6 @@
             }
         }
     }
-     
+
 }
 
