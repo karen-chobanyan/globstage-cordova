@@ -9,7 +9,7 @@
         padding-top: 4px;
         position: fixed;
         bottom: 0;
-        background: #95c800;
+        background: #023031;
         width: 100%;
         left: 0;
         right: 0;
@@ -26,9 +26,9 @@
                 padding: 0 12px;
                 button{
                  background: none;
-                 padding: 2px 0;
+                 padding: 0;
                  border-radius: 4px;
-                 font-size: 14px;
+                 font-size: 16px;
                  width: 40px;
                  color: #fff;
                  transition: 0.4s;
@@ -36,12 +36,16 @@
                  border: 2px solid #fff;
                 }
                 button:hover{
-                    background: #353535;
+                    background: #fff;
                     transition: 0.4s;
+                    i{
+                        color: #000;
+                    }
                 }
                 mat-form-field{
                     ::ng-deep .mat-select-value{
                         display: none;
+                        font-size: 0;
                     }
                     ::ng-deep .mat-select-arrow-wrapper{
                         display: none;
@@ -52,9 +56,6 @@
                 }
                 
 
-            }
-            .language{
-                float: right;
             }
             .notification{
                 position: absolute;
@@ -91,18 +92,25 @@
         }
         .mat-form-field{
             text-align: center;
-            width: 50px;
-            left: 50px;
+            right: 0;
+            position: absolute;
+            width: 70px;
+            bottom: -15px;
+            ::ng-deep .mat-select-value{
+                font-size: 0;
+            }
         }
-        // ::ng-deep .cdk-overlay-pane{
-        //     bottom: 98px;
-        //     left: 366px;
-        // }
+        ::ng-deep .cdk-overlay-pane {
+            margin-bottom: 80px !important;
+        }
      }
  }
  @media only screen and (max-width: 700px) {
     .menu-block{
         padding-top: 0;
+    }
+    ::ng-deep .cdk-overlay-container{
+        z-index: 99999;
     }
 }
     @media only screen and (max-width: 414px) {
@@ -134,7 +142,6 @@
         .menu{
             position: fixed;
             bottom: 0;
-            background: $color-green;
             width: 100%;
             left: 0;
             right: 0;
@@ -156,12 +163,6 @@
                 width: calc(100vw - 35px);
                 li{
                     padding: 0 2px;
-                }
-                .language{
-                    float: none;
-                    .mat-form-field{
-                        left: 30px;
-                    }
                 }
             }
         }

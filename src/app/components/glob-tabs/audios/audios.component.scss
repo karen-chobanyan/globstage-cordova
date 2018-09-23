@@ -133,3 +133,22 @@
         }
     }
 }
+@media only screen and (max-width: 375px){
+    .tabs-a{
+        padding: 10px 0;
+        .music-alb{
+            img{
+                width: 60px;
+            }
+        }
+        .upload{
+            padding-top: 10px;
+        }
+        .full{
+            .fullWidth{
+                max-width: 100%;
+            }
+        }
+    }
+    
+}

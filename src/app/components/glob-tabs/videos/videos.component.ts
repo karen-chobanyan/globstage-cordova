@@ -32,6 +32,8 @@ export class VideosComponent implements OnInit {
     });
   }
 
+  
+
   openDialogVideo() {
     const dialogRef = this.dialog.open(NewVideoModalComponent, {
       height: 'auto',

@@ -4,6 +4,10 @@ import { MatDialog } from '@angular/material';
 import { SearchAllComponent } from '../search-all/search-all.component';
 import { TranslateService } from '@ngx-translate/core';
 import { FriendsService } from "../../services/friends.service";
+import {getFromLocalStorage} from '../../utils/local-storage';
+import {ChatAdapter} from '../../components/ng-chat';
+import {GlobeAdapter} from '../../services/chatAdapter';
+
 
 
 @Component({
@@ -13,18 +17,21 @@ import { FriendsService } from "../../services/friends.service";
 })
 export class HeaderComponent implements OnInit {
 
+  userId = getFromLocalStorage('GLOBE_USER') ? getFromLocalStorage('GLOBE_USER').id : null;
   friendRequests: any[];
 
 
   @Input()
   public isCollapsed = false;
   public selectedOption = 'En';
+  public adapter: ChatAdapter = this.chatAdapter;
 
   constructor(
     private router: Router,
     public dialog: MatDialog,
     public translate: TranslateService,
     private friendService: FriendsService,
+    private chatAdapter: GlobeAdapter,
   ) {
 
   }
@@ -65,6 +72,9 @@ export class HeaderComponent implements OnInit {
   changeLang(e) {
     this.selectedOption = e.value;
     this.translate.use(e.value);
+  }
+  ngOnChanges() {
+    this.userId = getFromLocalStorage('GLOBE_USER') ? getFromLocalStorage('GLOBE_USER').id : null;
   }
 
 }

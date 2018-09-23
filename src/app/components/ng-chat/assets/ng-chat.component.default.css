@@ -3,7 +3,7 @@
     position:fixed;
     z-index:9999;
     right:0;
-    bottom:59px;
+    bottom:50px;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: initial;
@@ -175,7 +175,7 @@
     right:260px;
     height:360px;
     z-index:999;
-    bottom:064px;
+    bottom:50px;
     position: fixed;
     width:300px;
     border:1px solid #fff;
@@ -305,36 +305,17 @@
                 bottom: 50px;
             }
             .ng-chat-window{
-                bottom: 59px;
-            }
-        }
-        @media only screen and (max-width: 700px) {
-            #ng-chat{
                 bottom: 50px;
             }
-            .ng-chat-window{
-                bottom: 59px;
-            }
-            
-            
-          
         }
-
         @media only screen and (max-width: 582px) {
-            
             .ng-chat-window{
                 right: 0;
             }
-            
-          
         }
-
         @media only screen and (max-width: 347px) {
-            
             #ng-chat-people{
                 width: 220px;
                 bottom: 0;
             }
-            
-          
         }

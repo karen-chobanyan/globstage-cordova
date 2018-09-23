@@ -129,3 +129,20 @@ img{
     }
   }
 }
+
+@media only screen and (max-width: 480px){
+  .chooser{
+    width: 100%;
+    margin-top: 10px;
+  }
+.why-photo,.show-info{
+  display: none;
+}
+.user-upload{
+  .upload-btn{
+    text-align: center;
+  }
+}
+
+
+}

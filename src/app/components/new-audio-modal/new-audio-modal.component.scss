@@ -119,3 +119,22 @@
         }
     }
 }
+@media only screen and (max-width: 480px){
+    .create-audio{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 414px) {
+    .create-audio{
+    width: 100%;
+        height: 300px;
+        .create-btn{
+            text-align: center;
+        }
+        .song-load{
+            p{
+                display: none;
+            }
+        }
+    }
+} 

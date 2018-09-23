@@ -22,6 +22,7 @@ export class PostsService {
   deleteWallPost(id) {
     return this.http.delete(`/posts/${id}`);
   }
+  
 
   getGroupPosts(id) {
     return this.http.get(`/posts?filter[post_group_id]=${id}`);

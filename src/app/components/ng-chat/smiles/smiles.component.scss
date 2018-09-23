@@ -23,3 +23,24 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px){
+  .smile-wrap{
+    bottom: 134px;
+    width: 270px;
+    ul{
+        li{
+          width: 38px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px){
+  .smile-wrap{
+    ul{
+        li{
+          width: 32px;
+      }
+    }
+  }
+}

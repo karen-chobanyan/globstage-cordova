@@ -164,9 +164,12 @@
       .img-alb{
         width: 30%;
         img{
-          width: 100px;
+          width: 80px;
         }
     }
+        .upload{
+          width: 70%;
+        }
     .albums{
       width: 50%;
       img{
@@ -183,3 +186,12 @@
   }
 
 }
+@media only screen and (max-width: 414px){
+  .tabs-a{
+    .albums{
+      width: 100%;
+    }
+  }
+
+}
+

@@ -8,18 +8,19 @@
       <li (click)="openDialogSearch()"><button><i class="fa fa-search"></i></button></li>
       <li routerLink="/settings"><button><i class="fa fa-cog"></i></button></li>
       <li><button (click)="logOut()"><i class="fa fa-sign-out"></i></button></li>
-      <li class="language">
-        <mat-form-field>
-          <mat-select [(value)]="selectedOption" [ngClass]="selectedOption" (selectionChange)="changeLang($event)">
-            <mat-option value="En">
-              <img width="40" class="lang-gb" src="./assets/imgs/gb.svg" alt="GlobFull_logo1"> English
-            </mat-option>
-            <mat-option value="Ru">
-              <img width="40" class="lang-gb" src="./assets/imgs/ru.svg" alt="GlobFull_logo1"> Russian
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </li>
     </ul>
+    <div class="language">
+      <mat-form-field>
+        <mat-select [(value)]="selectedOption" [ngClass]="selectedOption" (selectionChange)="changeLang($event)">
+          <mat-option value="En">
+            <img width="40" class="lang-gb" src="./assets/imgs/gb.svg" alt="GlobFull_logo1">English
+          </mat-option>
+          <mat-option value="Ru">
+            <img width="40" class="lang-gb" src="./assets/imgs/ru.svg" alt="GlobFull_logo1">Russian
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   <div class="clearfix"></div>
 </div>
+<app-ng-chat *ngIf="userId" [adapter]="adapter" [userId]="userId" [isCollapsed]=true></app-ng-chat>

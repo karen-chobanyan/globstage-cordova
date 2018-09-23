@@ -95,6 +95,9 @@ img{max-width: 100%;}
     display: block;
     transition: 0.3s;
   }
+  .unsubs{
+    margin-top: 10px;
+  }
   span:hover{
     color: $color-green;
     background: rgba(0, 0, 0, 0.35);
@@ -102,7 +105,7 @@ img{max-width: 100%;}
   }
 }
 .subscribe{
-  margin-top: 15px;
+  margin-top: 8px;
 }
 .groups{
   padding: 20px;

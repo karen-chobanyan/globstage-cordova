@@ -140,6 +140,13 @@
     
 }
 
+@media only screen and (max-width: 480px){
+    .wall-content{
+        .wall-atach-photo{
+            padding-top: 10px;
+        }
+    }
+}
 @media only screen and (max-width: 375px) {
     
     .wall-content{

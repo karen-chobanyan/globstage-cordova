@@ -369,18 +369,24 @@
 }
 @media only screen and (max-width: 767px) {
     .animation {
-        margin-left: -700px;
+        margin-left: 0;
+        min-width: initial;
+        left: 0;
+        max-width: 100%;
     }
     .animate-login {
+        max-width: 100%;
+        left: 0;
+        margin-left: 0;
         h1{
             font-size: 36px;
         }
     }
   }
   @media only screen and (max-width: 480px) {
-    .animation {
-        margin-left: -930px;
-    }
+    // .animation {
+    //     margin-left: -930px;
+    // }
     .login-panel{
         .login-form{
             width: 270px;
@@ -407,9 +413,9 @@
   }
 
   @media only screen and (max-width: 375px) {
-    .animation {
-        margin-left: -150px;
-    }
+    // .animation {
+    //     margin-left: -150px;
+    // }
     .register-panel{
         .register-form{
             width: 250px;

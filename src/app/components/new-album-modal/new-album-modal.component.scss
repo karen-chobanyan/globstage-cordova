@@ -107,5 +107,11 @@
       transition: 0.3s;
     }
   }
-
+}
+@media only screen and (max-width: 480px){
+    .create-album{
+        .create-btn{
+            text-align: center;
+        }
+    }
 }

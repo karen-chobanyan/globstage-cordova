@@ -6,8 +6,11 @@
       <div class="create-group">
         <span (click)="openDialogGroup()" class="create">{{'groups.createGroup' | translate}}</span>
       </div>
-      <div class="create-group subscribe">
-        <span (click)="subscribeToGroup()" class="create">{{'groups.subToGroup' | translate}}</span>
+      <div *ngIf="!subscribe" class="create-group subscribe">
+        <span (click)="subscribeToGroup()" class="subs">{{'groups.subToGroup' | translate}}</span>
+      </div>
+      <div *ngIf="subscribe" class="create-group subscribe">
+        <span (click)="deleteSubsGroup()" class="unsubs">Unsubscribe</span>
       </div>
       <!--<app-friends-sidebar-block *ngIf="user.friends" [friends]="user.friends"></app-friends-sidebar-block>-->
     </div>

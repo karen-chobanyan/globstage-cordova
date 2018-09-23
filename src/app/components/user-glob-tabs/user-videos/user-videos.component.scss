@@ -152,7 +152,6 @@
     border-radius: 3px;
   }
 }
-
 .video-wrap:hover {
   .delete {
     right: 16px !important;
@@ -164,7 +163,21 @@
       width: 50%;
     }
 }
+@media only screen and (max-width: 767px){
+  .tabs-a{
+    .video-alb {
+      width: 30%;
+      img {
+        width: 70px;
+      }
+    }
+    .upload{
+      width: 70%;
+      padding-top: 8px;
+    }
+  }
 
+}
 @media only screen and (max-width: 480px) {
   .video-wrap{
     width: 100%;

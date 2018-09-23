@@ -27,6 +27,9 @@ export class GroupService {
   }
 
   subscribeToGroup(id) {
-    return this.http.get(`${appConfig.apiUrl}/groups/${id}`);
+    return this.http.post(`${appConfig.apiUrl}/followers`, {"author_id": JSON.parse(localStorage.getItem('GLOBE_USER')).id, "user_id": JSON.parse(localStorage.getItem('GLOBE_USER')).id, "follow_to": id, "to":"group"});
+  }
+  deleteSubsGroup(id){
+    return this.http.delete(`${appConfig.apiUrl}/followers/${id}?to=group`);
   }
 }

@@ -61,3 +61,25 @@ html, body { height: 100%; }
       background: linear-gradient(#FFFFFF, #E9E9E9);
     }
   }
+  @media only screen and (max-width: 480px){
+    .chooser{
+      width: 100%
+    }
+  }
+  @media only screen and (max-width: 375px){
+    .chooser{
+      width: 100%;
+    }
+    .table{
+      display: none;
+    }
+    .btn{
+      padding: 4px;
+      margin-right: 10px;
+    }
+    .upload-btn{
+      text-align: center;
+    }
+  }
+
+  
