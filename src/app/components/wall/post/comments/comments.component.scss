@@ -99,12 +99,36 @@
         }
         .delete-comm{
             width: 10%;
+            padding-left: 0;
         }
 
     }
+}
+@media only screen and (max-width: 414px){
+    .author-comment{
+        padding-left: 0;
+        padding-bottom: 0;
+        .author-img{
+            width: 30%;
+        }
+        .author{
+            width: 30%;
+            .comment-text{
+                display: block;
+                font-size: 10px;
+                height: 40px;
+                width: 125px;
+                overflow: hidden;
+            }
+        }
+        .date{
+            width: 30%;
+        }
+        .delete-comm{
+            width: 10%;
+        }
 
-
-  
+    }
 }
 
 @media only screen and (max-width: 375px) {

@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
 
   @Input()
   public isCollapsed = false;
-  public selectedOption = 'En';
   public adapter: ChatAdapter = this.chatAdapter;
 
   constructor(
@@ -69,10 +68,7 @@ export class HeaderComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  changeLang(e) {
-    this.selectedOption = e.value;
-    this.translate.use(e.value);
-  }
+  
   ngOnChanges() {
     this.userId = getFromLocalStorage('GLOBE_USER') ? getFromLocalStorage('GLOBE_USER').id : null;
   }

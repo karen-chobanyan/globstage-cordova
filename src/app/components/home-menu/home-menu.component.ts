@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { getFromLocalStorage } from '../../utils/local-storage';
+import { getFromLocalStorage, setToLocalStorage } from '../../utils/local-storage';
+import { TranslateService } from '@ngx-translate/core';
+
+
 
 @Component({
   selector: 'app-home-menu',
@@ -10,8 +13,12 @@ import { getFromLocalStorage } from '../../utils/local-storage';
 export class HomeMenuComponent implements OnInit {
 
   public user;
+  public selectedOption = getFromLocalStorage('GLOBE_LANG') || 'En';
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    public translate: TranslateService
+  ) { }
 
   ngOnInit() {
     this.user = getFromLocalStorage('GLOBE_USER');
@@ -22,5 +29,12 @@ export class HomeMenuComponent implements OnInit {
     localStorage.removeItem('GLOBE_USER');
     this.router.navigate(['']);
   }
+  changeLang(e) {
+    this.selectedOption = e.value;
+    this.translate.use(e.value);
+    setToLocalStorage('GLOBE_LANG', e.value);
+  }
+
+
 
 }

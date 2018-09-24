@@ -101,8 +101,11 @@ img{max-width: 100%;}
         transition: 0.3s;
     }
 }
+.right-block{
+    padding: 0;
+}
 .groups{
-    padding: 20px;
+    padding: 0;
     background: #fff;
     margin: 20px 0;
     .search-group{

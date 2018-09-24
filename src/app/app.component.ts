@@ -25,8 +25,8 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this._translate.setDefaultLang('En');
-    this._translate.use('En');
+    this._translate.setDefaultLang(getFromLocalStorage('GLOBE_LANG') || 'En');
+    this._translate.use(getFromLocalStorage('GLOBE_LANG') || 'En');
     this._config.locale = this._translate.getDefaultLang();
   }
 

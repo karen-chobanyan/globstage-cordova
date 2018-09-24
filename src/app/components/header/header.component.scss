@@ -42,18 +42,7 @@
                         color: #000;
                     }
                 }
-                mat-form-field{
-                    ::ng-deep .mat-select-value{
-                        display: none;
-                        font-size: 0;
-                    }
-                    ::ng-deep .mat-select-arrow-wrapper{
-                        display: none;
-                    }
-                    ::ng-deep .mat-form-field-infix{
-                        padding: 0;
-                    }
-                }
+                
 
 
             }
@@ -77,32 +66,7 @@
                 font-size: 12px;
             }
         }
-        .En{
-            background: url("../../../assets/imgs/gb.svg") no-repeat;
-            width: 40px;
-            max-width: 100%;
-            background-size: 100%;
-        }
-        .Ru{
-            background: url('../../../assets/imgs/ru.svg') no-repeat;
-            width: 40px;
-            height: 30px;
-            max-width: 100%;
-            background-size: 100%;
-        }
-        .mat-form-field{
-            text-align: center;
-            right: 0;
-            position: absolute;
-            width: 70px;
-            bottom: -15px;
-            ::ng-deep .mat-select-value{
-                font-size: 0;
-            }
-        }
-        ::ng-deep .cdk-overlay-pane {
-            margin-bottom: 80px !important;
-        }
+        
      }
  }
  @media only screen and (max-width: 700px) {

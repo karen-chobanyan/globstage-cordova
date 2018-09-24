@@ -2,6 +2,18 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
+      <div class="language">
+          <mat-form-field>
+            <mat-select [(value)]="selectedOption" [ngClass]="selectedOption" (selectionChange)="changeLang($event)">
+              <mat-option value="En">
+                <img width="40" class="lang-gb" src="./assets/imgs/gb.svg" alt="GlobFull_logo1">English
+              </mat-option>
+              <mat-option value="Ru">
+                <img width="40" class="lang-gb" src="./assets/imgs/ru.svg" alt="GlobFull_logo1">Russian
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
     <div class="user-avatar-menu">
         <div class="user-img">
           <img routerLink="/profile"  src="{{ user?.user_photo || './assets/imgs/no_avatar.png'}}">
