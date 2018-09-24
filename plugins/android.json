@@ -7,10 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-device": {
       "PACKAGE_NAME": "com.globstage.app"
     },
-    "cordova-plugin-device": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.globstage.app"
     }
   },
