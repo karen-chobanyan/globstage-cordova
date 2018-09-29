@@ -13,7 +13,6 @@ export class GroupService {
     private http: HttpClient,
   ) {
   }
-
   createGroup(group) {
     return this.http.post(`${appConfig.apiUrl}/groups`, group);
   }
@@ -31,5 +30,8 @@ export class GroupService {
   }
   deleteSubsGroup(id){
     return this.http.delete(`${appConfig.apiUrl}/followers/${id}?to=group`);
+  }
+  inviteFriends(invite){
+    return this.http.post(`${appConfig.apiUrl}/posts`, invite);
   }
 }

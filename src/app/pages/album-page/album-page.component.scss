@@ -218,6 +218,18 @@ li{
   
 
 }
+
+@media only screen and (max-width: 480px) {
+
+  .album-photo{
+    img{
+      max-width: 100%;
+      height: 130px;
+    }
+}
+  
+
+}
 @media only screen and (max-width: 414px) {
 
   .album-photo{

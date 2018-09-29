@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { getLocale } from 'ngx-bootstrap/chronos/locale/locales';
 import { getFromLocalStorage } from '../../utils/local-storage';
+import { FriendsService } from "../../services/friends.service";
 
 
 @Component({
@@ -18,12 +19,14 @@ export class GroupPageComponent implements OnInit {
   group_id;
   subscribe = false;
   followers = true;
+  friends = [];
 
   constructor(
     public groupService: GroupService,
     private route: ActivatedRoute,
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
+    private friendService: FriendsService
   ) {
   }
 
@@ -38,6 +41,10 @@ export class GroupPageComponent implements OnInit {
         }
         }
       );
+    });
+    this.friendService.getFriends(getFromLocalStorage('GLOBE_USER').id).subscribe((res: any[]) => {
+      this.friends = res;
+      console.log(res);
     });
 
 
@@ -64,4 +71,15 @@ export class GroupPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
   }
+  inviteFriends(){
+    let friendArr = <any>[];
+    this.friends.forEach(element => {
+      friendArr.push(element.id);
+    });
+    this.groupService.inviteFriends({
+    post_wall_ids: friendArr,
+    groupId: this.group_id,
+  }).subscribe(res => {
+  });
+}
 }

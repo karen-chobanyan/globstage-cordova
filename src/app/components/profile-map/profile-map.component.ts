@@ -1,4 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+declare var navigator;
+
 
 @Component({
   selector: 'app-profile-map',
@@ -12,6 +14,8 @@ export class ProfileMapComponent implements OnInit {
 
   constructor() {
   }
+
+  
 
   ngOnInit() {
     if (navigator.geolocation) {

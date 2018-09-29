@@ -36,4 +36,5 @@
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <engine name="android" spec="^7.0.0" />
     <engine name="ios" spec="^4.5.5" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
 </widget>

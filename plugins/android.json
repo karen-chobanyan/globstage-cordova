@@ -12,6 +12,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.globstage.app"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.globstage.app"
     }
   },
   "dependent_plugins": {}
