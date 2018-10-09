@@ -2,7 +2,7 @@
   <div class="search-user">
     <form  class="example-form">
       <mat-form-field class="example-full-width">
-        <input name="query" [(ngModel)]="query" type="search" matInput placeholder="Search" value="">
+        <input name="query" [(ngModel)]="query" type="search" matInput placeholder="{{'information.search' | translate}}" value="">
       </mat-form-field>
       <mat-form-field>
         <mat-select name="type" [(value)]="selected1" [(ngModel)]="type" >

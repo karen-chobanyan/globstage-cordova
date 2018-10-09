@@ -36,7 +36,9 @@
   "wall":{
     "wall": "Wall",
     "send": "Send",
-    "share": "Share"
+    "share": "Share",
+    "content": "What do you want to say?",
+    "comment": "Add a comment"
   },
 
   "save": "Save",
@@ -102,6 +104,13 @@
     "forgotYourPass": "Forgot your password",
     "allRequired": "All fields are required."
   },
+  "reg": {
+    "regName": "Your name",
+    "regLastname": "Your last name",
+    "regEmail": "E-mail address",
+    "passWord": "Password",
+    "confPass": "Password again*"
+  },
   "notes": {
     "note": "Create Notes"
   },
@@ -136,7 +145,12 @@
     "send": "Send",
     "emailAdd": "Your email address",
     "currentAdd": "Current address",
-    "saveAdd": "Save address"
+    "saveAdd": "Save address",
+    "oldPassword": "Old password",
+    "newPassword": "New password",
+    "confPassword": "Confirm password",
+    "newName": "Your name",
+    "newLastname": "Your lastname"
   },
   "userFriend":{
     "search": "Search"
@@ -160,7 +174,8 @@
     "notes": "Notes",
     "privacy": "Privacy",
     "pageBackground": "Page Background",
-    "language": "Language"
+    "language": "Language",
+    "exit": "Exit"
   },
   "newModal": {
     "createAlbum": "Create a new album",

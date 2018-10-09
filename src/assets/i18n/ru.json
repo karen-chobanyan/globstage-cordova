@@ -6,16 +6,17 @@
     "follow": "Подписаться",
     "unfollow": "Отписаться",
     "block": "Блокировать",
-    "unlock": "Разблокировать"
+    "unlock": "Разблокировать",
+    "fridelete": "Удалить из друзей"
   },
   "profile": {
     "statusPlaceholder": "Введите текст вашего статуса",
     "groupText": "Подпишитесь на интересующую вас группу и прочитайте ее обновления в ленте новостей.",
     "notesText": "С помощью заметок вы можете делиться событиями с друзьями, а также знать, все новое о них.",
     "videosText": "Можете хранить неограниченное количество видеофайлов. Чтобы добавить свое первое видео, нажмите здесь.",
-    "uplNewPhoto": "Upload a new photo",
-    "changeThumb": "Change thumbnail",
-    "delete": "Delete"
+    "uplNewPhoto": "добавить фото",
+    "changeThumb": "изменить эскиз",
+    "delete": "Удалить"
   },
   "save": "Сохранить",
   "news": "Новости",
@@ -35,15 +36,14 @@
     "readRules": "Read the rules",
     "closeRules": "Close the rules"
   },
-
-  "wall":{
+  "wall": {
     "wall": "Стена",
     "send": "Отправить",
-    "share": "Пделится"
+    "share": "Поделится",
+    "content": "Что вы хотите сказать?",
+    "comment": "Добавить комментарий"
   },
-
   "search": "Поиск",
-
   "information": {
     "country": "Страна",
     "city": "Город",
@@ -100,23 +100,30 @@
     "forgotYourPass": "Забили пароль",
     "allRequired": "Все полья обязателны."
   },
+  "reg": {
+    "regName": "ваше имя",
+    "regLastname": "Ваша фамилия",
+    "regEmail": "адрес электронной почты",
+    "passWord": "пароль",
+    "confPass": "пароль еще раз"
+  },
   "notes": {
     "note": "Create Notes"
   },
   "privacy": {
     "privateMess": "Кто может написать вам",
-    "otherPeoples": "Who sees other people's records on my wall",
-    "postMyWall": "Who can post on my wall",
-    "commentEntries": "Who can comment on my entries",
-    "basicInfoPage": "Who sees my basic information page",
-    "listMyQuotes": "Who can view a list of my guests",
-    "allMember": "All Member",
-    "justFriends": "Just Friends",
-    "no": "No",
-    "onlyVerified": "Only verified",
-    "onlyI": "Only I"
+    "otherPeoples": "Кто видит чужие записи на моей стене",
+    "postMyWall": "Кто может писать на моей стене",
+    "commentEntries": "Кто может комментировать мои записи",
+    "basicInfoPage": "Кто видит мою основную информационную страницу",
+    "listMyQuotes": "Кто может просматривать список моих гостей",
+    "allMember": "все участники",
+    "justFriends": "просто друзья",
+    "no": "нет",
+    "onlyVerified": "Только проверено",
+    "onlyI": "только я"
   },
-  "settings":{
+  "settings": {
     "changePass": "Иземить пароль",
     "changeName": "Иземить имю",
     "pageAdd": "Page address",
@@ -134,9 +141,14 @@
     "send": "Send",
     "emailAdd": "Your email address",
     "currentAdd": "Current address",
-    "saveAdd": "Save address"
+    "saveAdd": "Save address",
+    "oldPassword": "Старый пароль",
+    "newPassword": "Новый пароль",
+    "confPassword": "Подтвердите Пароль",
+    "newName": "Ваше имя",
+    "newLastname": "Ваша фамилия"
   },
-  "userFriend":{
+  "userFriend": {
     "search": "Поиск"
   },
   "uplPhotos": "Вы можете добавить фото",
@@ -145,11 +157,10 @@
   "viewFriends": "Друзя",
   "addFriend": "Добавить в друзя",
   "ignore": "Игнорировать",
-  "downAudio": "You have no audios.",
+  "downAudio": "Вы можете добавить аудио.",
   "addAudio": "Добавить аудио",
   "noDownAudio": "Videos hav no.",
   "addVideo": "Добавить видео",
-
   "homeMenu": {
     "albums": "Альбомы",
     "video": "Видео",
@@ -158,7 +169,8 @@
     "notes": "Пометки",
     "privacy": "Приватность",
     "pageBackground": "Page Background",
-    "language": "Язык"
+    "language": "Язык",
+    "exit": "Выход"
   },
   "newModal": {
     "createAlbum": "Создать альбом",
@@ -203,5 +215,4 @@
   "removeAll": "Удалить все",
   "ok": "Ok",
   "cancel": "Отмена"
-
 }

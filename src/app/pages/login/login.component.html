@@ -54,12 +54,12 @@
         <span class="solid"></span>
       </h3>
       <form [formGroup]="formgroupReg" (ngSubmit)="onSignUp(formgroupReg)" action="" method="post">
-        <input type="text" formControlName="user_first_name" placeholder="Your name*"><br>
-        <input type="text" formControlName="user_last_name" placeholder="Your last name*"><br>
-        <input type="email" formControlName="user_email" placeholder="E-mail address*"><br>
-        <input type="password" formControlName="user_password" placeholder="Password*"><br>
-        <input class="margin" type="password" formControlName="password_second" placeholder="Password again*"><br>
-        <p *ngIf="formgroupReg.invalid" class="form-error">* {{'login.allRequired' | translate}}</p>
+        <input type="text" formControlName="user_first_name" placeholder="{{'reg.regName' | translate}}*"><br>
+        <input type="text" formControlName="user_last_name" placeholder="{{'reg.regLastname' | translate}}*"><br>
+        <input type="email" formControlName="user_email" placeholder="{{'reg.regEmail' | translate}}*"><br>
+        <input type="password" formControlName="user_password" placeholder="{{'reg.passWord' | translate}}*"><br>
+        <input class="margin" type="password" formControlName="{{'reg.confPass' | translate}}" placeholder="Password again*"><br>
+        <p *ngIf="formgroupReg.invalid" class="form-error">*{{'login.allRequired' | translate}}</p>
         <span class="error-reg" *ngIf="errorReg">Pasdwords does not match*</span>
         <button type="submit" [disabled]="!formgroupReg.valid" class="register btn btn-success">{{'login.register' | translate}}</button>
       </form>

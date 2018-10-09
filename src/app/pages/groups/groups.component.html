@@ -13,7 +13,7 @@
           <div class="search-group">
             <form class="example-form" [formGroup]="searchGroup">
                 <mat-form-field class="example-full-width">
-                  <input type="search" formControlName="groupName" required matInput placeholder="Search">
+                  <input type="search" formControlName="groupName" required matInput placeholder="{{'groups.search' | translate}}">
                 </mat-form-field>
                 <button (click)="searchGroups(searchGroup)" class="search btn-success save">{{'groups.search' | translate}}</button>
             </form>

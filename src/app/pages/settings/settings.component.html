@@ -1,44 +1,45 @@
 <app-home-menu></app-home-menu>
 <div class="container">
-    <div class="row">
-      <div class="col-md-3">
+  <div class="row">
+    <div class="col-md-3">
       <app-profile-image></app-profile-image>
-      </div>
-      <div class="col-md-9">
-        <app-header></app-header>
-        <div class="settings-page">
-          <div class="change-password center">
-              <h4>{{'settings.changePass' | translate}}</h4>
-              <form [formGroup]="changePassword" (ngSubmit)="changePass(changePassword)" class="example-form">
-                  <mat-form-field class="example-full-width">
-                    <input formControlName="user_password" type="password" matInput placeholder="Old password" value="">
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width">
-                    <input formControlName="new_password" type="password" matInput placeholder="New password" value="">
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width">
-                    <input formControlName="confirm_password" type="password" matInput placeholder="Confirm Password" value="">
-                  </mat-form-field>
-                  <div class="change-btn">
-                    <button type="submit" class="change btn-success save">{{'settings.changePass' | translate}}</button>
-                  </div>
-              </form>
-          </div>
-          <div class="change-name center">
-              <h4>{{'settings.changeName' | translate}}</h4>
-              <form [formGroup]="nameLastname" (ngSubmit)="changeName(nameLastname)" class="example-form">
-                  <mat-form-field class="example-full-width">
-                    <input formControlName="user_name" type="text" matInput placeholder="Your name" value="">
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width">
-                    <input formControlName="user_last_name" type="text" matInput placeholder="Your lastname" value="">
-                  </mat-form-field>
-                  <div class="change-btn">
-                    <button type="submit" class="change btn-success save">{{'settings.changeName' | translate}}</button>
-                  </div>
-              </form>
-          </div>
-          <!-- <div class="page-address center">
+    </div>
+    <div class="col-md-9">
+      <app-header></app-header>
+      <div class="settings-page">
+        <div class="change-password center">
+          <h4>{{'settings.changePass' | translate}}</h4>
+          <form [formGroup]="changePassword" (ngSubmit)="changePass(changePassword)" class="example-form">
+            <mat-form-field class="example-full-width">
+              <input formControlName="user_password" type="password" matInput placeholder="{{'settings.oldPassword' | translate}}" value="">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input formControlName="new_password" type="password" matInput placeholder="{{'settings.newPassword' | translate}}" value="">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input formControlName="confirm_password" type="password" matInput placeholder="{{'settings.confPassword' | translate}}"
+                value="">
+            </mat-form-field>
+            <div class="change-btn">
+              <button type="submit" class="change btn-success save">{{'settings.changePass' | translate}}</button>
+            </div>
+          </form>
+        </div>
+        <div class="change-name center">
+          <h4>{{'settings.changeName' | translate}}</h4>
+          <form [formGroup]="nameLastname" (ngSubmit)="changeName(nameLastname)" class="example-form">
+            <mat-form-field class="example-full-width">
+              <input formControlName="user_name" type="text" matInput placeholder="{{'settings.newName' | translate}}" value="">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input formControlName="user_last_name" type="text" matInput placeholder="{{'settings.newLastname' | translate}}" value="">
+            </mat-form-field>
+            <div class="change-btn">
+              <button type="submit" class="change btn-success save">{{'settings.changeName' | translate}}</button>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="page-address center">
               <h4>{{'settings.pageAdd' | translate}}</h4>
               <p>{{'settings.pageNumb' | translate}}:<span>2</span></p>
               <form class="example-form">
@@ -103,8 +104,8 @@
                   </div>
               </form>
            </div> -->
-        </div>
       </div>
-      <div class="clearfix"></div>
     </div>
+    <div class="clearfix"></div>
   </div>
+</div>
