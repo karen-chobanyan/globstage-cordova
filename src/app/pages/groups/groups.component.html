@@ -1,27 +1,27 @@
 <app-home-menu></app-home-menu>
 <div class="container">
     <div class="row">
-      <div class="col-md-3 ">
+      <div class="col-md-3">
       <app-profile-image></app-profile-image>
       <div class="create-group">
         <span (click)="openDialogGroup()" class="create">{{'groups.createGroup' | translate}}</span>
       </div>
       </div>
-      <div class="col-md-9 right-block">
+      <div class="col-md-9">
         <app-header></app-header>
         <div class="groups">
           <div class="search-group">
             <form class="example-form" [formGroup]="searchGroup">
                 <mat-form-field class="example-full-width">
-                  <input type="search" formControlName="groupName" required matInput placeholder="{{'groups.search' | translate}}">
+                  <input type="search" formControlName="groupName" required matInput placeholder="Search">
                 </mat-form-field>
-                <button (click)="searchGroups(searchGroup)" class="search btn-success save">{{'groups.search' | translate}}</button>
+                <button (click)="searchGroups(searchGroup)" type="submit" class="search btn-success save">{{'groups.search' | translate}}</button>
             </form>
           </div>
           <div class="col-md-12">
             <div class="row">
                 <div class="group col-md-3" *ngFor="let group of groups" [routerLink]="'/group/'+group.id">
-                  <img [src]="group.attachments ? group.attachments[0].path : './assets/imgs/no_ava_groups.png'" [alt]="group.group_name">
+                  <img [src]="group.attachments ? group.attachments[0].path : '/assets/imgs/no_ava_groups.png'" [alt]="group.group_name">
                   <h3 class="group-title">{{group.group_name}}</h3>
                 </div>
                 <div class="clearfix"></div>
@@ -32,5 +32,3 @@
       <div class="clearfix"></div>
     </div>
   </div>
-
-  

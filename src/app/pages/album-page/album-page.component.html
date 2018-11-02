@@ -3,14 +3,14 @@
   <div class="row">
     <div class="col-md-3">
       <app-profile-image *ngIf="isMyAlbum"></app-profile-image>
-      <app-user-profile-image [user]="albumUser" *ngIf="!isMyAlbum"></app-user-profile-image>
+      <app-user-profile-image [user]="albumUser" *ngIf="!isMyAlbum && albumUser"></app-user-profile-image>
       <div class="create-group">
         <span *ngIf="isMyAlbum" (click)="openDialogAlbum()" class="create">Create album</span>
       </div>
       <div class="all-album">
         <span routerLink="/profile/albums" class="create">All album</span>
       </div>
-      <!-- <div class="user-avatar">
+      <div class="user-avatar">
         <div routerLink="/groups" class="box-group center">
           <div class="img-subscribe"></div>
           {{'profile.groupText' | translate}}
@@ -19,7 +19,7 @@
           <div class="img-video"></div>
           {{'profile.videosText' | translate}}
         </div>
-      </div> -->
+      </div>
     </div>
     <div class="col-md-9">
       <app-header></app-header>
@@ -27,19 +27,31 @@
         <div class="search-group col-md-12">
           <div class="row">
             <div class="col-md-11">
-              <h2 class="group-title">{{album?.name}}</h2>
+              <h2 class="group-title">{{album?.post_title}}</h2>
             </div>
             <div class="upload-btn col-md-1" *ngIf="isMyAlbum">
-              <img style="cursor: pointer" (click)="openDialogAttach()" src="./assets/imgs/Images_no_albums.png" alt="Images_no_albums.png">
+              <img style="width: 100%; cursor: pointer" (click)="openDialogAttach()" src="/assets/imgs/Images_no_albums.png" alt="Images_no_albums.png">
             </div>
             <div class="clearfix"></div>
           </div>
         </div>
+        <div class="privacy-album" *ngIf="isMyAlbum">
+          <form [formGroup]="albumPrivacy" class="example-form">
+            <p>Who can see album:
+              <mat-form-field>
+                <mat-select formControlName="can_see" (selectionChange)="onChangeAlb()">
+                  <mat-option value="2">Public</mat-option>
+                  <mat-option value="1">Friends</mat-option>
+                  <mat-option value="0">Private</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+          </form>
+        </div>
         <div class="col-md-12">
           <div class="row">
-            <div class="album-photo col-md-3" *ngFor="let img of album?.attachmentwithcomments">
-              <i class="delete fa fa-trash" aria-hidden="true" *ngIf="isMyAlbum" (click)="delete(img.id)"></i>
-              <!-- <img [src]="img.path" alt="no-avatar"> -->
+            <div class="album-photo col-md-3" *ngFor="let img of album?.attachments">
+              <i class="delete fa fa-trash" aria-hidden="true" *ngIf="isMyAlbum" (click)="openDialogDelete(img.id)" ></i>
               <a data-fancybox="gallery" [href]="img.path"><img [src]="img.path"></a>
             </div>
             <div class="clearfix"></div>
@@ -50,3 +62,4 @@
     <div class="clearfix"></div>
   </div>
 </div>
+<!-- (click)="delete(img.id)" -->

@@ -1,7 +1,7 @@
 <div class="user-avatar" *ngIf="user">
   <div class="user-img">
     <div class="img">
-      <img src="{{user.user_photo || './assets/imgs/no_avatar.png'}} " alt="no_avatar.png">
+      <img src="{{user.user_photo || '/assets/imgs/no_avatar.png'}} " alt="no_avatar.png">
     </div>
     <span class="hover-display">{{user.user_name + ' ' + user.user_last_name}}</span>
   </div>
@@ -10,15 +10,24 @@
       {{ user.user_status || 'userProfile.statusPlaceholder' | translate }}
     </div>
   </div>
-  <div class="user-attr">
+  <div *ngIf="username === user.username">
+    <div routerLink="/groups" class="box-group center">
+      <div class="img-subscribe"></div>
+      {{'profile.groupText' | translate}}
+    </div>
+    <div routerLink="/profile/videos" class="box-video center">
+      <div class="img-video"></div>
+      {{'profile.videosText' | translate}}
+    </div>
+  </div>
+  <div *ngIf="username !== user.username" class="user-attr">
     <button type="button" class="btn btn-success" *ngIf="!isFriend" (click)="addFriend()"><i class="fa fa-plus" aria-hidden="true" ></i>{{'userProfile.addFriend' | translate}}</button>
-    <button type="button" class="btn btn-success" *ngIf="isFriend" (click)="removeFriend()"><i class="fa fa-plus" aria-hidden="true" ></i>{{'userProfile.fridelete' | translate}}</button>
+    <button type="button" class="btn btn-success" *ngIf="isFriend" (click)="removeFriend()"><i class="fa fa-plus" aria-hidden="true" ></i>{{'userProfile.deleteFriend' | translate}}</button>
     <button type="button" class="btn btn-success" (click)="sendMessage()"><i class="fa fa-envelope" aria-hidden="true"></i>{{'userProfile.sendMessage' | translate}}</button>
     <button type="button" class="btn btn-success" *ngIf="!following" (click)="addFollow()"><i class="fa fa-share" aria-hidden="true"></i>{{'userProfile.follow' | translate}}</button>
     <button type="button" class="btn btn-success" *ngIf="following" (click)="deleteFollow()"><i class="fa fa-share" aria-hidden="true"></i>{{'userProfile.unfollow' | translate}}</button>
-    <!--<button type="button" class="btn btn-success"><i class="fa fa-star-o" aria-hidden="true"></i>Add to Favorites</button>-->
-    <button type="button" class="btn btn-success" *ngIf="!isFriend" (click)="blockUser()"><i class="fa fa-lock" aria-hidden="true"></i>{{'userProfile.block' | translate}}</button>
-    <button type="button" class="btn btn-success" *ngIf="!isFriend" (click)="unblockUser()"><i class="fa fa-unlock" aria-hidden="true"></i>{{'userProfile.unlock' | translate}}</button>
+    <button type="button" class="btn btn-success" *ngIf="!blocking" (click)="blockUser()"><i class="fa fa-lock" aria-hidden="true"></i>{{'userProfile.block' | translate}}</button>
+    <button type="button" class="btn btn-success" *ngIf="blocking" (click)="unblockUser()"><i class="fa fa-unlock" aria-hidden="true"></i>{{'userProfile.unlock' | translate}}</button>
   </div>
-  <app-friends-sidebar-block *ngIf="user.friends?.length" [userId]="user.id"></app-friends-sidebar-block>
+  <app-friends-sidebar-block *ngIf="user.friends?.length" [user]="user" [userId]="user.id"></app-friends-sidebar-block>
 </div>

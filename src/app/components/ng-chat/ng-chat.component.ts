@@ -11,6 +11,7 @@ import {UploadMediaAttachComponent} from '../upload-media-attach/upload-media-at
 import {MatDialog} from '@angular/material';
 import {NewVideoModalComponent} from '../new-video-modal/new-video-modal.component';
 import {NewAudioModalComponent} from '../new-audio-modal/new-audio-modal.component';
+import {getFromLocalStorage, removeFromLocalStorage, setToLocalStorage} from '../../utils/local-storage';
 
 
 @Component({
@@ -86,28 +87,30 @@ export class NgChatComponent implements OnInit {
   private audioFile: HTMLAudioElement;
   private users: any;
   // Defines the size of each opened window to calculate how many windows can be opened on the viewport at the same time.
-  private windowSizeFactor = 0;
+  private windowSizeFactor = 320;
   // Total width size of the friends list section
-  private friendsListWidth = 0;
+  private friendsListWidth = 262;
   // Available area to render the plugin
   private viewPortTotalArea;
 
   smileOpen = false;
+  messNotReq: any[];
+  public messnotifylength;
 
   constructor(
-    private chatService: ChatService,
-    public dialog: MatDialog,
+      private chatService: ChatService,
+      public dialog: MatDialog,
   ) {
   }
 
   get filteredUsers(): User[] {
     if (this.searchInput.length > 0) {
       // Searches in the friend list by the inputted search string
-      return this.users.body.filter(x => {
+      return this.users.filter(x => {
         return x.user_name.toUpperCase().includes(this.searchInput.toUpperCase()) || x.user_last_name.toUpperCase().includes(this.searchInput.toUpperCase());
       });
     }
-    return this.users.body;
+    return this.users;
   }
 
   private get localStorageKey(): string {
@@ -115,12 +118,29 @@ export class NgChatComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.userId = getFromLocalStorage('GLOBE_USER').id;
+
     // window.newMessage = '';
     this.bootstrapChat();
     this.chatService.change.subscribe(res => {
       res.status = 'online';
       this.openChatWindow(res, false, false);
       console.log(res);
+    });
+    // if (this.userId) {
+    //   setInterval(() => {
+    //     this.getMessageNotify();
+    //   }, 10000);
+    // }
+
+  }
+
+  getMessageNotify() {
+    this.chatService.getMessageNotify().subscribe((res: any[]) => {
+      this.messNotReq = res;
+      this.messnotifylength = res['body'].length;
+
     });
   }
 
@@ -329,9 +349,8 @@ export class NgChatComponent implements OnInit {
   // Sends a request to load the friends list
   private fetchFriendsList(isBootstrapping: boolean): void {
     this.adapter.listFriends()
-      .map((users: User[]) => {
-        this.users = users;
-      }).subscribe(() => {
+        .subscribe((users: any) => {
+      this.users = users.body;
       if (isBootstrapping) {
         this.restoreWindowsState();
       }
@@ -389,15 +408,15 @@ export class NgChatComponent implements OnInit {
       // Loads the chat history via an RxJs Observable
       if (this.historyEnabled) {
         this.adapter.getMessageHistory(newChatWindow.chattingTo.id)
-          .map((result: any) => {
+            .map((result: any) => {
 
-            newChatWindow.messages = result.body.concat(newChatWindow.messages);
-            newChatWindow.isLoadingHistory = false;
+              newChatWindow.messages = result.body.concat(newChatWindow.messages);
+              newChatWindow.isLoadingHistory = false;
 
-            setTimeout(() => {
-              this.scrollChatWindowToBottom(newChatWindow);
-            });
-          }).subscribe();
+              setTimeout(() => {
+                this.scrollChatWindowToBottom(newChatWindow);
+              });
+            }).subscribe();
       }
 
       this.windows.unshift(newChatWindow);
@@ -596,14 +615,14 @@ export class NgChatComponent implements OnInit {
       // window.messages.push(message);
 
       this.adapter.sendMessage(message).subscribe(res => {
-        console.log(message);
-        console.log(res);
-          res.body ? window.messages.push(res.body) : window.messages.push(res);
-        this.scrollChatWindowToBottom(window);
-      },
-        error => {
-        console.log(error);
-        });
+            console.log(message);
+            console.log(res);
+            res.body ? window.messages.push(res.body) : window.messages.push(res);
+            this.scrollChatWindowToBottom(window);
+          },
+          error => {
+            console.log(error);
+          });
 
       window.newMessage = ''; // Resets the new message input
 

@@ -10,10 +10,10 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.globstage.app"
     },
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.globstage.app"
     },
-    "cordova-plugin-geolocation": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.globstage.app"
     }
   },

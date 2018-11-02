@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, } from '@angular/core';
 import {NewAudioModalComponent} from '../../new-audio-modal/new-audio-modal.component';
 import {MatDialog} from '@angular/material';
 import {AudioService} from '../../../services/audio.service';
@@ -21,22 +21,29 @@ export class AudiosComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.audioServices.getAudios().subscribe(
       (audios: any[]) => {
         this.audios = audios;
         console.log(audios);
       });
+  }
 
+  delete(id) {
+      this.audios = this.audios.filter(a => a.id !== id);
   }
 
   openDialogAudio() {
     const dialogRef = this.dialog.open(NewAudioModalComponent, {
-      height: '350px',
+      height: '400px',
       width: '400px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.audios.push(result);
+      }
     });
   }
+
+
 }

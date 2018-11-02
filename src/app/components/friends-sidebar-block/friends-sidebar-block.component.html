@@ -4,59 +4,79 @@
       <p>Friends <span>{{friends?.length}}</span></p>
     </div>
     <div class="see-all">
-      <a href="">See All</a>
+      <a matTooltip="See All" *ngIf="!allFriendsVisible && friends?.length > 4" (click)="showAllFriends()"><mat-icon>arrow_downward</mat-icon></a>
+      <a matTooltip="Collapse"  *ngIf="allFriendsVisible" (click)="showFourFriends()"><mat-icon>arrow_upward</mat-icon></a>
     </div>
     <div class="clearfix"></div>
   </div>
   <div class="friend-img">
-    <div class="friends-item" [routerLink]="'/user-profile/'+user.id" *ngFor="let user of friends">
-      <div class="hover-popup">
+    <div class="friends-item" [routerLink]="'/user-profile/'+user.username" *ngFor="let user of friends; let i = index">
+      <div class="hover-popup" *ngIf="i < 4 || allFriendsVisible">
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-4">
             <img class="popup-img" [src]="user.user_photo || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
           </div>
-          <div class="col-md-7 center-text">
+          <div class="col-md-8 center-text">
             <h5>{{user.user_name + ' ' + user.user_last_name}}</h5>
-            <h4>{{user.user_country}}, {{user.user_city}}</h4>
-            <span class="age">25</span>
+            <h4>{{user.user_country}} {{user.user_city}}</h4>
+            <span class="age">{{user.user_date_of_birth}}</span>
           </div>
           <div class="clearfix"></div>
         </div>
       </div>
       <div class="to-bottom"></div>
-      <div class="img-width">
+      <div class="img-width" *ngIf="i < 4 || allFriendsVisible">
         <img class="friend-ava" [src]="user.user_photo || './assets/imgs/no_ava_50.png'" alt="no_ava_50.png">
       </div>
     </div>
   </div>
+  <div class="user-quantity">
+    <div class="friends">
+      <p>Followers <span>{{follower?.length}}</span></p>
+    </div>
+  </div>
+  <div class="friend-img">
+    <div class="friends-item" [routerLink]="'/user-profile/'+follower.username" *ngFor="let follower of user.user_followers?.user; let i = index">
+      <div class="hover-popup" *ngIf="i < 4 || allFriendsVisible">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="popup-img" [src]="follower.user_photo || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
+          </div>
+          <div class="col-md-8 center-text">
+            <h5>{{follower.user_name + ' ' + follower.user_last_name}}</h5>
+            <h4>{{follower.user_country}} {{follower.user_city}}</h4>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="to-bottom"></div>
+      <div class="img-width" *ngIf="i < 4 || allFriendsVisible">
+        <img class="friend-ava" [src]="follower.user_photo || './assets/imgs/no_ava_50.png'" alt="no_ava_50.png">
+      </div>
+    </div>
+  </div>
+  <div class="user-quantity">
+    <div class="friends">
+      <p>Groups <span>{{groups?.length}}</span></p>
+    </div>
+  </div>
+  <div class="friend-img">
+    <div class="friends-item" [routerLink]="'/group/'+groups.id" *ngFor="let groups of user.user_followers?.group; let i = index">
+      <div class="hover-popup" *ngIf="i < 4 || allFriendsVisible">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="popup-img" [src]="'./assets/imgs/no_ava_groups.png'" alt="no_avatar.png">
+          </div>
+          <div class="col-md-8 center-text">
+            <h5>{{groups.group_name }}</h5>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="to-bottom"></div>
+      <div class="img-width" *ngIf="i < 4 || allFriendsVisible">
+        <img class="friend-ava" [src]="'./assets/imgs/no_ava_groups.png'" alt="no_ava_50.png">
+      </div>
+    </div>
+  </div>
 </div>
-<!--<div class="online-friend">-->
-  <!--<div class="user-quantity-online">-->
-    <!--<div class="friends">-->
-      <!--<p>Contacts Online<span>1</span></p>-->
-    <!--</div>-->
-    <!--<div class="see-all">-->
-      <!--<a href="">See All</a>-->
-    <!--</div>-->
-    <!--<div class="clearfix"></div>-->
-  <!--</div>-->
-  <!--<div class="friend-img">-->
-    <!--<div class="friends-item"  *ngFor="let user of friendsOnline">-->
-      <!--<div class="hover-popup">-->
-        <!--<div class="row">-->
-          <!--<div class="col-md-5">-->
-            <!--<img class="popup-img" [src]="user.user_photo || '/assets/imgs/no_avatar.png'" alt="no_avatar.png">-->
-          <!--</div>-->
-          <!--<div class="col-md-7 center-text">-->
-            <!--<h5>{{user.user_name + ' ' + user.user_last_name}}</h5>-->
-            <!--<h4>{{user.country}}, {{user.city}}</h4>-->
-            <!--<span class="age">25</span>-->
-          <!--</div>-->
-          <!--<div class="clearfix"></div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="to-bottom"></div>-->
-      <!--<img class="friend-ava" [src]="user.user_photo || '/assets/imgs/no_ava_50.png'" alt="no_ava_50.png">-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->

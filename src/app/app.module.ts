@@ -26,7 +26,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {NgChatModule} from './components/ng-chat/ng-chat.module';
 import {GlobeAdapter} from './services/chatAdapter';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FileUploadModule} from 'ng2-file-upload';
 import {PostsService} from './services/posts.service';
 import {HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
@@ -37,6 +36,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { EmbedVideoService } from './services/embed-video.service';
 import { WallSmilesComponent } from './components/wall/wall-smiles/wall-smiles.component';
 import {MatInputModule} from '@angular/material/input';
+import { MomentModule } from 'angular2-moment';
 
 import {
   MatAutocompleteModule,
@@ -60,9 +60,12 @@ import {
   MatTabsModule,
   MatTooltipModule,
   MatStepperModule,
+  MatCheckboxModule,
+    MatRadioModule
 } from '@angular/material';
 import {NewAlbumModalComponent} from './components/new-album-modal/new-album-modal.component';
 import {NewAudioModalComponent} from './components/new-audio-modal/new-audio-modal.component';
+import {NewPollModalComponent} from './components/new-poll-modal/new-poll-modal.component';
 import {NewVideoModalComponent} from './components/new-video-modal/new-video-modal.component';
 import {ProfileInfoComponent} from './components/profile-info/profile-info.component';
 import {NewsComponent} from './components/news/news.component';
@@ -94,6 +97,7 @@ import {CommentService} from './services/comment.service';
 import {SearchService} from './services/search.service';
 import {VideoService} from './services/video.service';
 import {AudioService} from './services/audio.service';
+import {FilesService} from './services/files.service';
 import {FriendsSidebarBlockComponent} from './components/friends-sidebar-block/friends-sidebar-block.component';
 import {ImageCropperModule} from 'ngx-image-cropper';
 import {UserCropImageComponent} from './components/user-crop-image/user-crop-image.component';
@@ -121,10 +125,14 @@ import {AuthGuard} from './auth.guard';
 import { AlbumPageComponent } from './pages/album-page/album-page.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 import { NewPasswordModalComponent } from './components/new-password-modal/new-password-modal.component';
-// import { CreatePasswordModalComponent } from './components/create-password-modal/create-password-modal.component';
 import { ForgotComponent } from './pages/forgot/forgot.component';
 import { PostEmojifyPipe } from './pipes/post-emojify.pipe';
 import { UserProfileMapComponent } from './components/user-profile-map/user-profile-map.component';
+import { CommentComponent } from './components/wall/post/comment/comment.component';
+import { ContenteditableModule } from 'ng-contenteditable';
+import { DeleteConfirmationComponent } from './components/delete-confirmation/delete-confirmation.component';
+
+
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -147,7 +155,7 @@ const appRoutes: Routes = [
   {path: 'messages', component: MessagesComponent, canActivate: [AuthGuard]},
   {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]},
   {path: 'privacy', component: PrivacyComponent, canActivate: [AuthGuard]},
-  {path: 'privacy-policy', component: PrivacyPolicyComponent, canActivate: [AuthGuard]},
+  {path: 'privacy-policy', component: PrivacyPolicyComponent},
   {path: 'friends', component: FriendsComponent, canActivate: [AuthGuard]},
   {path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
   {
@@ -182,6 +190,7 @@ export class CustomTranslateLoader implements TranslateLoader {
     HeaderComponent,
     NewAlbumModalComponent,
     NewAudioModalComponent,
+    NewPollModalComponent,
     NewVideoModalComponent,
     ProfileInfoComponent,
     NewsComponent,
@@ -230,10 +239,13 @@ export class CustomTranslateLoader implements TranslateLoader {
     NewPasswordModalComponent,
     ForgotComponent,
     PostEmojifyPipe,
-    UserProfileMapComponent
+    UserProfileMapComponent,
+    CommentComponent,
+    DeleteConfirmationComponent
   ],
   imports: [
     CommonModule,
+    ContenteditableModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
@@ -242,6 +254,7 @@ export class CustomTranslateLoader implements TranslateLoader {
       appRoutes
     ),
     BrowserModule,
+    MomentModule,
     MatSelectModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
@@ -274,6 +287,7 @@ export class CustomTranslateLoader implements TranslateLoader {
     MatDatepickerModule,
     NgChatModule,
     MatCheckboxModule,
+    MatRadioModule,
     FileUploadModule,
     ImageCropperModule,
     AgmCoreModule.forRoot({
@@ -307,7 +321,8 @@ export class CustomTranslateLoader implements TranslateLoader {
     ChatService,
     ConfigService,
     EmbedVideoService,
-    AuthGuard
+    AuthGuard,
+    FilesService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
@@ -317,6 +332,7 @@ export class CustomTranslateLoader implements TranslateLoader {
     NewGroupModalComponent,
     NewGroupModalComponent,
     NewNotesModalComponent,
+    NewPollModalComponent,
     NewPasswordModalComponent,
     UserUploadImageComponent,
     UserCropImageComponent,
@@ -325,7 +341,8 @@ export class CustomTranslateLoader implements TranslateLoader {
     AttachmentsComponent,
     FriendsSidebarBlockComponent,
     AttachmentsComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    DeleteConfirmationComponent
   ]
 })
 export class AppModule {

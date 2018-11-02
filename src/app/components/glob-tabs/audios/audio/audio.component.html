@@ -1,9 +1,8 @@
 <div class="audio">
-  <span>{{audio.audio_name}}</span>
-  <audio class="fullWidth"  controls="controls">
-    <source [src]="audio.audio_link_url" />
+  <span>{{audio.post_title}}</span>
+  <div class="removeAudio"><i (click)="openDialogDelete()" *ngIf="audio.author_id == userAudio.id" class="delete-audio fa fa-times" aria-hidden="true"></i></div>
+  <audio  controls="controls">
+    <source [src]="audio.post_link" />
   </audio>
   <div class="clearfix"></div>
-</div>
-<div>
 </div>

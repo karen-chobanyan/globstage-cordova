@@ -1,13 +1,13 @@
 <app-home-menu></app-home-menu>
 <div class="container">
   <div class="row" *ngIf="!userBlocked">
-    <div class="col-md-3">
+    <div  class="col-md-3">
       <app-user-profile-image *ngIf="user" [user]="user"></app-user-profile-image>
     </div>
     <div class="col-md-9">
       <app-header></app-header>
       <app-user-glob-tabs *ngIf="user" [user]="user"></app-user-glob-tabs>
-      <app-wall *ngIf="user" [wallId]="user.id"></app-wall>
+      
     </div>
     <div class="clearfix"></div>
   </div>

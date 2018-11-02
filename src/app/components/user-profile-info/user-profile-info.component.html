@@ -4,7 +4,7 @@
         <div class="information col-md-12">
           <p class="title">{{'information.info' | translate}}</p>
           <div class="row">
-            <div class="col-md-6 user-title-info">
+            <div class="col-md-6">
               <p>{{'information.country' | translate}}:</p>
               <p>{{'information.city' | translate}}:</p>
               <p>{{'information.dob' | translate}}:</p>
@@ -12,16 +12,16 @@
             </div>
             <div class="col-md-6 user-info">
               <div class="user-country">
-                <span>{{ user.user_country }}</span>
+                <span>{{ user.user_country || 'Not set'}}</span>
               </div>
               <div class="user-city">
-                <span>{{ user.user_city }}</span>
+                <span>{{ user.user_city  || 'Not set'}}</span>
               </div>
               <div class="user-birthday">
-                <span>{{ user.user_date_of_birth }}</span>
+                <span>{{ user.user_date_of_birth  || 'Not set'}}</span>
               </div>
               <div class="user-info-rat">
-                <span class="rating">10</span>
+                <span class="rating">{{user?.user_rate}}</span>
               </div>
             </div>
             <div class="clearfix"></div>

@@ -5,6 +5,9 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import {appConfig} from '../app.config';
+import { getFromLocalStorage } from '../utils/local-storage';
+
+
 
 @Injectable()
 export class GroupService {
@@ -13,6 +16,7 @@ export class GroupService {
     private http: HttpClient,
   ) {
   }
+
   createGroup(group) {
     return this.http.post(`${appConfig.apiUrl}/groups`, group);
   }
@@ -26,7 +30,7 @@ export class GroupService {
   }
 
   subscribeToGroup(id) {
-    return this.http.post(`${appConfig.apiUrl}/followers`, {"author_id": JSON.parse(localStorage.getItem('GLOBE_USER')).id, "user_id": JSON.parse(localStorage.getItem('GLOBE_USER')).id, "follow_to": id, "to":"group"});
+    return this.http.post(`${appConfig.apiUrl}/followers`, {"user_id": getFromLocalStorage('GLOBE_USER').id, "author_id": getFromLocalStorage('GLOBE_USER').id, "to": "group", "follow_to": id});
   }
   deleteSubsGroup(id){
     return this.http.delete(`${appConfig.apiUrl}/followers/${id}?to=group`);

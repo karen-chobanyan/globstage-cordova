@@ -3,12 +3,16 @@
 
 .logo-block{
   margin-top: 20px;
+  img{
+    cursor: pointer;
+    outline: none
+  }
 }
 .content-policy{
   margin-top: 20px;
   background: #fff;
   text-align: center;
-  padding: 15px;
+  padding: 30px;
   h3{
     color: rgba(8, 107, 109, 0.8);
     margin-bottom: 20px;

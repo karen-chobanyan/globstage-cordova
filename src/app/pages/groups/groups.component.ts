@@ -3,8 +3,8 @@ import {MatDialog} from '@angular/material';
 import {NewGroupModalComponent} from '../../components/new-group-modal/new-group-modal.component';
 import {GroupService} from '../../services/group.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import {SearchService} from '../../services/search.service';
-
 
 
 @Component({
@@ -22,8 +22,10 @@ export class GroupsComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     public groupService: GroupService,
-    public searchService: SearchService,
     public formbuilder: FormBuilder,
+    private router: Router,
+    public searchService: SearchService,
+
   ) {
   }
 
@@ -31,6 +33,7 @@ export class GroupsComponent implements OnInit {
     this.groupService.getGroups().subscribe(res => {
       this.groups = res;
     });
+
     this.searchGroup = new FormGroup({
       groupName: new FormControl('', Validators.required)
     });
@@ -47,6 +50,7 @@ export class GroupsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
   }
+
   searchGroups(searchGroup){
     let search = searchGroup.controls['groupName'].value;
     this.searchService.searchGroups(search).subscribe((res) => {

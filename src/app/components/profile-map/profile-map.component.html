@@ -1,3 +1,15 @@
 <div class="map">
   <div id="map" #gmap></div>
 </div>
+<div class="show-map">
+  <ul>
+    <!--<li matTooltip="{{'header.navig' | translate}}">-->
+      <!--<mat-checkbox><mat-icon>navigation</mat-icon></mat-checkbox>-->
+    <!--</li>-->
+    <li *ngFor="let place of selectedPlaces" matTooltip="{{'header.' + place.value | translate}}">
+      <mat-radio-button (change)="updateMap($event)"  name="selectedPlaces" [value]="place.value"><mat-icon>{{place.icon}}</mat-icon></mat-radio-button>
+    </li>
+
+  </ul>
+</div>
+<app-wall *ngIf="userProfile" [wallId]="userProfile.id"></app-wall>

@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { getLocale } from 'ngx-bootstrap/chronos/locale/locales';
 import { getFromLocalStorage } from '../../utils/local-storage';
+import { PostsService } from '../../services/posts.service';
 import { FriendsService } from "../../services/friends.service";
 
 
@@ -26,6 +27,7 @@ export class GroupPageComponent implements OnInit {
     private route: ActivatedRoute,
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
+    private postsService: PostsService,
     private friendService: FriendsService
   ) {
   }
@@ -47,7 +49,6 @@ export class GroupPageComponent implements OnInit {
       console.log(res);
     });
 
-
   }
 
   subscribeToGroup() {
@@ -63,6 +64,19 @@ export class GroupPageComponent implements OnInit {
     });
   }
 
+  inviteFriends(){
+      let friendArr = <any>[];
+      this.friends.forEach(element => {
+        friendArr.push(element.id);
+      });
+      this.groupService.inviteFriends({
+      post_wall_ids: friendArr,
+      groupId: this.group_id,
+    }).subscribe(res => {
+      this.snackBar.open('Your invitation has been sent successfully.', 'ok', { duration: 3000 });
+    });
+  }
+
   openDialogGroup() {
     const dialogRef = this.dialog.open(NewGroupModalComponent, {
       width: '500px'
@@ -71,16 +85,4 @@ export class GroupPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
   }
-  inviteFriends(){
-    let friendArr = <any>[];
-    this.friends.forEach(element => {
-      friendArr.push(element.id);
-    });
-    this.groupService.inviteFriends({
-    post_wall_ids: friendArr,
-    groupId: this.group_id,
-  }).subscribe(res => {
-    this.snackBar.open('Your groups invited.', 'ok', { duration: 3000 });
-  });
-}
 }

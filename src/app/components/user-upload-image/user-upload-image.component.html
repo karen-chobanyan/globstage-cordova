@@ -8,7 +8,7 @@
     <div class="uploaded-img col-md-6">
       <!--<img src="{{uploadedImage || '/assets/imgs/no_avatar.png'}}" alt="no_avatar.png">-->
       <image-cropper crossorigin
-                     [imageBase64]="selectedImage || './assets/imgs/no_avatar.png'"
+                     [imageBase64]="selectedImage || '/assets/imgs/no_avatar.png'"
                      [imageChangedEvent]="imageChangedEvent"
                      [maintainAspectRatio]="true"
                      [resizeToWidth]="256"
@@ -62,7 +62,7 @@
       </div>
     </ng-template>
     <div class="upload-btn">
-      <button (click)="updateUploadImage()" type="button" class="ok btn btn-default">{{'user.ok' | translate}}</button>
+      <!-- <button (click)="updateUploadImage()" type="button" class="ok btn btn-default">{{'user.ok' | translate}}</button> -->
       <button (click)="onNoClick()" type="button" class="cancel btn btn-default">{{'user.cancel' | translate}}</button>
     </div>
   </div>

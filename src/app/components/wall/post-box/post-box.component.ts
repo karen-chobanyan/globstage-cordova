@@ -4,12 +4,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { NewAudioModalComponent } from '../../new-audio-modal/new-audio-modal.component';
+import { NewPollModalComponent } from '../../new-poll-modal/new-poll-modal.component';
 import { NewVideoModalComponent } from '../../new-video-modal/new-video-modal.component';
 import { UploadMediaAttachComponent } from '../../upload-media-attach/upload-media-attach.component';
 import { getFromLocalStorage } from '../../../utils/local-storage';
 import { ChatService } from '../../../services/chat.service';
 import { WallSmilesComponent } from '../../../components/wall/wall-smiles/wall-smiles.component';
-
+import {EmojifyPipe} from '../../ng-chat/pipes/emojify.pipe';
 
 @Component({
   selector: 'app-post-box',
@@ -17,6 +18,7 @@ import { WallSmilesComponent } from '../../../components/wall/wall-smiles/wall-s
   styleUrls: ['./post-box.component.scss'],
   entryComponents: [
     NewAudioModalComponent,
+    NewPollModalComponent,
     UploadMediaAttachComponent,
     NewVideoModalComponent,
     WallSmilesComponent],
@@ -35,6 +37,7 @@ export class PostBoxComponent implements OnInit {
   smileOpen = false;
   user_wall;
   videosid = [];
+  post: any = {};
 
   constructor(
     private postsService: PostsService,
@@ -88,7 +91,15 @@ export class PostBoxComponent implements OnInit {
     }
   }
 
+  updatePost() {
+    this.post.post_content = this.formgroupWall.get('user_wall').value;
+    this.postsService.updateWallPost(this.post).subscribe( res => {
+      this.postCreated.emit();
+      this.formgroupWall.get('user_wall').setValue('');
+      this.post = {};
 
+    });
+  }
 
   openDialogAttach() {
     const dialogRef = this.dialog.open(UploadMediaAttachComponent, {
@@ -97,9 +108,8 @@ export class PostBoxComponent implements OnInit {
     });
 
     dialogRef.componentInstance.onUpload.subscribe((res: any) => {
-      console.log(JSON.parse(res).id);
-      this.attachements.push(JSON.parse(res).id);
-      this.attached.push(JSON.parse(res));
+      this.attachements.push((res).id);
+      this.attached.push((res));
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -113,8 +123,7 @@ export class PostBoxComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.videos.push(result);
-        this.videosid.push(result.id)
+        this.post = result.body;
       }
     });
   }
@@ -125,6 +134,18 @@ export class PostBoxComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+  openDialogPoll() {
+    const dialogRef = this.dialog.open(NewPollModalComponent, {
+      height: '350px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.postCreated.emit();
+      }
     });
   }
 
@@ -142,6 +163,7 @@ export class PostBoxComponent implements OnInit {
 
   addSmile(e) {
     this.user_wall = this.formgroupWall.get('user_wall').value ? this.formgroupWall.get('user_wall').value + ` *${e}* ` : ` *${e}* `;
+    this.user_wall = EmojifyPipe.prototype.transform(this.user_wall, true);
     this.smileOpen = false;
     console.log(e, this.formgroupWall.get('user_wall').value);
   }

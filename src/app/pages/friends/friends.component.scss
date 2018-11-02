@@ -44,6 +44,7 @@ li{
     text-align: center;
     font-size: 22px;
   }
+
 }
 
 .friend-requests{
@@ -51,6 +52,22 @@ li{
   margin-top: 20px;
   padding: 20px;
 }
+
+// @media only screen and (max-width: 1199px) {
+//     .friends{
+//         padding: 10px;
+//         .search-friend .search{ 
+//             padding: 4px 10px; 
+//         }
+//     } 
+  
+// }
+
+// @media only screen and (max-width: 991px) {
+//     .friends .search-friend .mat-form-field{
+//        width: 85%;
+//     }
+// }
 
 @media only screen and (max-width: 1200px) {
     .friends{

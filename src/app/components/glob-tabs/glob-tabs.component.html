@@ -2,38 +2,45 @@
     <div class="map-header">
       <nav mat-tab-nav-bar>
         <a  mat-tab-link
+           [routerLinkActiveOptions]="{exact: true}"
            routerLink="/profile"
-           routerLinkActive #rla="routerLinkActive"
+           matTooltip="{{'glob.profile' | translate}}"
+           routerLinkActive="routerLinkActive" #rla="routerLinkActive"
            [active]="rla.isActive">
           <i class="fa fa-globe"></i>
         </a>
         <a mat-tab-link
            routerLink="info"
-           routerLinkActive #rla="routerLinkActive"
+           matTooltip="{{'glob.inform' | translate}}"
+           routerLinkActive="routerLinkActive" #rla="routerLinkActive"
            [active]="rla.isActive">
           <i class="fa fa-home"></i>
         </a>
         <a mat-tab-link
            routerLink="albums"
-           routerLinkActive #rla="routerLinkActive"
+           matTooltip="{{'glob.alb' | translate}}"
+           routerLinkActive="routerLinkActive" #rla="routerLinkActive"
            [active]="rla.isActive">
           <i class="fa fa-picture-o"></i>
         </a>
         <a mat-tab-link
            routerLink="audios"
-           routerLinkActive #rla="routerLinkActive"
+           matTooltip="{{'glob.audio' | translate}}"
+           routerLinkActive="routerLinkActive" #rla="routerLinkActive"
            [active]="rla.isActive">
           <i class="fa fa-music"></i>
         </a>
         <a mat-tab-link
            routerLink="videos"
-           routerLinkActive #rla="routerLinkActive"
+           matTooltip="{{'glob.video' | translate}}"
+           routerLinkActive="routerLinkActive" #rla="routerLinkActive"
            [active]="rla.isActive">
           <i class="fa fa-film"></i>
         </a>
         <a mat-tab-link
            routerLink="news"
-           routerLinkActive #rla="routerLinkActive"
+           matTooltip="{{'glob.news' | translate}}"
+           routerLinkActive="routerLinkActive" #rla="routerLinkActive"
            [active]="rla.isActive">
           <i class="fa fa-newspaper-o"></i>
         </a>

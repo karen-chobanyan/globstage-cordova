@@ -3,19 +3,8 @@
 
 .friend-req{
   margin: 6px 0;
-  .width30{
-    width: 35%;
-    padding-left: 8px;
-    img{
-      cursor: pointer;
-      max-width: 100%;
-      border-radius: 4px;
-    }
-  }
-  .width70{
-    width: 65%;
-    padding-left: 8px;
-  }
+  img{cursor: pointer;
+  max-width: 100%;}
   a{
     text-decoration: none;
     h4{
@@ -43,19 +32,4 @@
     background: rgba(24, 106, 107, 0.8);
     transition: 0.3s;
   }
-}
-@media only screen and (max-width: 375px){
-  .friend-req{
-    button{
-      padding: 4px 0;
-      font-size: 12px;
-    }
-    .width70{
-      h4{
-        margin: 0;
-      }
-    }
-  }
-
-
 }

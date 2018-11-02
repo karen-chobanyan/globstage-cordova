@@ -6,6 +6,10 @@
 .padding{
     padding: 0;
 }
+.routerLinkActive {
+    border-bottom: 3px solid #85cae8;
+}
+
 .map-block{
   padding-top: 20px;
   border-bottom: 2px solid rgb(149, 200, 0);
@@ -150,29 +154,6 @@
         span:hover{
             color: #333;
             transition: 0.3s;
-        }
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .map-block{
-        .map-header .mat-tab-nav-bar a{
-            min-width: 135px;
-        }
-    }
-}
-@media only screen and (max-width: 991px) {
-    .map-block{
-        .map-header .mat-tab-nav-bar a{
-            min-width: 100px;
-        }
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .map-block{
-        .map-header .mat-tab-nav-bar a{
-            min-width: auto;
         }
     }
 }

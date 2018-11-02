@@ -4,11 +4,15 @@
     padding-bottom: 20px;
     padding: 5px;
     padding-left: 16px;
-    .wall-name{
+    .wall-name, .wall-name a{
         color: #FFFFFF;
         font-size: 12px;
-        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
         margin-bottom: 2px;
+        p{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
     }
     .date{
         color: #fff;
@@ -25,23 +29,98 @@
     right: 10px;
     cursor: pointer;
     z-index: 999;
-
   }
 }
 .wall-content{
     padding-top: 20px;
-    padding-left: 66px;
+    padding-left: 30px;
+    padding-right: 30px;
     .wall-atach-photo{
         h6{
-            font-size: 11px;
+            font-size: 14px;
+            margin-top: 15px;
+            color: $color-blue;
+        }
+        ::ng-deep .video-js{
+            width: 100%;
+            height: 390px;
+        
+        }
+        .share-post{
+            margin-right: 15px;
+            cursor: pointer;
+            background: #35bbbd;
+            border-radius: 4px;
+            border: none;
+            padding: 4px 10px;
+            color: #fff;
+            .shared{
+                font-size: 15px;
+                margin-right: 4px;
+            }
+        }
+        .share-post:hover{
+            opacity: 0.8;
+        }
+
+        .audio{
+            position: relative;
+            .audio-add{
+                background: transparent;
+                position: absolute;
+                cursor: pointer;
+                border: none;
+                top: 38px;
+                left: 36.5%;
+            }
+        }
+    }
+    .poll{
+        .wall-poll{
+            .name{
+                color: #095b5d;
+                font-size: 20px;
+            }
+            .title2{
+                cursor: pointer;
+                margin-bottom: 5px;
+                color: #095b5d;
+            }
+            .count-vote{
+                width: 200px;
+                border: 1px solid #000;
+                height: 12px;
+                border-radius: 16px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .album{
+        .wall-album{
+            h4{
+                font-size: 18px;
+            }
+            a{
+                text-decoration: none;
+                color: $color-blue;
+            }
+            a:hover{
+                opacity: 0.7;            }
+        }
+    }
+    .wall-avatar-img{
+        .name{
+            font-size: 14px;
+            color: $color-blue;
         }
     }
 }
 .wall-atach-photo{
     padding-bottom: 20px;
     img{
-        width: 400px;
         max-width: 100%;
+        margin: auto;
+        display: block;
     }
 }
 .wall-attach-video{
@@ -53,14 +132,14 @@
 .like-dislike{
     text-align: left;
     padding-bottom: 20px;
-    padding-left: 66px;
+    padding-left: 36px;
     i{
         font-size: 21px;
         cursor: pointer;
     }
     .like{
         color: #95c800;
-        padding-right: 4px;
+        padding-right: 15px;
         position: relative;
         .like-count{
             width: 140px;
@@ -106,19 +185,28 @@
             display: block;
         }
     }
+    .share-post{
+        margin-right: 15px;
+        cursor: pointer;
+        background: #35bbbd;
+        border-radius: 4px;
+        border: none;
+        padding: 4px 10px;
+        color: #fff;
+        .shared{
+            font-size: 15px;
+            margin-right: 4px;
+        }
+    }
+    .share-post:hover{
+        opacity: 0.8;
+    }
 }
 
-@media only screen and (max-width: 991px){
-    .user-images{
-        max-width: 20%;
-    }
-    .wall-name{
-        max-width: 80%;
-    }
-}
 
-@media only screen and (max-width: 767px) {
-  
+
+@media only screen and (max-width: 700px) {
+
     .user-images{
         width: 20%;
     }
@@ -136,23 +224,15 @@
     .wall-attach-video{
         padding-left: 0;
     }
-    
-    
+
+
 }
 
-@media only screen and (max-width: 480px){
-    .wall-content{
-        .wall-atach-photo{
-            padding-top: 10px;
-        }
-    }
-}
 @media only screen and (max-width: 375px) {
-    
+
     .wall-content{
-        padding-left: 5px;
+        padding-left: 15px;
         padding-top: 0;
-        padding-right: 5px;
     }
     .like-dislike{
         padding-bottom: 0;
@@ -161,6 +241,6 @@
     .wall-attach-video{
         padding-left: 0;
     }
-    
-  
+
+
 }

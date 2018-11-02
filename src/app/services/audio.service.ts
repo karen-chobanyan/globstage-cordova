@@ -15,15 +15,23 @@ export class AudioService {
   ) { }
 
   getAudios() {
-    return this.http.get(`${appConfig.apiUrl}/audios/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`);
+    return this.http.get(`${appConfig.apiUrl}/posts/audio/${JSON.parse(localStorage.getItem('GLOBE_USER')).username}`);
   }
 
-  addAudio(audio){
-    return this.http.post(`${appConfig.apiUrl}/audios`, audio);
+  addAudio(audio) {
+    return this.http.post(`${appConfig.apiUrl}/posts`, audio);
   }
 
-  getUserAudios(id) {
-    return this.http.get(`${appConfig.apiUrl}/audios/${id}`);
+  addDownAudio(audio) {
+    return this.http.post(`${appConfig.apiUrl}/posts`, audio);
+  }
+
+  getUserAudios(username) {
+    return this.http.get(`${appConfig.apiUrl}/posts/audio/${username}`);
+  }
+
+  deleteAudio(id) {
+    return this.http.delete(`${appConfig.apiUrl}/posts/${id}`);
   }
 
 }

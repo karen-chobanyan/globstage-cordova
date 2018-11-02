@@ -12,17 +12,21 @@ export class VideoComponent implements OnInit {
 @Output() deleteVideo = new EventEmitter();
 
   constructor(
-    private videoService: VideoService
+    private videoService: VideoService,
   ) {
 
   }
 
   ngOnInit() {
+
+
   }
+
 
   delete(id) {
     this.videoService.deleteVideo(id).subscribe( res => {
       this.deleteVideo.emit(id);
+      console.log(res);
     });
   }
 }

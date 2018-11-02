@@ -10,12 +10,18 @@ import { FriendsService } from '../../services/friends.service';
 export class FriendsSidebarBlockComponent implements OnInit, OnChanges {
 
   public friends;
+  public follower;
+  public groups;
   @Input() userId;
+  @Input() user;
   friendsOnline: any[];
+  allFriendsVisible = false;
 
   constructor(private friendService: FriendsService) { }
 
   ngOnInit() {
+    console.log(this.user);
+    
     this.friendService.getFriends(this.userId).subscribe(res => {
       this.friends = res;
     });
@@ -26,5 +32,14 @@ export class FriendsSidebarBlockComponent implements OnInit, OnChanges {
       this.friends = res;
     });
   }
+
+  showAllFriends() {
+    this.allFriendsVisible = true;
+  }
+
+  showFourFriends() {
+    this.allFriendsVisible = false;
+  }
+
 
 }

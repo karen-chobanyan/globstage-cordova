@@ -16,7 +16,8 @@
     "videosText": "Can store an unlimited number of video files. To add your first video, click here.",
     "uplNewPhoto": "Upload a new photo",
     "changeThumb": "Change thumbnail",
-    "delete": "Delete"
+    "delete": "Delete",
+    "areYouSure": "Are you sure do you want to delete this item?"
 
   },
   "user": {
@@ -37,8 +38,7 @@
     "wall": "Wall",
     "send": "Send",
     "share": "Share",
-    "content": "What do you want to say?",
-    "comment": "Add a comment"
+    "wallPlace": "What do you want to say"
   },
 
   "save": "Save",
@@ -104,13 +104,6 @@
     "forgotYourPass": "Forgot your password",
     "allRequired": "All fields are required."
   },
-  "reg": {
-    "regName": "Your name",
-    "regLastname": "Your last name",
-    "regEmail": "E-mail address",
-    "passWord": "Password",
-    "confPass": "Password again*"
-  },
   "notes": {
     "note": "Create Notes"
   },
@@ -125,7 +118,12 @@
     "justFriends": "Just Friends",
     "no": "No",
     "onlyVerified": "Only verified",
-    "onlyI": "Only I"
+    "onlyI": "Only I",
+    "notificPriv": "Notification",
+    "notHide": "Hide",
+    "notShow": "Show"
+
+
   },
   "settings":{
     "changePass": "Change password",
@@ -145,12 +143,7 @@
     "send": "Send",
     "emailAdd": "Your email address",
     "currentAdd": "Current address",
-    "saveAdd": "Save address",
-    "oldPassword": "Old password",
-    "newPassword": "New password",
-    "confPassword": "Confirm password",
-    "newName": "Your name",
-    "newLastname": "Your lastname"
+    "saveAdd": "Save address"
   },
   "userFriend":{
     "search": "Search"
@@ -163,8 +156,9 @@
     "ignore": "Ignore",
     "downAudio": "You have no audios.",
     "addAudio": "Add Audio",
-    "noDownAudio": "Videos hav no.",
+    "noDownAudio": "You have no videos.",
     "addVideo": "Add a video",
+    "noAlbums": "No albums",
 
   "homeMenu": {
     "albums": "Albums",
@@ -175,6 +169,7 @@
     "privacy": "Privacy",
     "pageBackground": "Page Background",
     "language": "Language",
+    "logOut": "Logout",
     "exit": "Exit"
   },
   "newModal": {
@@ -183,6 +178,7 @@
     "commentPhoto": "Who can comment on the photos?",
     "done": "Done",
     "cancel": "Cancel",
+    "delete": "Delete",
     "allMember": "All Members",
     "justFriend": "Just Friends",
     "butI": "But I",
@@ -207,6 +203,42 @@
     "firstPost": "My Firts Post on my news",
     "newComment": "New Comment",
     "send": "Send"
+  },
+  "header": {
+    "notific": "Notifications",
+    "friend": "Friends",
+    "search": "Search",
+    "sett": "Settings",
+    "signout": "Sign Out",
+    "reqFriend": "send you friend request",
+    "reqGgroup": "Settings",
+    "navig": "Navigation",
+    "restaurant": "Restaurant",
+    "lodging": "Hotel",
+    "bar": "Bar",
+    "cafe": "Cafe",
+    "bank": "Account Balance",
+    "parking": "Parking",
+    "store": "Grocery Store",
+    "gas_station": "Gas Station",
+    "hospital": "Hospital"
+  },
+  "glob": {
+    "profile": "Profile",
+    "inform": "Information",
+    "alb": "Albums",
+    "audio": "Audios",
+    "video": "Videos",
+    "news": "News"
+  },
+  "comment": {
+    "addComm": "Add a comment",
+    "sendCom": "Send",
+    "showAllComments": "Show all comments"
+  },
+  "uploader": {
+    "files_selected": "Files selected",
+    "uploader_text": "Click to select or DRAG and DROP files here"
   },
   "byPeople": "By the people",
   "onVideos": "On the videos",

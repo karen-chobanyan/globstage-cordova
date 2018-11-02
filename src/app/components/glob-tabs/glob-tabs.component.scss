@@ -1,5 +1,7 @@
 @import '../../../variable';
-
+::ng-deep .video-js{
+    width: 370px;
+}
 .clearfix{
     clear: both;
 }
@@ -24,6 +26,11 @@
     }
   }
 }
+
+.routerLinkActive {
+    border-bottom: 3px solid #85cae8;
+}
+
 .tabs-a{
     background: $color-white;
     padding: 15px;
@@ -155,21 +162,6 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
-    .map-block{
-        .map-header .mat-tab-nav-bar a{
-            min-width: 115px;
-        }
-    }
-}
-@media only screen and (max-width: 991px) {
-    .map-block{
-        .map-header .mat-tab-nav-bar a{
-            min-width: 84px;
-        }
-    }
-}
-
 @media only screen and (max-width: 700px) {
     .map-block{
         padding-top: 40px;
@@ -179,10 +171,10 @@
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px){
     .map-block{
         .map-header .mat-tab-nav-bar a{
-            min-width: auto;
+            min-width: 65px;
         }
     }
 }
@@ -190,11 +182,9 @@
 
 @media only screen and (max-width: 375px) {
     .map-block{
-        padding-top: 20px;
-        margin-top: 10px;
         .map-header .mat-tab-nav-bar a{
             min-width: auto;
         }
-    }  
+    }
   }
-  
+

@@ -3,9 +3,6 @@
 .clearfix{
   clear: both;
 }
-img{
-  max-width: 100%;
-}
 .padding{
   padding: 0;
 }
@@ -107,7 +104,7 @@ img{
   }
   .img-alb{
     img{
-      width: 130px;
+      width: 100px;
     }
   }
   .music-alb{
@@ -143,8 +140,19 @@ img{
     margin: 6px 0;
     position: relative;
     cursor: pointer;
+    object-fit: cover;
+    height: 120px;
+    overflow: hidden;
+    mat-icon {
+      color: #c9302c;
+      position: absolute;
+      top: 5px;
+      right: 15px;
+    }
     img{
-      max-width: 100%;
+      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
     }
     h3{
       font-size: 18px;
@@ -161,55 +169,32 @@ img{
 
 }
 
-@media only screen and (max-width: 767px) {
-     
-    .upload{
-        width: 70%;
-        padding-top: 10px;
-    }
-    .tabs-a{
-      text-align: center;
-      .img-alb{
-        width: 30%;
-        img{
-          width: 100px;
-        }
-    }
-    .albums{
-      width: 50%;
-      img{
-        max-width: 100%;
-        height: auto;
-      }
-      h3{
-        left: 0;
-        right: 0;
-        margin: auto;
-        max-width: 100%;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 414px){
-  .tabs-a{
-    padding: 10px 0;
-    .upload{
-      padding-top: 14px;
-      p{
-        font-size: 12px;
-      }
-    }
-    .albums{
-      width: 100%;
-      margin: auto;
-      margin-bottom: 10px;
-    }
-  }  
-}
-@media only screen and (max-width: 320px){
-  .tabs-a{
-    .upload{
-      padding-top: 0;
-    }
-  }
-}
+// @media only screen and (max-width: 700px) {
+
+//     .upload{
+//         width: 70%;
+//     }
+//     .tabs-a{
+//       text-align: center;
+//       .img-alb{
+//         width: 30%;
+//         img{
+//           width: 100px;
+//         }
+//     }
+//     .albums{
+//       width: 50%;
+//       img{
+//         max-width: 200px;
+//         height: auto;
+//       }
+//       h3{
+//         left: 0;
+//         right: 0;
+//         margin: auto;
+//         width: 200px;
+//       }
+//     }
+//   }
+
+

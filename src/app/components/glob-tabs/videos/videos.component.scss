@@ -1,4 +1,7 @@
 @import '../../../../variable';
+// ::ng-deep .video-js{
+//   width: 100%;
+// }
 .clearfix{clear: both;}
 .tabs-a {
   background: $color-white;
@@ -95,9 +98,11 @@
       }
     }
   }
+  
   .video-alb {
+    text-align: right;
     img {
-      width: 130px;
+      width: 65px;
     }
   }
   .upload {
@@ -123,10 +128,9 @@
 
 .video-wrap {
   width: 255px;
-  margin: auto;
+  margin-top: 10px;
   display: inline-block;
   box-sizing: border-box;
-  height: 160px;
   overflow: hidden;
   position: relative;
   .delete {
@@ -134,50 +138,36 @@
     color: #c9302c;
     cursor: pointer;
     right: -36px;
-    top: 6px;
+    top: 35px;
     z-index: 999;
     font-size: 24px;
     background: aliceblue;
     padding: 4px;
     border-radius: 3px;
   }
+  p{
+    margin: 6px 0;
+    color: $color-blue;
+    letter-spacing: 2px
+  }
 }
 
 .video-wrap:hover {
   .delete {
-    right: 16px !important;
+    right: 25px !important;
+    top: 10px;
   }
 }
 
-@media only screen and (max-width: 1200px) {
-     
-  .tabs-a{
-    .video-alb{
-      padding-left: 0;
-      padding-bottom: 10px;
-      img{
-        width: 50px;
-      }
-    }
-    .upload{
-      padding-top: 0; 
+@media only screen and (max-width: 1200px){
+  .video-alb {
+    img {
+      width: 50px !important;
     }
   }
-  .video-wrap{
-    width: 50%;
-    padding-left: 5px;
-  }
-  .video-wrap:hover {
-    .delete {
-      right: 30px !important;
-    }
-  }
-  
-
 }
 
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 700px) {
      
   .upload{
       width: 80%;
@@ -192,13 +182,6 @@
     width: 50%;
     padding-left: 5px;
   }
-}
-@media only screen and (max-width: 480px){
-  .video-wrap{
-    width: 100%;
-    padding-left: 0;
-    text-align: center;
-  }
-}
+  
 
-
+}

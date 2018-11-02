@@ -1,8 +1,10 @@
 <div class="home-tab tabs-a">
   <div class="row">
+    <p *ngIf="user" style="width: 100%; text-align: center">My profile url: http:globstage.com/user-profile/{{user.username}}</p>
     <ng-template [ngIf]="showInfo">
       <div class="col-md-8 t-info">
         <div class="information col-md-12">
+
           <p (click)="editUserInfo()" class="title">{{'information.info' | translate}}</p>
           <div class="row">
             <div class="col-md-6 title-info">
@@ -13,16 +15,16 @@
             </div>
             <div class="col-md-6 user-info">
               <div class="user-country">
-                <span>{{ user?.user_country }}</span>
+                <span>{{ user?.user_country || 'Not set'}} </span>
               </div>
               <div class="user-city">
-                <span>{{ user?.user_city }}</span>
+                <span>{{ user?.user_city || 'Not set'}} </span>
               </div>
               <div class="user-birthday">
-                <span>{{ user?.user_date_of_birth }}</span>
+                <span>{{ user?.user_date_of_birth | amLocal | amDateFormat: 'MMM Do YYYY'  || 'not set'}} </span>
               </div>
               <div class="user-info-rat">
-                <span class="rating">10</span>
+                <span class="rating">{{user?.user_rate}}</span>
               </div>
             </div>
             <div class="clearfix"></div>
@@ -55,7 +57,7 @@
                 </mat-select>
               </mat-form-field>
               <mat-form-field>
-                <input formControlName="user_date_of_birth" matInput [matDatepicker]="picker" placeholder="Date of birth">
+                <input matInput formControlName="user_date_of_birth" [matDatepicker]="picker" placeholder="Date of birth">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
@@ -123,7 +125,8 @@
             </div>
             <div *ngIf="!personalEditing" class="personal borders">
               <p (click)="editUserPersonal()" class="personal-info edits">{{'information.personal-info' | translate}}</p>
-              <p class="pers-inf">{{'information.activities' | translate}}:<span>{{ user?.user_interests.activities }}</span></p>
+              <div *ngIf="personalInfo">
+                <p class="pers-inf">{{'information.activities' | translate}}:<span>{{ user?.user_interests.activities }}</span></p>
               <p class="pers-inf">{{'information.interests' | translate}}:<span>{{ user?.user_interests.interests }}</span></p>
               <p class="pers-inf">{{'information.fav-munshids' | translate}}:<span>{{ user?.user_interests.favorite_munshids
                   }}
@@ -135,6 +138,8 @@
               <p class="pers-inf">{{'information.sports' | translate}}:<span>{{ user?.user_interests.favorite_sports }}</span></p>
               <p class="pers-inf">{{'information.quotes' | translate}}:<span>{{ user?.user_interests.favorite_books }}</span></p>
               <p class="pers-inf">{{'information.about-me' | translate}}:<span>{{ user?.user_interests.about_me }}</span></p>
+            
+              </div>
             </div>
             <ng-template [ngIf]="showPersonal">
               <div class="edit-personal">
@@ -144,7 +149,17 @@
                     <textarea formControlName="activities" matInput placeholder="Activities"></textarea>
                   </mat-form-field>
                   <mat-form-field class="example-full-width">
-                    <textarea formControlName="interests" matInput placeholder="Interests"></textarea>
+                    <textarea matInput placeholder="Interests"></textarea>
+                      <mat-select formControlName="interests">
+                        <mat-option value="">Select Category</mat-option>
+                        <mat-option value="business">Business</mat-option>
+                        <mat-option value="entertainment">Entertainment</mat-option>
+                        <mat-option value="general">General</mat-option>
+                        <mat-option value="health">Health</mat-option>
+                        <mat-option value="science ">Science</mat-option>
+                        <mat-option value="sports">Sports</mat-option>
+                        <mat-option value="technology">Technology</mat-option>
+                      </mat-select>
                   </mat-form-field>
                   <mat-form-field class="example-full-width">
                     <textarea formControlName="favorite_munshids" matInput placeholder="Favorite Munshids"></textarea>

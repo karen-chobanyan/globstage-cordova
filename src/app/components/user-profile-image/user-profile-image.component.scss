@@ -29,6 +29,12 @@ li{
       line-height: 28px;
     }
   }
+  .img{
+    img{
+      width: 100%;
+      border-radius: 3px;
+    }
+  }
   .profile-status{
     background: rgba(3, 170, 173, 0.2);
     margin-bottom: 20px;
@@ -71,82 +77,21 @@ li{
       border-color: #398439;
     }
   }
-
-}
-@media only screen and (max-width: 1200px) {
-  .user-avatar{
-    .user-img{
-      .hover-display{
-        font-size: 20px;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 991px) {
-  .user-avatar{
-    .user-img{
-      .hover-display{
-        font-size: 18px;
-        padding: 2px 6px; 
-      }
-      .img{
-        img{
-          max-width: 100%;
-        }
-      }
-    }
-    .profile-status{
-      font-size: 11px;
-    }
-    .user-attr button{
-      font-size: 11px;    }
-  }
-}
-@media only screen and (max-width: 767px) {
-  .user-avatar {
-    .user-img{
-      .img{
-        text-align: center;
-        img{
-          max-width: 100%;
-        }
-      }
-      .hover-display{
-        width: 256px;
-        left: 0;
-        right: 0;
+  .box-group{
+    .img-subscribe{
+        background: url(/assets/imgs/big_icons.png) no-repeat -431px -110px;
         margin: auto;
-      }
+        height: 40px;
+        width: 32px;
     }
-    .profile-status{
-      text-align: center;
-      margin: auto;
-      width: 256px;
-      margin-top: 10px;
-      .status-text{
-        margin-top: 10px;
-      }
-    }
-    .user-attr{
-      width: 256px;
-      margin: auto;
-      margin-top: 15px;
-    }
-  }
 }
-
-@media only screen and (max-width: 700px) {
-  .img{
-    text-align: center;
-  }
-  .user-avatar {
-    text-align: center;
-    .user-img{
-      display: inline-block;
-      ul{
-        text-align: left;
-      }
+  .box-video{
+    .img-video{
+        background: url(/assets/imgs/big_icons.png) no-repeat -537px -112px;
+        margin: auto;
+        height: 40px;
+        width: 38px;
     }
-    
   }
+
 }

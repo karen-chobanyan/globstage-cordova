@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {HttpClient} from '@angular/common/http';
-import {filter, take} from 'rxjs/operators';
-import {getFromLocalStorage, setToLocalStorage} from '../utils/local-storage';
-import {appConfig} from '../app.config';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { HttpClient } from '@angular/common/http';
+import { filter, take } from 'rxjs/operators';
+import { getFromLocalStorage, setToLocalStorage } from '../utils/local-storage';
+import { appConfig } from '../app.config';
 
 @Injectable()
 export class UserService {
@@ -35,11 +35,18 @@ export class UserService {
     }
   }
 
+
   getUser(id) {
     return this.http.get(`${this.apiUrl}/users/${id}`);
   }
 
+  getUserByUsername(username) {
+    return this.http.get(`${this.apiUrl}/users/views/${username}`);
+  }
+
   updateUserInfo(info) {
+    console.log(info);
+    
     return this.http.put(`${this.apiUrl}/users/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, info);
   }
 
@@ -52,11 +59,19 @@ export class UserService {
   }
 
   changeAvatar(img) {
-    return this.http.put(`${this.apiUrl}/users`, {'user_photo': img});
+    return this.http.put(`${this.apiUrl}/users`, { 'user_photo': img });
   }
 
   savePrivacy(privacy) {
     return this.http.put(`${this.apiUrl}/privacys/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, privacy);
+  }
+
+  reqNot(priv) {
+    return this.http.put(`${this.apiUrl}/privacys/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, priv);
+  }
+
+  reqLocation(p) {
+    return this.http.put(`${this.apiUrl}/privacys/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, p);
   }
 
   getPrivacy() {
@@ -70,8 +85,9 @@ export class UserService {
   newName(nameLastname) {
     return this.http.put(`${this.apiUrl}/users/updateuser`, nameLastname);
   }
-  
+
   deleteUserPhoto(id) {
-    return this.http.put(`${appConfig.apiUrl}/users/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, {'user_photo': ''});
+    return this.http.put(`${appConfig.apiUrl}/users/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, { 'user_photo': '' });
   }
+
 }

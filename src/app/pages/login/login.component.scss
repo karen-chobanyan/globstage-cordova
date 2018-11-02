@@ -178,7 +178,7 @@
         margin: 0 auto;
         top: 54%;
         position: relative;
-        height: 425px;
+        height: 410px;
         margin-top: -265px;
         .icon-close{
             position: absolute;
@@ -214,6 +214,8 @@
             color: #398439;
             cursor: pointer;
             padding-right: 30px;
+            margin-bottom: 5px;
+            display: inline-block;
           }
         }
     }
@@ -270,6 +272,7 @@
             border-color: #4cae4c;
             font-size: 14px;
             padding: 10px;
+            margin-top: 10px;
         }
         .login:hover{
             background-color: #449d44;
@@ -296,7 +299,7 @@
         margin: 0 auto;
         top: 54%;
         position: relative;
-        height: 505px;
+        height: 515px;
         margin-top: -265px;
         .icon-close{
             position: absolute;
@@ -324,6 +327,9 @@
                 margin: 20px auto;
             }
         }
+        .pass-error{
+            border: 1px solid #E51616;
+        }
         input{
             height: 40px;
             width: 80%;
@@ -344,6 +350,10 @@
             border: 1px solid #7CCB18;
             background: #ffffff;
         }
+        .privacy-link{
+            color: #b10c0c;
+            text-decoration: none;
+        }
         .register{
             width: 80%;
             margin: 0 30px;
@@ -359,14 +369,19 @@
         }
         .error-reg{
             color: #e81000;
-            display: block;
-            text-align: center;
-            padding-bottom: 6px;
-            padding-top: 10px;
+            font-size: 15px;
+            margin-bottom: 0;
+            text-align: left;
+            display: inherit;
+            margin-left: 30px;
+        }
+        .email-error{
+            color: #b10c0c;
+            display: inline-block;
         }
     }
-
 }
+
 @media only screen and (max-width: 767px) {
     .animation {
         margin-left: 0;
@@ -396,7 +411,7 @@
     .register-panel{
         .register-form{
             width: 270px;
-            height: 475px;
+            height: 500px;
         }
     }
     .animate-login{
@@ -420,6 +435,9 @@
         .register-form{
             width: 250px;
             height: 465px;
+            input{
+                margin-bottom: 10px;
+            }
         }
         .register{
             margin: auto;

@@ -1,8 +1,6 @@
 @import '../../../variable';
 .clearfix{clear: both;}
-.container{
-    padding: 0;
-}
+#homeContent{overflow: hidden;}
 
 .user-avatar{
     position: relative;
@@ -150,3 +148,7 @@
         }
     }
 }
+
+
+
+

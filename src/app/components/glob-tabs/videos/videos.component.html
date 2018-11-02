@@ -1,7 +1,7 @@
 <div class="video-album tabs-a">
   <div class="row" *ngIf="videos.length < 1">
     <div class="col-md-2 video-alb">
-      <img src="./assets/imgs/no_videos.png" alt="no_videos.png">
+      <img src="/assets/imgs/no_videos.png" alt="no_videos.png">
     </div>
     <div class="col-md-10 upload">
       <p>{{'noDownAudio' | translate}}</p>
@@ -10,22 +10,21 @@
     <div class="clearfix"></div>
   </div>
   <div class="row" *ngIf="videos.length > 0">
-    <div class="col-md-11 upload">
-
+    <div class="upload">
     </div>
-    <div class="col-md-1 video-alb">
-      <img style="cursor: pointer" (click)="openDialogVideo()" src="./assets/imgs/no_videos.png" alt="no_videos.png">
+    <div class="col-md-12 video-alb">
+      <img style="cursor: pointer" (click)="openDialogVideo()" src="/assets/imgs/no_videos.png" alt="no_videos.png">
       <br>
     </div>
-
     <div class="clearfix"></div>
   </div>
   <div class="col-md-12">
     <div class="row">
       <!--<app-video *ngFor="let video of videos" [video]="video"  (deleteVideo)="deleteVideo($event)"></app-video>-->
       <div class="col-md-6 video-wrap" *ngFor="let video of videos">
-        <i class="fa fa-trash delete" aria-hidden="true" (click)="delete(video.id)"></i>
-        <app-video-player  [url]="video.link_to_videos"></app-video-player>
+        <i class="fa fa-trash delete" aria-hidden="true" (click)="openDialogDelete(video.id)"></i>
+        <app-video-player [video]="video"></app-video-player>
+        <p>{{ video.post_content }}</p>
       </div>
       <div class="clearfix"></div>
     </div>

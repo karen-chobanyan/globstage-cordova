@@ -77,7 +77,7 @@
         font-size: 12px;
       }
       .delete{
-        right: 30px;
+        right: 45px;
       }
     }
   }
@@ -85,40 +85,36 @@
 
 @media only screen and (max-width: 767px){
   
-    .friend{
-        .cols2{
-            width: 30%;
-        }
-        .cols8{
-          width: 70%;
-          button{
-            font-size: 11px;
-            padding: 6px 0;
-            width: 50%;
-          }
-          .delete{
-            right: 35px;
-          }
-        }
-    }
-  }
-
-  @media only screen and (max-width: 676px){
-    .friend{
+  .friend{
       .cols2{
           width: 30%;
       }
       .cols8{
         width: 70%;
+        button{
+          font-size: 11px;
+          padding: 6px 0;
+          width: 50%;
+        }
         .delete{
-          right: 25px;
+          right: 35px;
         }
       }
   }
-  }
+}
 
-  
-
-
+@media only screen and (max-width: 676px){
+  .friend{
+    .cols2{
+        width: 30%;
+    }
+    .cols8{
+      width: 70%;
+      .delete{
+        right: 25px;
+      }
+    }
+}
+}
 
 

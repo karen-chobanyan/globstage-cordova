@@ -24,6 +24,15 @@ export class FriendsService {
     return this.http.get(`${appConfig.apiUrl}/friends/${id}`);
   }
 
+  getNotification() {
+    return this.http.get(`${appConfig.apiUrl}/notifications/get-notifications`);
+  }
+
+  readReq(id){
+    return this.http.put(`${appConfig.apiUrl}/notifications/${id}`, {'read_status': 1});
+  }
+
+  
   getFriendRequests(){
     return this.http.get(`${appConfig.apiUrl}/friends?filter[subscription]=0&filter[friend_id]=${getFromLocalStorage('GLOBE_USER').id}`);
   }

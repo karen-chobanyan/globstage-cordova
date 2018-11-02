@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
-import {appConfig} from '../../app.config';
+import {UserService} from '../../services/user.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,16 +16,17 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private userService: UserService,
+    private titleService: Title
   ) {
 
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.http.get(`${appConfig.apiUrl}/users/${params.id}`).subscribe(user => {
-          console.log(user);
+      this.userService.getUserByUsername(params.id).subscribe(user => {
           this.user = user;
+            this.titleService.setTitle( this.user.user_name + ' ' +  this.user.user_last_name + ' | GlobStage');
         },
         error => {
           this.userBlocked = true;
