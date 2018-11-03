@@ -161,6 +161,14 @@
         }
     }
 }
+@media only screen and (max-width: 767px){
+    .map-block{
+        padding-top: 30px;
+        .map-header .mat-tab-nav-bar a{
+            min-width: 84px;
+        }
+    }
+}
 
 @media only screen and (max-width: 700px) {
     .map-block{
@@ -178,6 +186,13 @@
         }
     }
 }
+@media only screen and (max-width: 414px){
+    .map-block{
+        .map-header .mat-tab-nav-bar a{
+            min-width: auto;
+        }
+    }
+}
 
 
 @media only screen and (max-width: 375px) {
@@ -188,3 +203,10 @@
     }
   }
 
+  @media only screen and (max-width: 320px) {
+    .map-block{
+        .map-header .mat-tab-nav-bar a{
+           padding: 0 12px;
+        }
+    }
+  }

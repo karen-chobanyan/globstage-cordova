@@ -13,7 +13,7 @@
     <div class="friends-item" [routerLink]="'/user-profile/'+user.username" *ngFor="let user of friends; let i = index">
       <div class="hover-popup" *ngIf="i < 4 || allFriendsVisible">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 popup-col">
             <img class="popup-img" [src]="user.user_photo || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
           </div>
           <div class="col-md-8 center-text">
@@ -39,7 +39,7 @@
     <div class="friends-item" [routerLink]="'/user-profile/'+follower.username" *ngFor="let follower of user.user_followers?.user; let i = index">
       <div class="hover-popup" *ngIf="i < 4 || allFriendsVisible">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 popup-col">
             <img class="popup-img" [src]="follower.user_photo || './assets/imgs/no_avatar.png'" alt="no_avatar.png">
           </div>
           <div class="col-md-8 center-text">
@@ -64,10 +64,10 @@
     <div class="friends-item" [routerLink]="'/group/'+groups.id" *ngFor="let groups of user.user_followers?.group; let i = index">
       <div class="hover-popup" *ngIf="i < 4 || allFriendsVisible">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 popup-group">
             <img class="popup-img" [src]="'./assets/imgs/no_ava_groups.png'" alt="no_avatar.png">
           </div>
-          <div class="col-md-8 center-text">
+          <div class="col-md-8 center-text-group">
             <h5>{{groups.group_name }}</h5>
           </div>
           <div class="clearfix"></div>

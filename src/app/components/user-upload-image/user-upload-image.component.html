@@ -8,7 +8,7 @@
     <div class="uploaded-img col-md-6">
       <!--<img src="{{uploadedImage || '/assets/imgs/no_avatar.png'}}" alt="no_avatar.png">-->
       <image-cropper crossorigin
-                     [imageBase64]="selectedImage || '/assets/imgs/no_avatar.png'"
+                     [imageBase64]="selectedImage || './assets/imgs/no_avatar.png'"
                      [imageChangedEvent]="imageChangedEvent"
                      [maintainAspectRatio]="true"
                      [resizeToWidth]="256"

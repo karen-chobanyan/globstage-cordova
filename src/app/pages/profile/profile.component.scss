@@ -148,7 +148,22 @@
         }
     }
 }
-
+@media only screen and (max-width: 767px){
+    .right-block{
+        .user-avatar{
+            width: 400px;
+            display: block;
+            margin: auto;
+        }
+    }
+}
+@media only screen and (max-width: 480px){
+    .right-block{
+        .user-avatar{
+            width: 256px;
+        }
+    }
+}
 
 
 

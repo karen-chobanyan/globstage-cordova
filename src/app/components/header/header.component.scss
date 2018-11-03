@@ -82,7 +82,7 @@
         .menu{
             ul{
                 li{
-                    padding: 0 4px;
+                    padding: 8px;
                 }
             }
         }
@@ -94,7 +94,7 @@
             ul{
                 width: calc(100vw - 42px);
                 li{
-                    padding: 0 8px;
+                    padding: 8px;
                 }
             }
         }
@@ -120,14 +120,22 @@
     }
 
 }
+@media only screen and (max-width: 414px) {
+    .menu-block{
+    .menu{
+        ul{
+            li{
+                padding: 8px;
+            }
+        }
+    }
+    }
+}
 @media only screen and (max-width: 347px) {
     .menu-block{
         .menu{
             ul{
                 width: calc(100vw - 35px);
-                li{
-                    padding: 0 2px;
-                }
             }
         }
     }

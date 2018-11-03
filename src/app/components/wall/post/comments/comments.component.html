@@ -1,5 +1,4 @@
-<div *ngIf="post.posttype !== 'googlenews'" class="col-md-12 author-comment">
-
+<div *ngIf="post.posttype !== 'googlenews'" class="author-comment">
   <div *ngFor="let comment of post.comments" class="borders">
     <app-comment [comment]="comment" [post]="post" (onDelete)="filterComments($event)" ></app-comment>
   </div>

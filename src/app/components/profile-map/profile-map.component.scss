@@ -20,7 +20,7 @@
       list-style: none;
       display: inline-block;
       margin-right: 4px;
-      width: 66px;
+      width: 90px;
       height: 40px;
       background: none;
       border: 1px solid #fff;
@@ -58,6 +58,48 @@
     }
     ::ng-deep .mat-tab-label {
       opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .show-map {
+    ul {
+      li {
+        width: 70px;
+        mat-checkbox, mat-radio-button {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 414px){
+  .show-map {
+    ul {
+      li {
+        width: 60px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px){
+  .show-map {
+    ul {
+      li {
+        width: 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px){
+  .show-map {
+    ul {
+      li {
+        width: 75px;
+      }
     }
   }
 }
