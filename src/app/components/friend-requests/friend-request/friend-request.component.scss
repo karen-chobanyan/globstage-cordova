@@ -33,3 +33,35 @@
     transition: 0.3s;
   }
 }
+@media only screen and (max-width: 768px){
+  .friend-req{
+    .req-img{
+      width: 30%;
+      padding: 0;
+      img{
+        max-width: 80px;
+        border-radius: 4px;
+      }
+    }
+    .req-btn{
+      padding: 0;
+      width: 70%;
+      button{
+        width: 100px;
+        padding: 3px 12px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 375px){
+  .friend-req{
+    .req-img{
+      width: 40%;
+      padding: 0 15px;
+    }
+    .req-btn{
+      padding: 0 15px;
+      width: 60%;
+    }
+  }
+}

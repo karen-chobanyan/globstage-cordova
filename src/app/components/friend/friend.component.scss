@@ -72,7 +72,6 @@
       width: 70px;
     }
     .padd{
-      padding: 0;
       button{
         font-size: 12px;
       }
@@ -92,7 +91,7 @@
       .cols8{
         width: 70%;
         button{
-          font-size: 11px;
+          font-size: 12px;
           padding: 6px 0;
           width: 50%;
         }
@@ -106,12 +105,15 @@
 @media only screen and (max-width: 676px){
   .friend{
     .cols2{
-        width: 30%;
+        width: 40%;
     }
     .cols8{
-      width: 70%;
+      width: 60%;
       .delete{
         right: 25px;
+      }
+      button{
+        width: 60%;
       }
     }
 }

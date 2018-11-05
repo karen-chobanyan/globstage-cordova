@@ -115,7 +115,7 @@
     .upload{
         width: 70%;
         text-align: center;
-        padding-top: 30px;
+        padding-top: 20px;
         p{
             font-size: 14px;
             color: #777777;
@@ -132,4 +132,35 @@
             transition: 0.3s;
         }
     }
+}
+@media only screen and (max-width: 480px){
+    .upload{
+        padding-top: 6px;
+    }
+        .music-alb{
+            img{
+                max-width: 60px;
+                height: auto;
+            }
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .tabs-a{
+        padding: 10px 0;
+        .music-alb{
+            img{
+                width: 60px;
+            }
+        }
+        .upload{
+            padding-top: 10px;
+        }
+        .full{
+            .fullWidth{
+                max-width: 100%;
+            }
+        }
+    }
+    
 }

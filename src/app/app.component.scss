@@ -203,3 +203,7 @@
 ::ng-deep .cdk-overlay-container{
     z-index: 9999 !important;
 }
+
+::ng-deep .mat-snack-bar-container{
+    z-index: 99999;
+}

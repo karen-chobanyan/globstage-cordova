@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.style-snackbar{
+  z-index: 99999;
+}
+
 .add-comment {
   padding: 10px 0;
   text-align: right;

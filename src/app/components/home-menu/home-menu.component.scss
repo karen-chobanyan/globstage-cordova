@@ -23,12 +23,14 @@ li{
       border: none;
       transition: 0.3s;
       top: 30px;
+      background: $color-green;
+      color: #fff;
   }
-  .menu-btn:hover{
-    background: $color-green;
-    color: #fff;
-    transition: 0.3s;
-}
+//   .menu-btn:hover{
+//     background: #fff;
+//     color: $color-green;
+//     transition: 0.3s;
+// }
   button.mat-menu-item{
       width: 260px;
       padding-left: 6px;
@@ -136,4 +138,12 @@ li{
         }
       }
   }
+
+  @media only screen and (max-width: 768px){
+    ::ng-deep .mat-menu-content{
+        padding-bottom: 45px !important;
+    }
+  }
+  
+
   

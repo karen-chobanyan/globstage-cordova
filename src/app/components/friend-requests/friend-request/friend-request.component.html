@@ -2,11 +2,11 @@
   <div class="row">
     <div class="friend-req col-md-6">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 req-img">
           <img [routerLink]="'/user-profile/'+request.user.username" *ngIf='request.user.user_photo' src='{{ request.user.user_photo }}'>
           <img [routerLink]="'/user-profile/'+request.user.username" *ngIf='! request.user.user_photo' src="/assets/imgs/no_ava_friend.png">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 req-btn">
           <a [routerLink]="'/user-profile/'+request.user.username"><h4>{{ request.user.user_name + " " + request.user.user_last_name }}</h4></a>
           <button (click)="confirmFriend()" type="submit" class="post btn-success save">{{'addFriend' | translate}}</button>
           <button (click)="unConfirmFriend()" type="submit" class="view-friend btn-success save">{{'ignore' | translate}}</button>

@@ -7,8 +7,8 @@
       <div class="col-md-1 user-images">
         <div class="wall-avatar">
           <a>
-            <img [routerLink]="['/user-profile/' + post.user.username]" *ngIf="post.posttype !== 'googlenews'" [src]="post.user?.user_photo || '/assets/imgs/no_ava_50.png'" alt="no_ava_50">
-            <img *ngIf="post.posttype == 'googlenews'" [src]="post.user?.user_photo || '/assets/imgs/googlenews.png'" alt="googlenews">
+            <img [routerLink]="['/user-profile/' + post.user.username]" *ngIf="post.posttype !== 'googlenews'" [src]="post.user?.user_photo || './assets/imgs/no_ava_50.png'" alt="no_ava_50">
+            <img *ngIf="post.posttype == 'googlenews'" [src]="post.user?.user_photo || './assets/imgs/googlenews.png'" alt="googlenews">
           </a>
         </div>
       </div>

@@ -60,7 +60,7 @@ export class CommentComponent implements OnInit {
       this.formgroupComment.get('user_comment').setValue('');
       res.user = getFromLocalStorage('GLOBE_USER');
       this.replies.push(res);
-      this.snackBar.open('Comment added.', 'ok', { duration: 3000 });
+      this.snackBar.open('Comment added.', 'ok', { duration: 3000, panelClass: ['style-snackbar'] });
     });
   }
 

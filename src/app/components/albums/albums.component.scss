@@ -196,5 +196,32 @@
 //       }
 //     }
 //   }
+@media only screen and (max-width: 1200px) {
+  .map-block{
+      .map-header .mat-tab-nav-bar a{
+          min-width: 135px;
+      }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .map-block{
+      .map-header .mat-tab-nav-bar a{
+          min-width: 100px;
+      }
+  }
+}
 
+@media only screen and (max-width: 480px) {
+  .map-block{
+      .map-header .mat-tab-nav-bar a{
+          min-width: auto;
+      }
+  }
+  .img-alb{
+    img{
+      max-width: 50px;
+      width: 100%;
+    }
+  }
+}
 
