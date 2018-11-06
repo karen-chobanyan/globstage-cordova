@@ -95,3 +95,32 @@ li{
   }
 
 }
+@media only screen and (max-width: 768px){
+  .user-avatar{
+    .user-img{
+      max-width: 250px;
+      margin: auto;
+    }
+    .profile-status{
+      max-width: 400px;
+      margin: 10px auto 0 auto;
+    }
+    .user-attr{
+      max-width: 400px;
+      margin: auto;
+      margin-top: 10px
+    }
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .user-avatar{
+    .profile-status{
+      max-width: 250px;
+      margin: auto;
+    }
+    .user-attr{
+      max-width: 250px;
+    }
+  }
+}

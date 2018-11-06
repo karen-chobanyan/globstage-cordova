@@ -140,3 +140,20 @@
     }
   }
 }
+@media only screen and (max-width: 991px){
+  .home-tab{
+    .t-info{
+      .user-info{
+        width: 50%;
+        .user-birthday{
+          span{
+            font-size: 12px;
+          }
+        }
+      }
+      .user-title-info{
+        width: 50%;
+      }
+    }
+  }
+}

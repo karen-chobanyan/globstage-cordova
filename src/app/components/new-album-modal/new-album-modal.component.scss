@@ -109,3 +109,17 @@
     }
   }
 }
+@media only screen and (max-width: 480px){
+    .create-album{
+        .create-btn{
+            text-align: center;
+        }
+        .center-p{
+            margin-bottom: 0;
+            margin-top: -20px;
+        }
+        ::ng-deep .mat-form-field-wrapper{
+            
+        }
+    }
+}

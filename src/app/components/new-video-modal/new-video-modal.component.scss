@@ -90,3 +90,17 @@
     height: 160px;
   }
 }
+@media only screen and (max-width: 480px){
+  .create-video{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 414px){
+  .create-video{
+     .create-btn{
+      text-align: center;
+      padding-top: 0;
+    }
+  }
+}

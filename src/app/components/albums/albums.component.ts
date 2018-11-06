@@ -40,7 +40,7 @@ export class AlbumsComponent implements OnInit {
   openDialogAlbum() {
     const dialogRef = this.dialog.open(NewAlbumModalComponent, {
       height: 'auto',
-      width: '400px'
+      width: '260px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

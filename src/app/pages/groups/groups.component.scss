@@ -21,13 +21,9 @@ img{max-width: 100%;}
         outline: none;
         position: fixed;
         cursor: pointer;
-        color: $color-green;
-        border: none;
-        transition: 0.3s;
-    }
-    .menu-btn:hover{
-        background: $color-green;
         color: #fff;
+        border: none;
+        background: $color-green;
         transition: 0.3s;
     }
     button.mat-menu-item{

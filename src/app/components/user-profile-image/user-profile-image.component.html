@@ -1,7 +1,7 @@
 <div class="user-avatar" *ngIf="user">
   <div class="user-img">
     <div class="img">
-      <img src="{{user.user_photo || '/assets/imgs/no_avatar.png'}} " alt="no_avatar.png">
+      <img src="{{user.user_photo || './assets/imgs/no_avatar.png'}} " alt="no_avatar.png">
     </div>
     <span class="hover-display">{{user.user_name + ' ' + user.user_last_name}}</span>
   </div>

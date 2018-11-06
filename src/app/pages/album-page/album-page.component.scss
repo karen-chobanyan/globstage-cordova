@@ -51,15 +51,15 @@ li{
     outline: none;
     position: fixed;
     cursor: pointer;
-    color: $color-green;
+    color: #fff;
     border: none;
     transition: 0.3s;
   }
-  .menu-btn:hover{
-    background: $color-green;
-    color: #fff;
-    transition: 0.3s;
-  }
+  // .menu-btn:hover{
+  //   background: $color-green;
+  //   color: #fff;
+  //   transition: 0.3s;
+  // }
   button.mat-menu-item{
     width: 260px;
     padding-left: 6px;
@@ -214,4 +214,47 @@ li{
   padding: 5px;
   cursor: pointer;
 }
+}
+@media only screen and (max-width: 1200px) {
+
+  .upload-btn{
+    padding-left: 0;
+      img{
+        width: 50px;
+      }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upload-btn{
+      img{
+        width: 60px !important;
+      }
+  }
+  .album-photo{
+    width: 50%;
+  }
+  
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  .album-photo{
+    img{
+      max-width: 100%;
+      height: 130px;
+    }
+}
+  
+
+}
+@media only screen and (max-width: 414px) {
+
+  .album-photo{
+    width: 100%;
+  }
+  
+
 }

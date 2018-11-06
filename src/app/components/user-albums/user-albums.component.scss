@@ -157,3 +157,39 @@
   }
 
 }
+@media only screen and (max-width: 767px){
+  .tabs-a{
+      text-align: center;
+      .img-alb{
+        width: 30%;
+        img{
+          width: 80px;
+        }
+    }
+        .upload{
+          width: 70%;
+        }
+    .albums{
+      width: 50%;
+      img{
+        max-width: 100%;
+        height: auto;
+      }
+      h3{
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 414px){
+  .tabs-a{
+    .albums{
+      width: 100%;
+    }
+  }
+
+}

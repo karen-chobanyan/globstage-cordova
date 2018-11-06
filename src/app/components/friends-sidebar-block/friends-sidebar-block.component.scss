@@ -151,3 +151,11 @@
 
   }
 }
+
+@media only screen and (max-width: 480px){
+  .user-friend{
+    max-width: 250px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}

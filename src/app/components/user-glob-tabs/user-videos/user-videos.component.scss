@@ -161,3 +161,30 @@
     right: 16px !important;
   }
 }
+@media only screen and (max-width: 1200px) {
+  .video-wrap{
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 767px){
+.tabs-a{
+  .video-alb {
+    width: 30%;
+    img {
+      width: 70px;
+    }
+  }
+  .upload{
+    width: 70%;
+    padding-top: 8px;
+  }
+}
+
+}
+@media only screen and (max-width: 480px) {
+.video-wrap{
+  width: 100%;
+  padding-left: 0;
+  text-align: center;
+}
+}

@@ -24,11 +24,30 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 767px){
   .smile-wrap{
-    width: 100%;
+    max-width: 380px;
+    ul{
+      margin: 0;
+        li{
+          width: 38px;
+      }
+    }
   }
-  
+}
+@media only screen and (max-width: 480px){
+  .smile-wrap{
+    max-width: 310px;
+    ul{
+        li{
+          width: 34px;
+      }
+    }
+  }
+}
 
-  
+@media only screen and (max-width: 375px){
+  .smile-wrap{
+    max-width: 220px;
+  }
 }

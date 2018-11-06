@@ -113,6 +113,14 @@
             .smiles{
                padding-top: 6px;
                padding-left: 0;
+               ul{
+                   li{
+                       padding: 0 4px;
+                       i{
+                           padding-left: 10px;
+                       }
+                   }
+               }
             }
             .share-btn{
                text-align: center;
@@ -121,6 +129,21 @@
         }
     }
 }
+@media only screen and (max-width: 414px){
+    .text-area{
+        .smile-block{
+            .smiles{
+               ul{
+                i{
+                    padding-left: 8px;
+                    font-size: 22px;
+                 }
+               }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 375px) {
     .user-img{
         width: 20%;

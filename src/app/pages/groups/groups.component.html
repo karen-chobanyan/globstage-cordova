@@ -21,7 +21,7 @@
           <div class="col-md-12">
             <div class="row">
                 <div class="group col-md-3" *ngFor="let group of groups" [routerLink]="'/group/'+group.id">
-                  <img [src]="group.attachments ? group.attachments[0].path : '/assets/imgs/no_ava_groups.png'" [alt]="group.group_name">
+                  <img [src]="group.attachments ? group.attachments[0].path : './assets/imgs/no_ava_groups.png'" [alt]="group.group_name">
                   <h3 class="group-title">{{group.group_name}}</h3>
                 </div>
                 <div class="clearfix"></div>

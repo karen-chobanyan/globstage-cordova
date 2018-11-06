@@ -179,3 +179,19 @@
         }
     }
 }
+
+@media only screen and (max-width: 414px) {
+    .map-block{
+        .map-header .mat-tab-nav-bar a{
+            min-width: 70px;
+        }
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .map-block{
+        .map-header .mat-tab-nav-bar a{
+            min-width: auto;
+        }
+    }
+}
