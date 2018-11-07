@@ -205,13 +205,52 @@
 
 
 
-@media only screen and (max-width: 700px) {
+// @media only screen and (max-width: 700px) {
 
+//     .user-images{
+//         width: 20%;
+//     }
+//     .wall-name{
+//         width: 80%;
+//     }
+//     .wall-content{
+//         padding-left: 15px;
+//         padding-top: 0;
+//     }
+//     .like-dislike{
+//         padding-bottom: 10px;
+//         padding-left: 15px;
+//     }
+//     .wall-attach-video{
+//         padding-left: 0;
+//     }
+
+
+// }
+
+// @media only screen and (max-width: 375px) {
+
+//     .wall-content{
+//         padding-left: 15px;
+//         padding-top: 0;
+//     }
+//     .like-dislike{
+//         padding-bottom: 0;
+//         padding-left: 15px;
+//     }
+//     .wall-attach-video{
+//         padding-left: 0;
+//     }
+
+
+// }
+@media only screen and (max-width: 767px) {
+  
     .user-images{
-        width: 20%;
+        width: 30%;
     }
     .wall-name{
-        width: 80%;
+        width: 70%;
     }
     .wall-content{
         padding-left: 15px;
@@ -224,15 +263,23 @@
     .wall-attach-video{
         padding-left: 0;
     }
-
-
+    
+    
 }
 
-@media only screen and (max-width: 375px) {
-
+@media only screen and (max-width: 480px){
     .wall-content{
-        padding-left: 15px;
+        .wall-atach-photo{
+            padding-top: 10px;
+        }
+    }
+}
+@media only screen and (max-width: 375px) {
+    
+    .wall-content{
+        padding-left: 5px;
         padding-top: 0;
+        padding-right: 5px;
     }
     .like-dislike{
         padding-bottom: 0;
@@ -241,6 +288,4 @@
     .wall-attach-video{
         padding-left: 0;
     }
-
-
 }

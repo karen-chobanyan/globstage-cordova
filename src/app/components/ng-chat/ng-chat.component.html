@@ -17,7 +17,7 @@
     <ul id="ng-chat-users" *ngIf="!isCollapsed">
 
       <li *ngFor="let usr of filteredUsers" (click)="openChatWindow(usr, true, true)">
-        <div *ngIf="usr">
+       
           <div *ngIf="!usr?.user_photo" class="icon-wrapper">
             <i class="user-icon"></i>
           </div>
@@ -32,13 +32,14 @@
           }"
             title="{{getStatusTitle(UserStatus[usr.status])}}"></span>
           <span *ngIf="unreadMessagesTotalByUser(usr).length > 0" class="ng-chat-unread-messages-count">{{unreadMessagesTotalByUser(usr)}}</span>
-        </div>
+
       </li>
 
     </ul>
   </div>
-  <div *ngFor="let window of windows; let i = index" [ngClass]="{'ng-chat-window': true, 'ng-chat-window-collapsed': window.isCollapsed}"
-    [ngStyle]="{'right': friendsListWidth + 20 + windowSizeFactor * i + 'px'}">
+  <div *ngFor="let window of windows; let i = index" 
+    [ngClass]="{'ng-chat-window': true, 'ng-chat-window-collapsed': window.isCollapsed}"
+    [ngStyle]="{'right': 0}">
     <ng-container *ngIf="window.isCollapsed">
       <div class="ng-chat-title" (click)="onChatWindowClicked(window)">
         <strong title="{{window.chattingTo.userng-star-inserted_name}}">

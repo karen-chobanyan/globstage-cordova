@@ -1,4 +1,43 @@
 @import '../../../variable';
+::ng-deep .mat-menu-panel{
+    border: none;
+}
+::ng-deep .mat-menu-content:not(:empty){
+    padding: 0 !important;
+}
+.notification{
+    background: #fff;
+    h4{
+        text-align: center;
+        color: #038e95;
+        font-size: 18px;
+        padding: 6px 0;
+     }
+     .read-0 {
+        background: #ebf7ff;
+     }
+     .notify-count{
+        padding: 1px 0;
+         p{
+             font-size: 14px;
+             padding: 10px;
+             margin-bottom: 0;
+             a{
+                 color: $color-blue;
+             }
+         }
+         img{
+             width: 50px;
+             border-radius: 100%;
+             margin: 4px 6px;
+         }
+         .notify-img{
+             width: 25%;
+             float: left;
+         }
+     } 
+}
+
 .menu-block{
     position: relative;
     padding-top: 10px;
@@ -53,20 +92,20 @@
                 }
             }
             .relative-length{
-                position: absolute;
-                left: 70px;
-                top: -10px;
+                position: relative;
                 z-index: 9999;
             }
             .notify-length{
-                color: #fff;
-                top: 4px;
-                left: 12px;
+                color: red;
+                top: 12px;
+                left: 0;
                 z-index: 9999;
                 font-size: 12px;
+                position: absolute;
+                right: 0;
+                margin: auto;
             }
         }
-        
      }
      .top{
             position: fixed;
