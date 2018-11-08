@@ -14,10 +14,14 @@ body{
 body .cdk-overlay-container{
   z-index: 99999 !important;
 }
-
 .cdk-overlay-pane{
   margin-bottom: 50px !important;
 }
-input.ng-touched.ng-invalid{
-  //border: 1px solid #9D0A0E !important;
+ngx-gallery {
+  .ngx-gallery-image{
+    z-index: 998 !important;
+  }
+  .ngx-gallery-arrow-wrapper, .ngx-gallery-icon,{
+      z-index: 998 !important;
+    }
 }
