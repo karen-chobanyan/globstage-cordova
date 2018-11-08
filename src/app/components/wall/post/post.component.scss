@@ -247,17 +247,17 @@
 @media only screen and (max-width: 767px) {
   
     .user-images{
-        width: 30%;
+        width: 15%;
     }
     .wall-name{
-        width: 70%;
+        width: 85%;
     }
     .wall-content{
         padding-left: 15px;
         padding-top: 0;
     }
     .like-dislike{
-        padding-bottom: 10px;
+        padding-bottom: 15px;
         padding-left: 15px;
     }
     .wall-attach-video{
@@ -274,6 +274,15 @@
         }
     }
 }
+@media only screen and (max-width: 414px){
+    .user-images{
+        width: 20%;
+    }
+    .wall-name{
+        width: 80%;
+    }
+}
+
 @media only screen and (max-width: 375px) {
     
     .wall-content{
@@ -282,7 +291,6 @@
         padding-right: 5px;
     }
     .like-dislike{
-        padding-bottom: 0;
         padding-left: 15px;
     }
     .wall-attach-video{

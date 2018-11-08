@@ -57,24 +57,25 @@ export class CommentsComponent implements OnInit {
 
 
   postComment() {
-    if(this.formgroupComment.valid){
+    if (this.formgroupComment.valid) {
       let mn = this.commentService.postComment({
         comment_content: this.formgroupComment.get('user_comment').value,
         comment_post_id:  this.post.id,
         comment_for: 'post',
       }).subscribe((res: any) => {
         console.log(res);
-        
         this.smileClass = '';
         this.formgroupComment.get('user_comment').setValue('');
         res.user = getFromLocalStorage('GLOBE_USER');
+        if (!this.post.comments) {
+          this.post.comments = [];
+        }
         this.post.comments.push(res);
         this.post.post_comment_count++;
         this.snackBar.open('Comment added.', 'ok', {duration: 3000});
       });
-    }else{
+    } else {
       console.log('test');
-      
     }
   }
 
@@ -99,7 +100,6 @@ export class CommentsComponent implements OnInit {
     this.smileOpen = false;
     console.log(e, this.formgroupComment.get('user_comment').value);
   }
-
 
 
 }

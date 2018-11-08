@@ -8,6 +8,12 @@ body{
   width: 100vw;
   overflow: hidden;
 }
+.style-snackbar{
+  z-index: 99999 !important;
+}
+body .cdk-overlay-container{
+  z-index: 99999 !important;
+}
 
 .cdk-overlay-pane{
   margin-bottom: 50px !important;

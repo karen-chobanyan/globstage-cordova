@@ -43,7 +43,7 @@ export class PostComponent implements OnInit {
     }
   }
 
-  addAudio(post){
+  addAudio(post) {
     post.posttype = 'audio';
     post.post_attchments = [],
     post.post_content = post.post_title,
@@ -62,6 +62,7 @@ export class PostComponent implements OnInit {
     }).subscribe(res => {
       this.post.post_like_count++;
       this.user = getFromLocalStorage('GLOBE_USER');
+      this.snackBar.open('Like.', 'ok', { duration: 3000 });
       if (res.body.message === 'liked') {
         this.post.likes_dislikes.push({user: this.user, user_id: this.user.id, status: 'like'});
         }
@@ -76,6 +77,7 @@ export class PostComponent implements OnInit {
     }).subscribe(res => {
       this.post.post_dislike_count++;
       this.user = getFromLocalStorage('GLOBE_USER');
+      this.snackBar.open('Dislike.', 'ok', { duration: 3000 });
       if (res.body.message === 'disliked') {
         this.post.likes_dislikes.push({user: this.user, user_id: this.user.id, status: 'dislike'});
         }
@@ -87,12 +89,14 @@ export class PostComponent implements OnInit {
     if (post.posttype === 'post') {
       this.postService.deleteWallPost(id).subscribe(res => {
         this.onDelete.emit({message: 'postDeleted', id: id});
+        this.snackBar.open('Post Deleted.', 'ok', { duration: 3000 });
       }, err => {
         this.onDelete.emit({message: 'postDeleted', id: id});
       });
     } else  {
       post.hide_from_wall = 0;
       this.postService.hidePostOnWall(post).subscribe( res => {
+        this.snackBar.open('Post Deleted.', 'ok', { duration: 3000 });
         this.post.hide_from_wall = 0;
         console.log(res);
       });

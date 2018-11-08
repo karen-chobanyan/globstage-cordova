@@ -11,6 +11,8 @@ import { getFromLocalStorage } from '../../../utils/local-storage';
 import { ChatService } from '../../../services/chat.service';
 import { WallSmilesComponent } from '../../../components/wall/wall-smiles/wall-smiles.component';
 import {EmojifyPipe} from '../../ng-chat/pipes/emojify.pipe';
+import {MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-post-box',
@@ -43,6 +45,7 @@ export class PostBoxComponent implements OnInit {
     private postsService: PostsService,
     public dialog: MatDialog,
     private chatService: ChatService,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -69,6 +72,7 @@ export class PostBoxComponent implements OnInit {
         this.attached = [];
         this.attachements = [];
         this.videos = [];
+        this.snackBar.open('Wall post created.', 'ok', {duration: 3000});
       });
     }
     if (this.groupId) {
@@ -87,6 +91,7 @@ export class PostBoxComponent implements OnInit {
         this.attached = [];
         this.attachements = [];
         this.videos = [];
+        this.snackBar.open('Group post created.', 'ok', {duration: 3000});
       });
     }
   }

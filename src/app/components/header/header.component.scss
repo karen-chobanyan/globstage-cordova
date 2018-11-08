@@ -47,14 +47,13 @@
         text-align: left;
         padding-top: 4px;
         position: fixed;
-        bottom: 0;
+        top: calc(100vh - 48px);
         background: #097475;
         width: 100%;
         left: 0;
         right: 0;
         margin: auto;
-        z-index: 99999;
-        height: 50px;
+        z-index: 999;
         ul{
             padding: 0;
             margin: 0;
@@ -167,7 +166,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            z-index: 99999;
             ul{
                 li{
                     padding: 0 6px;

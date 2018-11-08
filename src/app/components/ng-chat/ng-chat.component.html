@@ -12,7 +12,7 @@
         <li *ngIf="messNotReq?.length > 0" class="notification"><i class="notify fa fa-bell" aria-hidden="true"></i></li>
       </ul> -->
     </a>
-    <input id="ng-chat-search_friend" type="search" [placeholder]="localization.searchPlaceholder" [(ngModel)]="searchInput"
+    <input *ngIf="!isCollapsed" id="ng-chat-search_friend" type="search" [placeholder]="localization.searchPlaceholder" [(ngModel)]="searchInput"
     />
     <ul id="ng-chat-users" *ngIf="!isCollapsed">
 
