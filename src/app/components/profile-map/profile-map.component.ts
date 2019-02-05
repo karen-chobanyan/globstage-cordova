@@ -43,10 +43,14 @@ export class ProfileMapComponent implements OnInit {
 
   ngOnInit() {
     this.user = getFromLocalStorage('GLOBE_USER');
-    this.userService.getUser(getFromLocalStorage('GLOBE_USER').id).subscribe((user: any) => {
-      this.userProfile = user;
-      setToLocalStorage('GLOBE_USER', user);
-    });
+    if (this.user){
+      console.log(this.user.id);
+      this.userService.getUser(this.user.id).subscribe((user: any) => {
+        this.userProfile = user;
+        setToLocalStorage('GLOBE_USER', user);
+      });
+    }
+
 
     this.placeList = new FormArray([
 
@@ -89,7 +93,7 @@ export class ProfileMapComponent implements OnInit {
         this.userService.updLocation(this.myLocation).subscribe();
       });
 
-      this.friendService.getFriends(userId).subscribe((res: any[]) => {
+      this.friendService.getFriends(this.user.id).subscribe((res: any[]) => {
         this.friends = res;
         for (let i = 0; i < res.length; i++) {
           if (res[i].user_location) {
