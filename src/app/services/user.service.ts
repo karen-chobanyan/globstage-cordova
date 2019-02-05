@@ -46,7 +46,7 @@ export class UserService {
 
   updateUserInfo(info) {
     console.log(info);
-    
+
     return this.http.put(`${this.apiUrl}/users/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, info);
   }
 
@@ -88,6 +88,10 @@ export class UserService {
 
   deleteUserPhoto(id) {
     return this.http.put(`${appConfig.apiUrl}/users/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, { 'user_photo': '' });
+  }
+
+  updLocation(location) {
+    return this.http.put(`${this.apiUrl}/users/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, {user_location: location.lat() + ',' + location.lng() });
   }
 
 }

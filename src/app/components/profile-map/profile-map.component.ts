@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {getFromLocalStorage, removeFromLocalStorage, setToLocalStorage} from '../../utils/local-storage';
 import {FormArray} from '@angular/forms';
-
+import { FriendsService } from '../../services/friends.service';
 
 declare var navigator;
 
@@ -22,6 +22,8 @@ export class ProfileMapComponent implements OnInit {
   infowindow;
   myLocation;
   placeMarkers = [];
+  public friends;
+  public userId;
 
   selectedPlaces = [
     {icon: 'restaurant', value: 'restaurant', checked: false},
@@ -35,7 +37,7 @@ export class ProfileMapComponent implements OnInit {
     {icon: 'local_hospital', value: 'hospital', checked: false}
   ];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private friendService: FriendsService) {
 
   }
 
@@ -61,7 +63,7 @@ export class ProfileMapComponent implements OnInit {
 
   initMap() {
     console.log('Rendering the Map');
-
+    let userId = this.userId;
     if (navigator.geolocation) {
 
       console.log('Navigation ON');
@@ -84,7 +86,35 @@ export class ProfileMapComponent implements OnInit {
           map: this.map,
           animation: google.maps.Animation.BOUNCE,
         });
+        this.userService.updLocation(this.myLocation).subscribe();
+      });
 
+      this.friendService.getFriends(userId).subscribe((res: any[]) => {
+        this.friends = res;
+        for (let i = 0; i < res.length; i++) {
+          if (res[i].user_location) {
+            const location = new google.maps.LatLng(res[i].user_location.split(',')[0], res[i].user_location.split(',')[1]);
+            let icon = {
+              url: '../../../assets/imgs/friend-marker.png',
+              scaledSize: new google.maps.Size(50, 50),
+            };
+            let infowindow = new google.maps.InfoWindow({
+              content: res[i].user_name + ' ' + res[i].user_last_name
+            });
+            const marker = new google.maps.Marker({
+              position: location,
+              map: this.map,
+              animation: google.maps.Animation.BOUNCE,
+              icon: icon,
+              title: 'Hello World!'
+            });
+            marker.addListener('click', function() {
+              infowindow.open(this.map, marker);
+            });
+
+          }
+
+        }
       });
 
     } else {
