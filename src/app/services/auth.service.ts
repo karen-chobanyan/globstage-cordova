@@ -11,7 +11,6 @@ import {Router} from '@angular/router';
 @Injectable()
 export class AuthService {
 
-
   urlOnlyForOauth = appConfig.apiOauth;
   apiUrl = appConfig.apiUrl;
   isLoggedIN = new BehaviorSubject(false);

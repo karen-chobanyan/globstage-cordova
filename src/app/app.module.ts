@@ -330,7 +330,6 @@ export class CustomTranslateLoader implements TranslateLoader {
     NewAudioModalComponent,
     NewVideoModalComponent,
     NewGroupModalComponent,
-    NewGroupModalComponent,
     NewNotesModalComponent,
     NewPollModalComponent,
     NewPasswordModalComponent,

@@ -9,7 +9,6 @@ import {getFromLocalStorage, setToLocalStorage} from '../../utils/local-storage'
 import {MatDialog} from '@angular/material';
 import { NewPasswordModalComponent } from '../../components/new-password-modal/new-password-modal.component';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -45,7 +44,6 @@ export class LoginComponent implements OnInit {
 
   }
 
-  
   ngOnInit() {
 
     if (this.authService.isLogged) {
@@ -66,15 +64,6 @@ export class LoginComponent implements OnInit {
       user_password: ['', Validators.required],
     });
 
-
-    // this.name = this.formgroupReg.controls['name'];
-    // this.lastname = this.formgroupReg.controls['lastname'];
-    // this.email = this.formgroupReg.controls['email'];
-    // this.password_first = this.formgroupReg.controls['password_first'];
-    // this.password_second = this.formgroupReg.controls['password_second'];
-    // this.email = this.formgroupLog.controls['email'];
-    // this.password = this.formgroupLog.controls['password'];
-
   }
 
   checkPasswords() {
@@ -91,13 +80,11 @@ export class LoginComponent implements OnInit {
         this.errorReg = false;
           // passwordConfirmationInput.setErrors(null);
       }
-    
   }
 
   openLogin() {
     this.loginPanel = true;
   }
-
 
   closeLogin() {
     this.loginPanel = false;
@@ -140,7 +127,6 @@ export class LoginComponent implements OnInit {
     //   this.formError = '';
     // }.bind(this), 3000);
   }
-
   onSignUp() {
     this.loading = true;
     const sendData = new User();
@@ -163,17 +149,16 @@ export class LoginComponent implements OnInit {
           console.log(error.error.code);
           this.errorRegister = error.error.code;
         }
-        
+
         this.loading = false;
         this.formError = 'true';
       }, () => {
         this.loading = false;
       });
-            
+
     }else{
       // this.errorReg = true;
     }
-    
       // setTimeout(() => {
       //   window.location.reload();
       // }, 2000);
@@ -188,5 +173,5 @@ export class LoginComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
   }
-  
+
 }
