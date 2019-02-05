@@ -99,7 +99,7 @@ export class ProfileMapComponent implements OnInit {
           if (res[i].user_location) {
             const location = new google.maps.LatLng(res[i].user_location.split(',')[0], res[i].user_location.split(',')[1]);
             let icon = {
-              url: '../../../assets/imgs/friend-marker.png',
+              url: './assets/imgs/friend-marker.png',
               scaledSize: new google.maps.Size(50, 50),
             };
             let infowindow = new google.maps.InfoWindow({
