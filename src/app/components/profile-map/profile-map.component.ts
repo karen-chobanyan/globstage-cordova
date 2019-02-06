@@ -24,6 +24,8 @@ export class ProfileMapComponent implements OnInit {
   placeMarkers = [];
   public friends;
   public userId;
+  public check;
+  checked: boolean;
 
   selectedPlaces = [
     {icon: 'restaurant', value: 'restaurant', checked: false},
@@ -57,7 +59,13 @@ export class ProfileMapComponent implements OnInit {
     ]);
     this.initMap();
 
+    this.userService.getPrivacy().subscribe((ret:any) => {
+      console.log(ret.location);
+      this.check = !!ret.location;
+    });
+
   }
+
 
   get selectedOptions() { // right now: ['1','3']
     return this.selectedPlaces
@@ -181,5 +189,21 @@ export class ProfileMapComponent implements OnInit {
       type: e.value
     }, this.callback);
   }
+
+  onInputChange(event: any) {
+    console.log(event);
+    let mn = event.checked;
+    if (event.checked === true) {
+      mn = 1;
+    } else {
+      mn = 0;
+    }
+    this.userService.reqLocationMap(mn).subscribe(ret => {
+      console.log(ret);
+    });
+  }
+
+
+
 
 }

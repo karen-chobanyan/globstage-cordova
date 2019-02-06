@@ -78,6 +78,10 @@ export class UserService {
     return this.http.get(`${this.apiUrl}/privacys`);
   }
 
+  // getMapLoc() {
+  //   return this.http.get(`${this.apiUrl}/privacys`);
+  // }
+
   newPassword(newPass) {
     return this.http.put(`${this.apiUrl}/users/updateuser`, newPass);
   }
@@ -93,5 +97,11 @@ export class UserService {
   updLocation(location) {
     return this.http.put(`${this.apiUrl}/users/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, {user_location: location.lat() + ',' + location.lng() });
   }
+  reqLocationMap(p) {
+    return this.http.put(`${this.apiUrl}/privacys/${JSON.parse(localStorage.getItem('GLOBE_USER')).id}`, {
+      'location': p
+    });
+  }
+
 
 }

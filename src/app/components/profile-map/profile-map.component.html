@@ -7,9 +7,12 @@
       <!--<mat-checkbox><mat-icon>navigation</mat-icon></mat-checkbox>-->
     <!--</li>-->
     <li *ngFor="let place of selectedPlaces" matTooltip="{{'header.' + place.value | translate}}">
-      <mat-radio-button (change)="updateMap($event)"  name="selectedPlaces" [value]="place.value"><mat-icon>{{place.icon}}</mat-icon></mat-radio-button>
+      <mat-radio-button (change)="updateMap($event)"  name="selectedPlaces" [value]="place.value">
+        <mat-icon>{{place.icon}}</mat-icon></mat-radio-button>
     </li>
-
   </ul>
+  <div class="update-map">
+    <mat-slide-toggle [checked]="check" (change)="onInputChange($event)">Location</mat-slide-toggle>
+  </div>
 </div>
 <app-wall *ngIf="userProfile" [wallId]="userProfile.id"></app-wall>
