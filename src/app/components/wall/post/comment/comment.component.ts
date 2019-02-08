@@ -60,6 +60,7 @@ export class CommentComponent implements OnInit {
       this.formgroupComment.get('user_comment').setValue('');
       res.user = getFromLocalStorage('GLOBE_USER');
       this.replies.push(res);
+      this.comment.has_child = true;
       this.snackBar.open('Comment added.', 'ok', { duration: 3000, panelClass: ['style-snackbar'] });
     });
   }
@@ -67,6 +68,9 @@ export class CommentComponent implements OnInit {
   getReplies() {
     this.commentService.getReplies(this.comment.id).subscribe((replies: any[]) => {
       this.replies = replies;
+      if (replies.length === 0) {
+        this.comment.has_child = false;
+      }
     });
   }
 
@@ -76,15 +80,16 @@ export class CommentComponent implements OnInit {
 
   deleteComment(id) {
     console.log(this.post);
-      this.commentService.deleteComment(id).subscribe(res => {
+    this.commentService.deleteComment(id).subscribe(res => {
+      if (this.post) {
         this.post.post_comment_count--;
-        this.snackBar.open('Comment is successfully deleted.', 'ok', { duration: 3000 });
-        this.onDelete.emit(id);
-      }, err => {
-
-        this.snackBar.open('Comment can not be deleted.', 'ok', { duration: 3000 });
-        console.log(err);
-      });
+      }
+      this.snackBar.open('Comment is successfully deleted.', 'ok', { duration: 3000 });
+      this.onDelete.emit(id);
+    }, err => {
+      this.snackBar.open('Comment can not be deleted.', 'ok', { duration: 3000 });
+      console.log(err);
+    });
   }
 
   openDialogDelete() {

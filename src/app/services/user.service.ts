@@ -78,10 +78,6 @@ export class UserService {
     return this.http.get(`${this.apiUrl}/privacys`);
   }
 
-  // getMapLoc() {
-  //   return this.http.get(`${this.apiUrl}/privacys`);
-  // }
-
   newPassword(newPass) {
     return this.http.put(`${this.apiUrl}/users/updateuser`, newPass);
   }
