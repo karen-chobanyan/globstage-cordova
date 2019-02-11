@@ -79,7 +79,6 @@ export class CommentComponent implements OnInit {
   }
 
   deleteComment(id) {
-    console.log(this.post);
     this.commentService.deleteComment(id).subscribe(res => {
       if (this.post) {
         this.post.post_comment_count--;
@@ -109,5 +108,4 @@ export class CommentComponent implements OnInit {
     this.replies = this.replies.filter(r => r.id !== id);
     this.snackBar.open('Comment is successfully deleted.', 'ok', { duration: 3000 });
   }
-
 }

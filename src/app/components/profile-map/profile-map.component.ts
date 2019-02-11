@@ -52,11 +52,8 @@ export class ProfileMapComponent implements OnInit {
         setToLocalStorage('GLOBE_USER', user);
       });
     }
-
-
-    this.placeList = new FormArray([
-
-    ]);
+    this.placeList = new FormArray([]);
+    
     this.initMap();
 
     this.userService.getPrivacy().subscribe((ret:any) => {
