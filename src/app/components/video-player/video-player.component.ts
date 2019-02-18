@@ -16,6 +16,7 @@ export class VideoPlayerComponent implements OnInit {
   @Input() url;
   data;
 
+
   constructor(
       private embedService: EmbedVideoService
   ) {
@@ -25,7 +26,7 @@ export class VideoPlayerComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
           let settings = {};
-          const container = document.getElementById('vid-' + this.video.id);
+          const container: any = document.getElementById('vid-' + this.video.id);
 
           if (this.video.post_link && this.video.post_link.indexOf('youtube.com') > -1) {
             settings = {
@@ -60,8 +61,17 @@ export class VideoPlayerComponent implements OnInit {
             };
           }
           videojs(container, settings);
+          container.player.on('play', () => {
+            this.pauseOthers('vid-' + this.video.id);
+          });
         },
         500);
   }
+      pauseOthers(id) {
+        let players = $('.vjs-default-skin').not('#' + id);
+        players.each((i) => {
+          players[i].player.pause();
+        });
+      }
 
 }
